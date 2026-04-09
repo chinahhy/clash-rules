@@ -36,6 +36,10 @@ DOMAIN-SUFFIX,umu.se
 DOMAIN-SUFFIX,avcdn.net
 DOMAIN-SUFFIX,perfops.net
 
+# 火山引擎
+DOMAIN-SUFFIX,byteplusbiz.com
+DOMAIN-SUFFIX,yhgfb-static.com
+
 # ai仓库
 DOMAIN-SUFFIX,clawhub.ai
 
