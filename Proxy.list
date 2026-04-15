@@ -47,6 +47,7 @@ DOMAIN-SUFFIX,mapbox.com
 DOMAIN-SUFFIX,ctfassets.net
 DOMAIN-SUFFIX,musixmatch.com
 DOMAIN-SUFFIX,imtintl.com
+DOMAIN-SUFFIX,go-mpulse.net
 
 # Playwright 浏览器
 DOMAIN-SUFFIX,azureedge.net
