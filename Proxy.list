@@ -48,6 +48,9 @@ DOMAIN-SUFFIX,ctfassets.net
 DOMAIN-SUFFIX,musixmatch.com
 DOMAIN-SUFFIX,imtintl.com
 
+# Playwright 浏览器
+DOMAIN-SUFFIX,azureedge.net
+
 # Gmail
 DOMAIN-SUFFIX,gmailapp.store
 
