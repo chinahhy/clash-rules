@@ -98,6 +98,9 @@ DOMAIN-SUFFIX,icons8.com
 DOMAIN-SUFFIX,wikimedia.org
 DOMAIN-SUFFIX,astockcdn.net
 
+# Telegram第三方客户端
+DOMAIN-SUFFIX,swiftgram.app
+
 # 铃声网站
 DOMAIN-SUFFIX,notificationsounds.com
 
