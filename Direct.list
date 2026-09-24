@@ -153,7 +153,6 @@ DOMAIN-SUFFIX,kyarucloud.moe
 DOMAIN-SUFFIX,winudf.com
 
 # PT站点-猪猪
-DOMAIN-SUFFIX,piggo.me
 
 # 机场
 DOMAIN-SUFFIX,sakura-cat1.com
@@ -295,8 +294,6 @@ DOMAIN-SUFFIX,iill.top
 DOMAIN-SUFFIX,iptv.cc
 DOMAIN-SUFFIX,aptv.app
 DOMAIN-SUFFIX,ottiptv.cc
-DOMAIN-SUFFIX,iill.top
-DOMAIN-SUFFIX,jsdelivr.net
 DOMAIN-SUFFIX,bit.ly
 
 # 字幕网
@@ -315,8 +312,6 @@ DOMAIN-SUFFIX,rdadong.com
 DOMAIN-SUFFIX,right.com.cn
 DOMAIN-SUFFIX,izspace.cn
 DOMAIN-SUFFIX,paopaoshequ.com
-DOMAIN-SUFFIX,hassbian.com
-DOMAIN-SUFFIX,zspace.cn
 DOMAIN-SUFFIX,hassbian.com
 DOMAIN-SUFFIX,gebi1.com
 DOMAIN-SUFFIX,zjbjw.com
@@ -398,7 +393,6 @@ DOMAIN-SUFFIX,adobe.io
 DOMAIN-SUFFIX,adobe.com
 
 # 赛睿
-DOMAIN-SUFFIX,a-volute.com
 DOMAIN-SUFFIX,klaviyo.com
 DOMAIN-SUFFIX,steelseriescdn.com
 DOMAIN-SUFFIX,sitecampaign.com
@@ -652,7 +646,6 @@ DOMAIN-SUFFIX,adbecrsl.com
 DOMAIN-SUFFIX,adobe-aemassets-value.com
 DOMAIN-SUFFIX,adobe-audience-finder.com
 DOMAIN-SUFFIX,adobe-video-partner-finder.com
-DOMAIN-SUFFIX,adobe.com
 DOMAIN-SUFFIX,adobe.ly
 DOMAIN-SUFFIX,adobeaemcloud.com
 DOMAIN-SUFFIX,adobeaemcloud.net
@@ -661,7 +654,6 @@ DOMAIN-SUFFIX,adobecontent.io
 DOMAIN-SUFFIX,adobecreativityawards.com
 DOMAIN-SUFFIX,adobedc.net
 DOMAIN-SUFFIX,adobedemo.com
-DOMAIN-SUFFIX,adobedtm.com
 DOMAIN-SUFFIX,adobeexchange.com
 DOMAIN-SUFFIX,adobeexperienceawards.com
 DOMAIN-SUFFIX,adobegov.com
@@ -713,7 +705,6 @@ DOMAIN-SUFFIX,placesdocs.com
 DOMAIN-SUFFIX,sundanceignite2016.com
 DOMAIN-SUFFIX,worldsecureemail.com
 DOMAIN-SUFFIX,worldsecuresystems.com
-DOMAIN-SUFFIX,adobe.io
 DOMAIN-SUFFIX,developria.com
 DOMAIN-SUFFIX,behance.net
 DOMAIN-SUFFIX,s2stagehance.com
