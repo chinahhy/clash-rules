@@ -1,0 +1,8 @@
+#!name=Hoya AdBlock Plus
+#!desc=比 DIY2-V2 内置 AdvertisingLite 更强的广告域名拦截。纯规则模块，不需要 MITM。出现误杀时优先关闭此模块。
+#!category=Hoya
+#!homepage=https://github.com/chinahhy/clash-rules
+#!raw-url=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/modules/Hoya-AdBlock-Plus.sgmodule
+
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Advertising/Advertising.list,REJECT
