@@ -1,51 +1,69 @@
 #!name=Hoya Amap Clean
-#!desc=高德地图深度净化 v1.2：针对 Amap 16.25.2 实测流量，清首页/AI推荐/搜索/附近/我的/路线规划/打车/开屏/运营推广，并拦截部分遥测。
+#!desc=高德地图深度净化 v1.3：对齐 2026-08-30 RuCu6 规则，并补充 Shadowrocket 2026-07 项目的通配 AI 推荐拦截。需要 MITM。
 #!category=Hoya
 #!homepage=https://github.com/chinahhy/clash-rules
 #!raw-url=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/modules/Hoya-Amap-Clean.sgmodule
-#!version=1.2.1
+#!version=1.3.0
 
 [Rule]
+DOMAIN,amap-aos-info-nogw.amap.com,REJECT
+DOMAIN,free-aos-cdn-image.amap.com,REJECT
+DOMAIN-SUFFIX,v.smtcdns.com,REJECT
 DOMAIN-SUFFIX,adiu.amap.com,REJECT
 DOMAIN-SUFFIX,dualstack-logs.amap.com,REJECT
 DOMAIN-SUFFIX,logs.amap.com,REJECT
 DOMAIN-SUFFIX,optimus-ads.amap.com,REJECT
-DOMAIN,adashx.ut.amap.com,REJECT
-DOMAIN,amap-aos-info-nogw.amap.com,REJECT
-DOMAIN,free-aos-cdn-image.amap.com,REJECT
 
 [URL Rewrite]
-# Amap 16.25.2 实测：遥测/日志
-^https:\/\/m5-x\.amap\.com\/+ws\/shield\/(?:amapstream\/upload|alc\/collect)(?:\?|$) - reject
-^https:\/\/awaken\.amap\.com\/ws\/h5_log(?:\?|$) - reject
+# 开屏 / 归因 / 广告资源
+^https?:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama(?:[\/?#]|$) - reject-200
+^https?:\/\/(?:[A-Za-z0-9-]+\.)+amap\.com\/ws\/aos\/alimama\/splash_screen(?:[\/?#]|$) - reject-200
+^https?:\/\/(?:[A-Za-z0-9-]+\.)+amap\.com\/ws\/asa\/ads_attribution(?:[\/?#]|$) - reject
+^https?:\/\/optimus-ads\.amap\.com\/uploadimg\/[A-Za-z0-9_-]+\.gif(?:[?#]|$) - reject-img
 
-# 通用推广接口
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan)(?:\?|$) - reject-dict
-^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword(?:\?|$) - reject-dict
-^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv(?:\?|$) - reject-dict
-^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/(?:\?|$) - reject-dict
-^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-(?:assets|location)(?:\?|$) - reject-dict
-^https:\/\/m5\.amap\.com\/ws\/mapapi\/hint_text\/offline_data(?:\?|$) - reject-dict
-^https:\/\/m5\.amap\.com\/ws\/message\/notice\/list(?:\?|$) - reject-dict
-^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend(?:\?|$) - reject-dict
-^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp(?:\?|$) - reject-dict
+# AI / 首页运营推荐：覆盖 ai.amap v1 和任意 amap 子域的 vN/ai_rec
+^https?:\/\/(?:[A-Za-z0-9-]+\.)+amap\.com\/v\d+\/ai_rec(?:[\/?#]|$) - reject-dict
+^https:\/\/ai\.amap\.com\/v1\/ai_rec\/ - reject-dict
 
-[Map Local]
-# Amap 16.25.2 实测：首页 AI 推荐
-^https:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# 搜索 / 首页 / 场景推荐
+^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword\? - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv\? - reject-dict
+^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/\? - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list\? - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page-assets|main-page-location|ridewalk-end-fc|usr-profile-fc\/homeV2) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/(?:mapapi\/hint_text\/offline_data|message\/notice\/list|shield\/search\/new_hotword) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend\? - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/valueadded\/weather\/v2\? - reject-dict
+^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp\? - reject-dict
 
-# 开屏与运营内容
-^https:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/orderList(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
-^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+# 打车 / 周边推广
+^https:\/\/m5\.amap\.com\/ws\/c3frontend\/af-comment\/contentNearbyCard\? - reject-dict
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:order\/car\/(?:feedback\/get_card_questions|feedback\/viptips|king_toolbox_car_bubble|remark\/satisfactionConf|rights_information)|tips\/onscene_visual_optimization) - reject-dict
+^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:pay\/web\/paySuccess\/info\/request|transportation\/diversion\/resource\/driving) - reject-dict
+
+[Body Rewrite]
+http-response-jq ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? 'delpaths([["data","commonMaterial"]])'
+http-response-jq ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? 'delpaths([["data","tipsOperationLocation"]])'
+http-response-jq ^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/marketingOperationStructured\? 'delpaths([["data","resourcePlacement"]])'
+http-response-jq ^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/homepage\? 'delpaths([["history_tags"]])'
+http-response-jq ^https:\/\/m5-zb\.amap\.com\/ws\/sharedtrip\/taxi\/order_detail_car_tips\? 'delpaths([["data","carTips","data","popupInfo"]])'
 
 [Script]
-Hoya-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/(?:faas\/amap-navigation\/(?:main-page|card-service-plan-home)|aos\/perception\/publicTravel\/beforeNavi|bus\/plan\/integrate|perception\/drive\/(?:routeInfo|routePlan)|c3frontend\/(?:af-(?:hotel|launch)\/page\/main|af-nearby\/nearby)|shield\/search_business\/process\/marketingOperationStructured|shield\/search\/(?:new_hotword|nearbyrec_smart|poi\/detail|common\/coupon\/info)|shield\/search_bff\/hotword|shield\/search_poi\/(?:homepage|mps|search\/sp|sug|tips_operation_location)|shield\/dsp\/profile\/index\/nodefaasv3?|shield\/frogserver\/aocs\/updatable\/1|valueadded\/alimama\/splash_screen|message\/notice\/list),requires-body=true,max-size=-1,timeout=30,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js
-
-Hoya-Amap-Taxi = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/(?:promotion-web\/resource(?:\/home)?|boss\/(?:car\/order\/content_info|order_web\/friendly_information)|sharedtrip\/taxi\/order_detail_car_tips),requires-body=true,max-size=-1,timeout=30,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js
-
-Hoya-Amap-Msg = type=http-response,pattern=^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull,requires-body=true,max-size=-1,timeout=30,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+移除路线规划推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/aos\/perception\/publicTravel\/beforeNavi\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除路线规划导航结束推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/bus\/plan\/integrate\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除酒店步行附近页推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/c3frontend\/(?:af-(?:hotel|launch)\/page\/main|af-nearby\/nearby),script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除驾车路线推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/perception\/drive\/(?:routeInfo|routePlan),script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除搜索栏推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_bff\/hotword\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除搜索详情推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/(?:mps|search\/sp|sug|tips_operation_location),script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除首页推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:card-service-plan-home|main-page),script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除首页运营图层 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs\/updatable\/1\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除我的页面推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除附近页推广 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除开屏广告 = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除打车页推广 = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/boss\/(?:car\/order\/content_info|order_web\/friendly_information),script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除打车资源推广 = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/promotion-web\/resource(?:\/home)?\?,script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
+移除地点详情推广 = type=http-response,pattern=^https:\/\/(?:info|m5)\.amap\.com\/ws\/shield\/search\/(?:common\/coupon\/info|poi\/detail),script-path=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/scripts/Hoya-Amap-Clean.js,requires-body=true,max-size=0
 
 [MITM]
 hostname = %APPEND% *.amap.com
