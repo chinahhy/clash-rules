@@ -1,0 +1,14 @@
+#!name=Hoya Network Debug
+#!desc=网络诊断模式：把常用 IP/DNS 泄漏测试站固定走 DIY2-V2 的“🌍 默认代理”，便于判断真实代理出口。纯规则模块，不需要 MITM。
+#!category=Hoya
+#!homepage=https://github.com/chinahhy/clash-rules
+#!raw-url=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/modules/Hoya-Network-Debug.sgmodule
+
+[Rule]
+DOMAIN-SUFFIX,ip.sb,🌍 默认代理
+DOMAIN-SUFFIX,ipify.org,🌍 默认代理
+DOMAIN-SUFFIX,ipleak.net,🌍 默认代理
+DOMAIN-SUFFIX,dnsleaktest.com,🌍 默认代理
+DOMAIN-SUFFIX,browserleaks.com,🌍 默认代理
+DOMAIN-SUFFIX,skk.moe,🌍 默认代理
+DOMAIN-SUFFIX,whatismyipaddress.com,🌍 默认代理
