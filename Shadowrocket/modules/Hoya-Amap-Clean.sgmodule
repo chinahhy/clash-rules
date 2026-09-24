@@ -1,0 +1,24 @@
+#!name=Hoya Amap Clean
+#!desc=高德地图轻度净化：开屏、首页推广卡片、搜索热词、附近运营位、我的页面营销卡片、打车推广等。需要 MITM；不修改核心地图/导航数据。
+#!category=Hoya
+#!homepage=https://github.com/chinahhy/clash-rules
+#!raw-url=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/modules/Hoya-Amap-Clean.sgmodule
+#!version=1.0.0
+
+[Rule]
+DOMAIN-SUFFIX,optimus-ads.amap.com,REJECT
+DOMAIN-SUFFIX,logs.amap.com,REJECT
+DOMAIN,amap-aos-info-nogw.amap.com,REJECT
+
+[Script]
+Hoya-Amap-Home = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/(?:main-page|card-service-plan-home),requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+Hoya-Amap-Profile = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/profile\/index\/nodefaasv3,requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+Hoya-Amap-Search = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/(?:search\/new_hotword|search_bff\/hotword),requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+Hoya-Amap-Nearby = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/search\/nearbyrec_smart,requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+Hoya-Amap-Splash = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/valueadded\/alimama\/splash_screen,requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+Hoya-Amap-Promo = type=http-response,pattern=^https:\/\/(?:m5|m5-zb)\.amap\.com\/ws\/promotion-web\/resource,requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+Hoya-Amap-Msg = type=http-response,pattern=^https:\/\/(?:m5|sns)\.amap\.com\/ws\/(?:msgbox\/pull|message\/notice\/list),requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+Hoya-Amap-AOCS = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/shield\/frogserver\/aocs,requires-body=true,max-size=1048576,timeout=10,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean.js
+
+[MITM]
+hostname = %APPEND% m5.amap.com, m5-zb.amap.com, sns.amap.com
