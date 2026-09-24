@@ -1,0 +1,8 @@
+#!name=Hoya Privacy
+#!desc=隐私/追踪器增强拦截。纯规则模块，不需要 MITM。若某 App 登录、统计或推送异常，可先关闭本模块排查。
+#!category=Hoya
+#!homepage=https://github.com/chinahhy/clash-rules
+#!raw-url=https://raw.githubusercontent.com/chinahhy/clash-rules/main/Shadowrocket/modules/Hoya-Privacy.sgmodule
+
+[Rule]
+RULE-SET,https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Shadowrocket/Privacy/Privacy.list,REJECT
