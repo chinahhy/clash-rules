@@ -1,0 +1,51 @@
+#!name=Hoya Amap Clean
+#!desc=高德地图深度净化 v1.2：针对 Amap 16.25.2 实测流量，清首页/AI推荐/搜索/附近/我的/路线规划/打车/开屏/运营推广，并拦截部分遥测。
+#!category=Hoya
+#!homepage=https://github.com/chinahhy/clash-rules
+#!raw-url=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/modules/Hoya-Amap-Clean-v1.2.sgmodule
+#!version=1.2.0
+
+[Rule]
+DOMAIN-SUFFIX,adiu.amap.com,REJECT
+DOMAIN-SUFFIX,dualstack-logs.amap.com,REJECT
+DOMAIN-SUFFIX,logs.amap.com,REJECT
+DOMAIN-SUFFIX,optimus-ads.amap.com,REJECT
+DOMAIN,adashx.ut.amap.com,REJECT
+DOMAIN,amap-aos-info-nogw.amap.com,REJECT
+DOMAIN,free-aos-cdn-image.amap.com,REJECT
+
+[URL Rewrite]
+# Amap 16.25.2 实测：遥测/日志
+^https:\/\/m5-x\.amap\.com\/+ws\/shield\/(?:amapstream\/upload|alc\/collect)(?:\?|$) - reject
+^https:\/\/awaken\.amap\.com\/ws\/h5_log(?:\?|$) - reject
+
+# 通用推广接口
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/card-service-(?:car-end|route-plan)(?:\?|$) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/shield\/search\/new_hotword(?:\?|$) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_poi\/tips_adv(?:\?|$) - reject-dict
+^https:\/\/oss\.amap\.com\/ws\/banner\/lists\/(?:\?|$) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/faas\/amap-navigation\/main-page-(?:assets|location)(?:\?|$) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/mapapi\/hint_text\/offline_data(?:\?|$) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/message\/notice\/list(?:\?|$) - reject-dict
+^https:\/\/m5\.amap\.com\/ws\/shield\/scene\/recommend(?:\?|$) - reject-dict
+^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull_mp(?:\?|$) - reject-dict
+
+[Map Local]
+# Amap 16.25.2 实测：首页 AI 推荐
+^https:\/\/ai\.amap\.com\/v1\/ai_rec\/home_qs(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+# 开屏与运营内容
+^https:\/\/amap-aos-info-nogw\.amap\.com\/ws\/aos\/alimama\/splash_screen_rt(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/m5\.amap\.com\/ws\/shield\/dsp\/app\/startup\/init(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/m5\.amap\.com\/ws\/shield\/search_business\/process\/orderList(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+^https:\/\/m5\.amap\.com\/ws\/aos\/main\/page\/product\/list(?:\?|$) data-type=text data="{}" status-code=200 header="Content-Type:application/json"
+
+[Script]
+Hoya-Amap = type=http-response,pattern=^https:\/\/m5\.amap\.com\/ws\/(?:faas\/amap-navigation\/(?:main-page|card-service-plan-home)|aos\/perception\/publicTravel\/beforeNavi|bus\/plan\/integrate|perception\/drive\/(?:routeInfo|routePlan)|c3frontend\/(?:af-(?:hotel|launch)\/page\/main|af-nearby\/nearby)|shield\/search_business\/process\/marketingOperationStructured|shield\/search\/(?:new_hotword|nearbyrec_smart|poi\/detail|common\/coupon\/info)|shield\/search_bff\/hotword|shield\/search_poi\/(?:homepage|mps|search\/sp|sug|tips_operation_location)|shield\/dsp\/profile\/index\/nodefaasv3?|shield\/frogserver\/aocs\/updatable\/1|valueadded\/alimama\/splash_screen|message\/notice\/list),requires-body=true,max-size=-1,timeout=30,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean-v1.2.js
+
+Hoya-Amap-Taxi = type=http-response,pattern=^https:\/\/m5-zb\.amap\.com\/ws\/(?:promotion-web\/resource(?:\/home)?|boss\/(?:car\/order\/content_info|order_web\/friendly_information)|sharedtrip\/taxi\/order_detail_car_tips),requires-body=true,max-size=-1,timeout=30,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean-v1.2.js
+
+Hoya-Amap-Msg = type=http-response,pattern=^https:\/\/sns\.amap\.com\/ws\/msgbox\/pull,requires-body=true,max-size=-1,timeout=30,script-path=https://cdn.jsdelivr.net/gh/chinahhy/clash-rules@main/Shadowrocket/scripts/Hoya-Amap-Clean-v1.2.js
+
+[MITM]
+hostname = %APPEND% *.amap.com
