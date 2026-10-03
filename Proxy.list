@@ -99,6 +99,9 @@ DOMAIN-SUFFIX,openbittorrent.com
 DOMAIN-SUFFIX,leech.ie
 DOMAIN-SUFFIX,rarbg.com
 DOMAIN-SUFFIX,macos-developer.com
+DOMAIN-SUFFIX,softonic.com
+DOMAIN-SUFFIX,aidevmac.com
+DOMAIN-SUFFIX,sftcdn.net
 
 # Telegram第三方客户端
 DOMAIN-SUFFIX,swiftgram.app
