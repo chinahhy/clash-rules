@@ -1,0 +1,15 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/slack.list
+# Format: DOMAIN-SET
+# Upstream SHA256: 1806a909a0d2682f526accf235a97de53037c2937912802cbe1c618d963e31ba
+# Rules: 11
+.slack-core.com
+.slack-edge.com
+.slack-files.com
+.slack-imgs.com
+.slack-msgs.com
+.slack-redir.net
+.slack.com
+.slackb.com
+.slackcertified.com
+.slackdemo.com
+.slackhq.com

@@ -1,0 +1,17 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/whatsapp.list
+# Format: DOMAIN-SET
+# Upstream SHA256: 5554ce8069e2b3ca3222f112b2192652e96e5574be9096f71579191c8d498bfc
+# Rules: 13
+.wa.me
+.whatsapp-plus.info
+.whatsapp-plus.me
+.whatsapp-plus.net
+.whatsapp.cc
+.whatsapp.com
+.whatsapp.info
+.whatsapp.net
+.whatsapp.org
+.whatsapp.tv
+.whatsappbrand.com
+.graph.whatsapp.com
+.graph.whatsapp.net

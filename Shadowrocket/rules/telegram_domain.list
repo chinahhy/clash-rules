@@ -1,0 +1,25 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/telegram.list
+# Format: DOMAIN-SET
+# Upstream SHA256: 2448b2699519cd258b10232fcacd01e89b7db04c8ce7fc860a4962518370a329
+# Rules: 21
+.cdn-telegram.org
+.comments.app
+.contest.com
+.fragment.com
+.graph.org
+.quiz.directory
+.t.me
+.tdesktop.com
+.telega.one
+.telegra.ph
+.telegram-cdn.org
+.telegram.dog
+.telegram.me
+.telegram.org
+.telegram.space
+.telesco.pe
+.tg.dev
+.ton.org
+.toncenter.com
+.tx.me
+.usercontent.dev

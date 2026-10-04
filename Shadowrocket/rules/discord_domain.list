@@ -1,0 +1,32 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/discord.list
+# Format: DOMAIN-SET
+# Upstream SHA256: 9f2530e2dc4117a27851256d731908931064bc6c9fefe43f69cc164804a33456
+# Rules: 28
+discord-attachments-uploads-prd.storage.googleapis.com
+hammerandchisel.ssl.zendesk.com
+.dis.gd
+.discord.co
+.discord.com
+.discord.design
+.discord.dev
+.discord.gg
+.discord.gift
+.discord.gifts
+.discord.media
+.discord.new
+.discord.store
+.discord.tools
+.discord-activities.com
+.discordactivities.com
+.discordapp.com
+.discordapp.net
+.discordmerch.com
+.discordpartygames.com
+.discordsays.com
+.discordstatus.com
+.airhorn.solutions
+.airhornbot.com
+.bigbeans.solutions
+.watchanimeattheoffice.com
+.discordapp.io
+.discordcdn.com

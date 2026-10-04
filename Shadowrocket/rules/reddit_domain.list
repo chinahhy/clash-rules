@@ -1,0 +1,16 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/reddit.list
+# Format: DOMAIN-SET
+# Upstream SHA256: bbfb9746c59c64d225d9126f23dc1f4d376edbafab2ac297415be9e9a059af16
+# Rules: 12
+.redd.it
+.reddit.com
+.redditblog.com
+.reddithelp.com
+.redditinc.com
+.redditmail.com
+.redditmedia.com
+.redditspace.com
+.redditstatic.com
+.redditstatus.com
+.reddit.app.link
+.reddit.map.fastly.net

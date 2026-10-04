@@ -1,0 +1,26 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/openai.list
+# Format: DOMAIN-SET
+# Upstream SHA256: 9c3c755ad42fa75196e5d37705d0d5bfff5f60bc0d9a1f017272e70eafde7645
+# Rules: 22
+openaiapi-site.azureedge.net
+openaiassets.blob.core.windows.net
+openaicom-api-bdcpf8c6d2e9atf6.z01.azurefd.net
+openaicom.imgix.net
+openaicomproductionae4b.blob.core.windows.net
+production-openaicom-storage.azureedge.net
+.oaiusercontent.com
+.chatgpt.com
+.chatgpt.site
+.crixet.com
+.oaistatic.com
+.oaistatsig.com
+.chat.com
+.openai.com
+.sora.com
+.chatgpt.livekit.cloud
+.host.livekit.cloud
+.turn.livekit.cloud
+.openai.com.cdn.cloudflare.net
+browser-intake-datadoghq.com
+o33249.ingest.sentry.io
+openai.qualtrics.com

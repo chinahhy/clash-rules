@@ -1,0 +1,20 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/onedrive.list
+# Format: DOMAIN-SET
+# Upstream SHA256: 9c11417141d57b2f1f8d4474602858c65f28185304103afedea6eb5a1182b72a
+# Rules: 16
+.onedrive
+.onedriveupdater
+.sharepointonline.com
+.microsoftpersonalcontent.com
+.onedrive.com
+.sharepoint.cn
+.livefilestore.com
+.sharepoint.com
+.1drv.com
+.storage.msn.com
+.spoprod-a.akamaihd.net
+.storage.live.com
+.oneclient.sfx.ms
+.photos.live.com
+.onedrive.live.com
+.skydrive.wns.windows.com

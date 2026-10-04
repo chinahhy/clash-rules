@@ -1,0 +1,16 @@
+# Converted from https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geoip/telegram.list
+# Format: RULE-SET
+# Upstream SHA256: b0a0a5a4280f2c713a26bf1763317be5aefeda02e4e78dab7c2efbda02663181
+# Rules: 12
+IP-CIDR,91.105.192.0/23
+IP-CIDR,91.108.4.0/22
+IP-CIDR,91.108.8.0/21
+IP-CIDR,91.108.16.0/21
+IP-CIDR,91.108.56.0/22
+IP-CIDR,95.161.64.0/20
+IP-CIDR,149.154.160.0/20
+IP-CIDR,185.76.151.0/24
+IP-CIDR6,2001:67c:4e8::/48
+IP-CIDR6,2001:b28:f23c::/47
+IP-CIDR6,2001:b28:f23f::/48
+IP-CIDR6,2a0a:f280::/32
