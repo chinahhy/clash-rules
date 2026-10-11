@@ -1,0 +1,2141 @@
+{
+  "$schema": "https://sing-box.sagernet.org/schema.json",
+  "dns": {
+    "servers": [
+      {
+        "tag": "local",
+        "type": "local",
+        "prefer_go": true
+      },
+      {
+        "tag": "ali",
+        "type": "https",
+        "server": "223.5.5.5"
+      },
+      {
+        "tag": "tx",
+        "type": "https",
+        "server": "doh.pub",
+        "domain_resolver": "hosts"
+      },
+      {
+        "tag": "google",
+        "type": "https",
+        "server": "8.8.8.8",
+        "detour": "🫎 Proxy"
+      },
+      {
+        "tag": "fakeip",
+        "type": "fakeip",
+        "inet4_range": "198.19.0.0/16"
+      },
+      {
+        "type": "hosts",
+        "tag": "hosts",
+        "predefined": {
+          "doh.pub": [
+            "1.12.12.21",
+            "120.53.53.53"
+          ]
+        }
+      }
+    ],
+    "rules": [
+      {
+        "query_type": [
+          "HTTPS",
+          "SVCB"
+        ],
+        "action": "reject"
+      },
+      {
+        "clash_mode": "Direct",
+        "server": "ali"
+      },
+      {
+        "clash_mode": "Global",
+        "server": "fakeip"
+      },
+      {
+        "rule_set": [
+          "private_domain",
+          "cn_domain"
+        ],
+        "server": "ali"
+      },
+      {
+        "rule_set": "geolocation-!cn",
+        "server": "google"
+      },
+      {
+        "match_response": true,
+        "rule_set": "cn_ip",
+        "server": "ali"
+      },
+      {
+        "query_type": [
+          "A",
+          "AAAA"
+        ],
+        "server": "fakeip",
+        "rewrite_ttl": 1
+      }
+    ],
+    "final": "google",
+    "strategy": "ipv4_only",
+    "cache_capacity": 8192,
+    "optimistic": {
+      "enabled": true
+    },
+    "reverse_mapping": true
+  },
+  "outbounds": [
+    {
+      "tag": "🫎 Proxy",
+      "type": "selector",
+      "outbounds": [
+        "🇹🇼 台湾节点",
+        "🇯🇵 日本节点",
+        "🇭🇰 香港节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "📹 YouTube",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🍀 Google",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "👨🏿‍💻 GitHub",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🫆 ChatGPT",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🧢 Gemini",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🧶 Grok",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "👒 ClaudeCode",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🤖 AI其它",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🦀 Twitter",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇭🇰 香港节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "📲 Telegram",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "☁️ CloudFlare",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 自动选择",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "🇯🇵 日本节点",
+        "直连"
+      ]
+    },
+    {
+      "tag": "🐱 Instagram",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 自动选择",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "🇯🇵 日本节点"
+      ]
+    },
+    {
+      "tag": "👹 PT",
+      "type": "selector",
+      "outbounds": [
+        "直连"
+      ]
+    },
+    {
+      "tag": "👟 Slack",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🕸️ Direct",
+      "type": "selector",
+      "outbounds": [
+        "直连"
+      ]
+    },
+    {
+      "tag": "🚢 Docker",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "💠 GiffGaff",
+      "type": "selector",
+      "outbounds": [
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "📞 Whatsapp",
+      "type": "selector",
+      "outbounds": [
+        "🇭🇰 香港节点",
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "📌 Reddit",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 自动选择",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "🇯🇵 日本节点"
+      ]
+    },
+    {
+      "tag": "🎈 Discord",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 自动选择",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "🇯🇵 日本节点"
+      ]
+    },
+    {
+      "tag": "😉 Byte-Muse",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇭🇰 香港节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🧩 Facebook",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 自动选择",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "🇯🇵 日本节点"
+      ]
+    },
+    {
+      "tag": "🦉 Steam",
+      "type": "selector",
+      "outbounds": [
+        "直连",
+        "♻️ 自动选择",
+        "🇯🇵 日本节点",
+        "🇭🇰 香港节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点"
+      ]
+    },
+    {
+      "tag": "🐬 OneDrive",
+      "type": "selector",
+      "outbounds": [
+        "直连",
+        "♻️ 自动选择",
+        "🇯🇵 日本节点",
+        "🇭🇰 香港节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点"
+      ]
+    },
+    {
+      "tag": "🪟 Microsoft",
+      "type": "selector",
+      "outbounds": [
+        "直连",
+        "♻️ 自动选择",
+        "🇯🇵 日本节点",
+        "🇭🇰 香港节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点"
+      ]
+    },
+    {
+      "tag": "🎵 TikTok",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇭🇰 香港节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "🎥 NETFLIX",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇭🇰 香港节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "✈️ Speedtest",
+      "type": "selector",
+      "outbounds": [
+        "直连",
+        "♻️ 自动选择",
+        "🇯🇵 日本节点",
+        "🇭🇰 香港节点",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点"
+      ]
+    },
+    {
+      "tag": "💶 PayPal",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇭🇰 香港节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "♻️ 自动选择",
+        "直连"
+      ]
+    },
+    {
+      "tag": "🥰 Pornhub",
+      "type": "selector",
+      "outbounds": [
+        "🇯🇵 日本节点",
+        "🇹🇼 台湾节点",
+        "🇭🇰 香港节点",
+        "🇸🇬 狮城节点",
+        "♻️ 自动选择"
+      ]
+    },
+    {
+      "tag": "🍎 Apple",
+      "type": "selector",
+      "outbounds": [
+        "直连"
+      ]
+    },
+    {
+      "tag": "♻️ 自动选择",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "tolerance": 20
+    },
+    {
+      "tag": "🐟 漏网之鱼",
+      "type": "selector",
+      "outbounds": [
+        "♻️ 自动选择",
+        "🇹🇼 台湾节点",
+        "🇸🇬 狮城节点",
+        "🇺🇲 美国节点",
+        "🇬🇧 英国节点",
+        "🇯🇵 日本节点",
+        "直连"
+      ]
+    },
+    {
+      "tag": "🇯🇵 日本节点",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "1m",
+      "tolerance": 20
+    },
+    {
+      "tag": "🇹🇼 台湾节点",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "tolerance": 20
+    },
+    {
+      "tag": "🇭🇰 香港节点",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "tolerance": 20
+    },
+    {
+      "tag": "🇸🇬 狮城节点",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "tolerance": 20
+    },
+    {
+      "tag": "🇺🇲 美国节点",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "tolerance": 20
+    },
+    {
+      "tag": "🇬🇧 英国节点",
+      "type": "urltest",
+      "outbounds": [],
+      "url": "https://www.gstatic.com/generate_204",
+      "interval": "5m",
+      "tolerance": 20
+    },
+    {
+      "tag": "🌐 全部节点",
+      "type": "selector",
+      "outbounds": []
+    },
+    {
+      "tag": "GLOBAL",
+      "type": "selector",
+      "outbounds": [
+        "🫎 Proxy",
+        "📹 YouTube",
+        "🍀 Google",
+        "👨🏿‍💻 GitHub",
+        "🫆 ChatGPT",
+        "🧢 Gemini",
+        "🧶 Grok",
+        "👒 ClaudeCode",
+        "🤖 AI其它",
+        "🦀 Twitter",
+        "📲 Telegram",
+        "☁️ CloudFlare",
+        "🐱 Instagram",
+        "👹 PT",
+        "👟 Slack",
+        "🕸️ Direct",
+        "🚢 Docker",
+        "💠 GiffGaff",
+        "📞 Whatsapp",
+        "📌 Reddit",
+        "🎈 Discord",
+        "😉 Byte-Muse",
+        "🧩 Facebook",
+        "🦉 Steam",
+        "🐬 OneDrive",
+        "🪟 Microsoft",
+        "🎵 TikTok",
+        "🎥 NETFLIX",
+        "✈️ Speedtest",
+        "💶 PayPal",
+        "🥰 Pornhub",
+        "🍎 Apple",
+        "🐟 漏网之鱼",
+        "🌐 全部节点",
+        "直连"
+      ]
+    },
+    {
+      "tag": "直连",
+      "type": "direct",
+      "domain_resolver": "ali"
+    }
+  ],
+  "http_clients": [
+    {
+      "tag": "直连下载",
+      "detour": "直连"
+    }
+  ],
+  "route": {
+    "rules": [
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "domain_suffix": "push.apple.com"
+          },
+          {
+            "rule_set": "geoip-telegram"
+          }
+        ],
+        "invert": true,
+        "action": "sniff",
+        "sniffer": [
+          "http",
+          "tls",
+          "stun",
+          "quic",
+          "dns"
+        ],
+        "timeout": "100ms"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 53
+          },
+          {
+            "protocol": "dns"
+          }
+        ],
+        "action": "hijack-dns"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "直连"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "直连"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "GLOBAL"
+      },
+      {
+        "rule_set": "pt_domain",
+        "outbound": "👹 PT"
+      },
+      {
+        "rule_set": "direct_domain",
+        "outbound": "🕸️ Direct"
+      },
+      {
+        "rule_set": "github_domain",
+        "outbound": "👨🏿‍💻 GitHub"
+      },
+      {
+        "rule_set": "youtube_domain",
+        "outbound": "📹 YouTube"
+      },
+      {
+        "rule_set": "gemini_domain",
+        "outbound": "🧢 Gemini"
+      },
+      {
+        "rule_set": "google_domain",
+        "outbound": "🍀 Google"
+      },
+      {
+        "rule_set": "docker_domain",
+        "outbound": "🚢 Docker"
+      },
+      {
+        "rule_set": "chatgpt_domain",
+        "outbound": "🫆 ChatGPT"
+      },
+      {
+        "rule_set": "claude_domain",
+        "outbound": "👒 ClaudeCode"
+      },
+      {
+        "rule_set": "grok_domain",
+        "outbound": "🧶 Grok"
+      },
+      {
+        "rule_set": "ai_other_domain",
+        "outbound": "🤖 AI其它"
+      },
+      {
+        "rule_set": "slack_domain",
+        "outbound": "👟 Slack"
+      },
+      {
+        "rule_set": "giffgaff_domain",
+        "outbound": "💠 GiffGaff"
+      },
+      {
+        "rule_set": "whatsapp_domain",
+        "outbound": "📞 Whatsapp"
+      },
+      {
+        "rule_set": "reddit_domain",
+        "outbound": "📌 Reddit"
+      },
+      {
+        "rule_set": "discord_domain",
+        "outbound": "🎈 Discord"
+      },
+      {
+        "rule_set": "byte_domain",
+        "outbound": "😉 Byte-Muse"
+      },
+      {
+        "rule_set": "proxy_domain",
+        "outbound": "🫎 Proxy"
+      },
+      {
+        "rule_set": "twitter_domain",
+        "outbound": "🦀 Twitter"
+      },
+      {
+        "rule_set": "private_domain",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "apple_domain",
+        "outbound": "🍎 Apple"
+      },
+      {
+        "rule_set": "onedrive_domain",
+        "outbound": "🐬 OneDrive"
+      },
+      {
+        "rule_set": "microsoft_domain",
+        "outbound": "🪟 Microsoft"
+      },
+      {
+        "rule_set": "tiktok_domain",
+        "outbound": "🎵 TikTok"
+      },
+      {
+        "rule_set": "instagram_domain",
+        "outbound": "🐱 Instagram"
+      },
+      {
+        "rule_set": "speedtest_domain",
+        "outbound": "✈️ Speedtest"
+      },
+      {
+        "rule_set": "telegram_domain",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "facebook_domain",
+        "outbound": "🧩 Facebook"
+      },
+      {
+        "rule_set": "netflix_domain",
+        "outbound": "🎥 NETFLIX"
+      },
+      {
+        "rule_set": "paypal_domain",
+        "outbound": "💶 PayPal"
+      },
+      {
+        "rule_set": "steam_domain",
+        "outbound": "🦉 Steam"
+      },
+      {
+        "rule_set": "cloudflare_domain",
+        "outbound": "☁️ CloudFlare"
+      },
+      {
+        "rule_set": "pornhub_domain",
+        "outbound": "🥰 Pornhub"
+      },
+      {
+        "rule_set": "google_ip",
+        "outbound": "🍀 Google"
+      },
+      {
+        "rule_set": "twitter_ip",
+        "outbound": "🦀 Twitter"
+      },
+      {
+        "rule_set": "netflix_ip",
+        "outbound": "🎥 NETFLIX"
+      },
+      {
+        "rule_set": "telegram_ip",
+        "outbound": "📲 Telegram"
+      },
+      {
+        "rule_set": "gfw_domain",
+        "outbound": "🫎 Proxy"
+      },
+      {
+        "rule_set": "geolocation-!cn",
+        "outbound": "🫎 Proxy"
+      },
+      {
+        "rule_set": "private_ip",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "cn_domain",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "cn_ip",
+        "outbound": "直连"
+      }
+    ],
+    "rule_set": [
+      {
+        "tag": "pt_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "tangpt.top",
+              "raingfh.top",
+              "ptzone.xyz",
+              "ptcafe.club",
+              "xingyungept.org",
+              "novahd.top",
+              "t-baozi.cc",
+              "dubhe.site",
+              "crabpt.vip",
+              "13city.org",
+              "carpt.net",
+              "discfan.net",
+              "open.cd",
+              "piggo.me",
+              "hddolby.com",
+              "ptdream.net",
+              "orcinusorca.org",
+              "m-team.cc",
+              "m-team.io",
+              "m-team.co",
+              "springsunday.net",
+              "hdcmct.org",
+              "pterclub.net",
+              "hhan.club",
+              "hhanclub.net",
+              "hhanclub.top",
+              "trackerfile.com",
+              "chdbits.xyz",
+              "ptchdbits.co",
+              "rainbowisland.co",
+              "chdbits.co",
+              "hdhome.org",
+              "totheglory.im",
+              "cinefiles.info",
+              "audiences.me",
+              "keepfrds.com",
+              "zmpt.cc",
+              "whlwhl.top",
+              "freesmall.icu",
+              "ourbits.club",
+              "ourhelp.club",
+              "ubits.club",
+              "hdfans.org",
+              "hdkyl.in",
+              "hdkylin.com",
+              "hdkylin.top",
+              "qingwapt.org",
+              "qingwapt.com",
+              "qingwapt.pro",
+              "qingwa.pro",
+              "wawawa.me",
+              "ptskit.org",
+              "ptskit.com",
+              "netok.xyz",
+              "filegear-sg.me",
+              "ptskit.kqbhek.com",
+              "zhuque.in",
+              "rousipt.com",
+              "rousi.zip",
+              "rousi.pro",
+              "pttime.online",
+              "pttime.org",
+              "ptpimg.me",
+              "agsvpt.cn",
+              "trackers.work",
+              "agsvpt.work",
+              "agsvpt.com",
+              "agsv.top",
+              "nicept.net",
+              "nextpt.net",
+              "cyanbug.net",
+              "ilolicon.cc",
+              "ilolicon.com",
+              "loli.net",
+              "nekofish.cc",
+              "xloli.cc",
+              "bgm.tv",
+              "cdfile.org",
+              "ptlover.cc",
+              "btschool.club",
+              "btschool.net",
+              "soulvoice.club",
+              "ptsbao.club"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "giffgaff_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "giffgaff.com",
+              "giff.ly",
+              "gaff.ly"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "slack_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/slack.srs"
+      },
+      {
+        "tag": "whatsapp_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/whatsapp.srs"
+      },
+      {
+        "tag": "direct_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "199462.xyz",
+              "hoyas.dpdns.org",
+              "fluxbrowser.cn",
+              "rewardsauto.top",
+              "midaspayment.com",
+              "workbuddy.ai",
+              "userway.org",
+              "nelreports.net",
+              "112114.xyz",
+              "danteng.org",
+              "wingify.com",
+              "z4q834d.net",
+              "baozhiqiang.xyz",
+              "90dao.com",
+              "yandex.net",
+              "z4a.net",
+              "gitlink.net",
+              "fengshows-cdn.com",
+              "okyago.com",
+              "jprj.com",
+              "0hax7.app",
+              "libravatar.org",
+              "stripe.com",
+              "stripe.net",
+              "onetrust.com",
+              "cookielaw.org",
+              "giscus.app",
+              "eyeo.com",
+              "packagecontrol.io",
+              "geekzu.org",
+              "hdcity.city",
+              "hdf.world",
+              "house-of-usenet.com",
+              "bluebird-hd.org",
+              "blutopia.cc",
+              "verisign.com",
+              "umu.se",
+              "avcdn.net",
+              "perfops.net",
+              "staticj.top",
+              "upsellit.com",
+              "nortonlifelock.com",
+              "funto.fun",
+              "yadg.cc",
+              "madrays.de",
+              "algolia.net",
+              "smadex.com",
+              "rilipro.com",
+              "demandbase.com",
+              "company-target.com",
+              "openweathermap.org",
+              "nektony.com",
+              "mixpanel.com",
+              "ipinfo.io",
+              "999831.xyz",
+              "laozhang.ai",
+              "icanhazip.com",
+              "appstoreprice.org",
+              "revenuecat.com",
+              "darkreader.org",
+              "the-best-airport.com",
+              "braze.com",
+              "models.dev",
+              "dshdesktop.com",
+              "cc.cd",
+              "snssdk.com",
+              "tailwindcss.com",
+              "wawawa.win",
+              "internetwarriors.net",
+              "codex-reset.com",
+              "iroh.link",
+              "clashmi.app",
+              "ntp.org",
+              "scribdassets.com",
+              "featureassets.org",
+              "prodregistryv2.org",
+              "pdawiki.com",
+              "ajay.ap",
+              "savefrom.net",
+              "byteplusbiz.com",
+              "yhgfb-static.com",
+              "byteintlapi.com",
+              "ollama.ai",
+              "obsidian.md",
+              "proxmox.com",
+              "pp.ua",
+              "movie-pilot.org",
+              "trace.moe",
+              "pythonhosted.org",
+              "pypi.org",
+              "srg3f.net",
+              "4rzxy.net",
+              "0ly6e.net",
+              "98t.la",
+              "keka.io",
+              "immersivetranslate.com",
+              "hacs.xyz",
+              "mb3admin.com",
+              "notion.so",
+              "notion.com",
+              "notion.site",
+              "sentry.io",
+              "thunderbird.net",
+              "mozilla.org",
+              "fundraiseup.com",
+              "fndrsp.net",
+              "innocraft.cloud",
+              "motrix.app",
+              "canyouseeme.org",
+              "scriptcat.org",
+              "zspace.cn",
+              "zconnect.cn",
+              "baotangguo.cn",
+              "ipaxxs.cn",
+              "ttt.sh",
+              "macked.app",
+              "apple.com",
+              "kyarucloud.moe",
+              "winudf.com",
+              "sakura-cat1.com",
+              "sakura-cat2.com",
+              "sakura-cat3.com",
+              "sakura-cat-cdn1.com",
+              "sakura-cat-cdn2.com",
+              "sakura-cat-cdn3.com",
+              "1-sakuracat.com",
+              "2-sakuracat.com",
+              "c1-sakuracat.com",
+              "c2-sakuracat.com",
+              "cyberairport.net",
+              "wgetcloud.org",
+              "bajie.la",
+              "artislg.com",
+              "pp.dg4.org",
+              "dy.ax",
+              "cat-cdn.com",
+              "starwindsoftware.com",
+              "0210.net",
+              "bsbsb.top",
+              "hcaptcha.com",
+              "getadblock.com",
+              "meowtv.vip",
+              "meowtv.top",
+              "v1.mk",
+              "hostbuf.com",
+              "423down.com",
+              "a-volute.com",
+              "digicert.com",
+              "iconify.design",
+              "akamaized.net",
+              "azureedge.net",
+              "gaoqing.la",
+              "domp4.cc",
+              "padmp4.com",
+              "dygang.tv",
+              "yinfans.me",
+              "breakvip.com",
+              "bugutv.org",
+              "ddmp4.cc",
+              "jsdelivr.net",
+              "z2pyw.com",
+              "y80s.tv",
+              "srtku.com",
+              "kufeiyu.com",
+              "xinlangtupian.com",
+              "imgikzy.com",
+              "hao6v.tv",
+              "66tutup.com",
+              "66hao.cc",
+              "haibao123.xyz",
+              "diygod.dev",
+              "shields.io",
+              "ddzimu.com",
+              "ffh7y.com",
+              "sectigo.com",
+              "wangfei.tv",
+              "wangfei1.cc",
+              "naifeitv.xyz",
+              "tegouys.com",
+              "lencr.org",
+              "postimg.cc",
+              "souyisou.top",
+              "ijujitv.cc",
+              "yinfans.net",
+              "playwoool.com",
+              "heimuer.tv",
+              "wsyzyts.vip",
+              "hdao.tv",
+              "appsflyersdk.com",
+              "crisp.chat",
+              "gvt1.com",
+              "windows.net",
+              "gilcdn.com",
+              "auth0.com",
+              "gitcode.com",
+              "gitchat.cn",
+              "csdn.net",
+              "kaifayun.com",
+              "csdnimg.cn",
+              "csto.com",
+              "csdn.com",
+              "gitbook.cn",
+              "datasea.cn",
+              "codechina.net",
+              "gitcode.net",
+              "iteye.com",
+              "csdn.net.cn",
+              "programmer.com.cn",
+              "programmer.net.cn",
+              "ghproxy.net",
+              "akams.cn",
+              "gitwarp.com",
+              "bitcomet.com",
+              "microsoftsa.com",
+              "jwcop.net",
+              "2qq42.us",
+              "fu2zu.net",
+              "3qlx.net",
+              "0oz0.net",
+              "fanart.tv",
+              "czpygy.com",
+              "fanmingming.com",
+              "qualtrics.com",
+              "eu.org",
+              "iill.top",
+              "iptv.cc",
+              "aptv.app",
+              "ottiptv.cc",
+              "bit.ly",
+              "subhd.tv",
+              "subhd.cc",
+              "subhd.me",
+              "daniao.org",
+              "edit.php",
+              "cpolar.top",
+              "gxnas.com",
+              "bgegao.com",
+              "zhoujie218.top",
+              "rdadong.com",
+              "right.com.cn",
+              "izspace.cn",
+              "paopaoshequ.com",
+              "hassbian.com",
+              "gebi1.com",
+              "zjbjw.com",
+              "kilvn.com",
+              "yyyue.xyz",
+              "songchenwen.com",
+              "vumstar.com",
+              "nanodesu.net",
+              "nickyam.com",
+              "isedu.top",
+              "paugram.com",
+              "livecodes.vip",
+              "geekxw.top",
+              "hanscn.com",
+              "cbd.int",
+              "i-meto.com",
+              "umami.is",
+              "wangshuai.app",
+              "zhichao.org",
+              "picgo.net",
+              "ylimg.com",
+              "imgbox.com",
+              "exoticaz.to",
+              "imgs.ovh",
+              "kamept.com",
+              "2048.spa",
+              "unisvg.com",
+              "fontshare.com",
+              "supabase.co",
+              "tabboard.com",
+              "emojiall.com",
+              "gifyu.com",
+              "picx.cx",
+              "wsrv.nl",
+              "weserv.nl",
+              "pixhost.to",
+              "fontawesome.com",
+              "simplesvg.com",
+              "ipazyw.com",
+              "ipa.store",
+              "ipaku.cc",
+              "diyios.com",
+              "thornbird.org",
+              "kleientertainment.com",
+              "klei.com",
+              "tclai.top",
+              "jquery.com",
+              "java.com",
+              "java.net",
+              "lucky.gd",
+              "salesforceliveagent.com",
+              "adblockplus.org",
+              "tutu.to",
+              "xperi.com",
+              "adobedtm.com",
+              "adobe.io",
+              "adobe.com",
+              "klaviyo.com",
+              "steelseriescdn.com",
+              "sitecampaign.com",
+              "steelseries.com",
+              "sun-panel.top",
+              "asus.com",
+              "unpkg.com",
+              "iili.io",
+              "transcend-cdn.com",
+              "kunlun.com",
+              "cdngslb.com",
+              "dnsv1.com",
+              "cdntip.com",
+              "bdydns.com",
+              "jomodns.com",
+              "qiniudns.com",
+              "aicdn.com",
+              "sublimehq.com",
+              "sublimetext.com",
+              "nvidia.tt.omtrdc.net",
+              "nvidia.nl",
+              "nvidiaforhp.com",
+              "geforce.com",
+              "tegrazone.kr",
+              "tegrazone.jp",
+              "gputechconf.com",
+              "tegrazone.com",
+              "tegrazone.co",
+              "gputechconf.eu",
+              "gputechconf.in",
+              "gputechconf.jp",
+              "nvidia.asia",
+              "nvidia.at",
+              "nvidia.be",
+              "nvidia.ch",
+              "shotwithgeforce.com",
+              "nvidiagrid.net",
+              "nvidia.fr",
+              "nvidia.tw",
+              "nvidia.cz",
+              "nvidia.com",
+              "nvidia.se",
+              "nvidia.ru",
+              "nvidia.ro",
+              "nvidia.pl",
+              "nvidia.no",
+              "nvidia.mx",
+              "nvidia.lu",
+              "nvidia.jp",
+              "nvidia.it",
+              "nvidia.in",
+              "nvidia.de",
+              "nvidia.dk",
+              "nvidia.es",
+              "nvidia.eu",
+              "nvidia.fi",
+              "nvidia.co.at",
+              "nvidia.co.uk",
+              "gputechconf.com.au",
+              "nvidia.com.ua",
+              "nvidia.com.tw",
+              "nvidia.com.tr",
+              "geforce.co.kr",
+              "nvidia.com.pl",
+              "nvidia.com.pe",
+              "nvidia.com.mx",
+              "nvidia.com.br",
+              "nvidia.com.au",
+              "nvidia.co.kr",
+              "nvidia.co.jp",
+              "nvidia.co.in",
+              "geforce.co.uk",
+              "gputechconf.com.tw",
+              "tegrazone.co.kr",
+              "nvidia.com.ve",
+              "gputechconf.co.kr",
+              "geforce.com.tw",
+              "geforce.cn",
+              "gputechconf.cn",
+              "nvidia.cn",
+              "cn.download.nvidia.com",
+              "firefox.com",
+              "firefoxusercontent.com",
+              "mozilla.com",
+              "istoreos.com",
+              "istoreos.cn",
+              "fnnas.com",
+              "fnnas.net",
+              "fnnas.wiki",
+              "fnnas.html",
+              "3dns-1.adobe.com",
+              "3dns-2.adobe.com",
+              "3dns-3.adobe.com",
+              "3dns-4.adobe.com",
+              "3dns-5.adobe.com",
+              "3dns.adobe.com",
+              "activate-sea.adobe.com",
+              "activate-sjc0.adobe.com",
+              "activate.adobe.com",
+              "activate.wip1.adobe.com",
+              "activate.wip2.adobe.com",
+              "activate.wip3.adobe.com",
+              "activate.wip4.adobe.com",
+              "adobe-dns-1.adobe.com",
+              "adobe-dns-2.adobe.com",
+              "adobe-dns-3.adobe.com",
+              "adobe-dns-4.adobe.com",
+              "adobe-dns.adobe.com",
+              "adobeereg.com",
+              "crl.versign.net",
+              "ereg.adobe.com",
+              "ereg.wip.adobe.com",
+              "ereg.wip1.adobe.com",
+              "ereg.wip2.adobe.com",
+              "ereg.wip3.adobe.com",
+              "ereg.wip4.adobe.com",
+              "hl2rcv.adobe.com",
+              "hlrcv.stage.adobe.com",
+              "lm.licenses.adobe.com",
+              "lmlicenses.wip4.adobe.com",
+              "na1r.services.adobe.com",
+              "ood.opsource.net",
+              "practivate.adobe",
+              "practivate.adobe.com",
+              "practivate.adobe.ipp",
+              "practivate.adobe.newoa",
+              "practivate.adobe.ntp",
+              "wip.adobe.com",
+              "wip1.adobe.com",
+              "wip2.adobe.com",
+              "wip3.adobe.com",
+              "wip4.adobe.com",
+              "wwis-dubc1-vip100.adobe.com",
+              "wwis-dubc1-vip101.adobe.com",
+              "wwis-dubc1-vip102.adobe.com",
+              "wwis-dubc1-vip103.adobe.com",
+              "wwis-dubc1-vip104.adobe.com",
+              "wwis-dubc1-vip105.adobe.com",
+              "wwis-dubc1-vip106.adobe.com",
+              "wwis-dubc1-vip107.adobe.com",
+              "wwis-dubc1-vip108.adobe.com",
+              "wwis-dubc1-vip109.adobe.com",
+              "wwis-dubc1-vip110.adobe.com",
+              "wwis-dubc1-vip111.adobe.com",
+              "wwis-dubc1-vip112.adobe.com",
+              "wwis-dubc1-vip113.adobe.com",
+              "wwis-dubc1-vip114.adobe.com",
+              "wwis-dubc1-vip115.adobe.com",
+              "wwis-dubc1-vip116.adobe.com",
+              "wwis-dubc1-vip117.adobe.com",
+              "wwis-dubc1-vip118.adobe.com",
+              "wwis-dubc1-vip119.adobe.com",
+              "wwis-dubc1-vip120.adobe.com",
+              "wwis-dubc1-vip121.adobe.com",
+              "wwis-dubc1-vip122.adobe.com",
+              "wwis-dubc1-vip123.adobe.com",
+              "wwis-dubc1-vip124.adobe.com",
+              "wwis-dubc1-vip125.adobe.com",
+              "wwis-dubc1-vip30.adobe.com",
+              "wwis-dubc1-vip31.adobe.com",
+              "wwis-dubc1-vip32.adobe.com",
+              "wwis-dubc1-vip33.adobe.com",
+              "wwis-dubc1-vip34.adobe.com",
+              "wwis-dubc1-vip35.adobe.com",
+              "wwis-dubc1-vip36.adobe.com",
+              "wwis-dubc1-vip37.adobe.com",
+              "wwis-dubc1-vip38.adobe.com",
+              "wwis-dubc1-vip39.adobe.com",
+              "wwis-dubc1-vip40.adobe.com",
+              "wwis-dubc1-vip41.adobe.com",
+              "wwis-dubc1-vip42.adobe.com",
+              "wwis-dubc1-vip43.adobe.com",
+              "wwis-dubc1-vip44.adobe.com",
+              "wwis-dubc1-vip45.adobe.com",
+              "wwis-dubc1-vip46.adobe.com",
+              "wwis-dubc1-vip47.adobe.com",
+              "wwis-dubc1-vip48.adobe.com",
+              "wwis-dubc1-vip49.adobe.com",
+              "wwis-dubc1-vip50.adobe.com",
+              "wwis-dubc1-vip51.adobe.com",
+              "wwis-dubc1-vip52.adobe.com",
+              "wwis-dubc1-vip53.adobe.com",
+              "wwis-dubc1-vip54.adobe.com",
+              "wwis-dubc1-vip55.adobe.com",
+              "wwis-dubc1-vip56.adobe.com",
+              "wwis-dubc1-vip57.adobe.com",
+              "wwis-dubc1-vip58.adobe.com",
+              "wwis-dubc1-vip59.adobe.com",
+              "wwis-dubc1-vip60.adobe.com",
+              "wwis-dubc1-vip61.adobe.com",
+              "wwis-dubc1-vip62.adobe.com",
+              "wwis-dubc1-vip63.adobe.com",
+              "wwis-dubc1-vip64.adobe.com",
+              "wwis-dubc1-vip65.adobe.com",
+              "wwis-dubc1-vip66.adobe.com",
+              "wwis-dubc1-vip67.adobe.com",
+              "wwis-dubc1-vip68.adobe.com",
+              "wwis-dubc1-vip69.adobe.com",
+              "wwis-dubc1-vip70.adobe.com",
+              "wwis-dubc1-vip71.adobe.com",
+              "wwis-dubc1-vip72.adobe.com",
+              "wwis-dubc1-vip73.adobe.com",
+              "wwis-dubc1-vip74.adobe.com",
+              "wwis-dubc1-vip75.adobe.com",
+              "wwis-dubc1-vip76.adobe.com",
+              "wwis-dubc1-vip77.adobe.com",
+              "wwis-dubc1-vip78.adobe.com",
+              "wwis-dubc1-vip79.adobe.com",
+              "wwis-dubc1-vip80.adobe.com",
+              "wwis-dubc1-vip81.adobe.com",
+              "wwis-dubc1-vip82.adobe.com",
+              "wwis-dubc1-vip83.adobe.com",
+              "wwis-dubc1-vip84.adobe.com",
+              "wwis-dubc1-vip85.adobe.com",
+              "wwis-dubc1-vip86.adobe.com",
+              "wwis-dubc1-vip87.adobe.com",
+              "wwis-dubc1-vip88.adobe.com",
+              "wwis-dubc1-vip89.adobe.com",
+              "wwis-dubc1-vip90.adobe.com",
+              "wwis-dubc1-vip91.adobe.com",
+              "wwis-dubc1-vip92.adobe.com",
+              "wwis-dubc1-vip93.adobe.com",
+              "wwis-dubc1-vip94.adobe.com",
+              "wwis-dubc1-vip95.adobe.com",
+              "wwis-dubc1-vip96.adobe.com",
+              "wwis-dubc1-vip97.adobe.com",
+              "wwis-dubc1-vip98.adobe.com",
+              "wwis-dubc1-vip99.adobe.com",
+              "10xfotolia.com",
+              "2o7.net",
+              "acrobat.com",
+              "adbecrsl.com",
+              "adobe-aemassets-value.com",
+              "adobe-audience-finder.com",
+              "adobe-video-partner-finder.com",
+              "adobe.ly",
+              "adobeaemcloud.com",
+              "adobeaemcloud.net",
+              "adobeawards.com",
+              "adobecontent.io",
+              "adobecreativityawards.com",
+              "adobedc.net",
+              "adobedemo.com",
+              "adobeexchange.com",
+              "adobeexperienceawards.com",
+              "adobegov.com",
+              "adobehiddentreasures.com",
+              "adobejanus.com",
+              "adobeku.com",
+              "adobelanding.com",
+              "adobelogin.com",
+              "adobeoobe.com",
+              "adobeplatinumclub.com",
+              "adobeprojectm.com",
+              "adobesc.com",
+              "adobesign.com",
+              "adobesigncdn.com",
+              "adobespark.com",
+              "adobess.com",
+              "adobestock.com",
+              "adobetag.com",
+              "adobetarget.com",
+              "adobetcstrialdvd.com",
+              "adobetechcomm.com",
+              "adobetechcommcallback.com",
+              "adobetechcommdemo.com",
+              "adobexdplatform.com",
+              "assetsadobe.com",
+              "authorxml.com",
+              "businesscatalyst.com",
+              "ccnsite.com",
+              "ccpsx.com",
+              "demdex.net",
+              "dollarfotoclub.com",
+              "dollarphotoclub.com",
+              "dollarphotosclub.com",
+              "douwriteright.com",
+              "echocdn.com",
+              "echosign.com",
+              "edgefonts.net",
+              "enablementadobe.com",
+              "ftcdn.net",
+              "gostorego.com",
+              "imagineecommerce.com",
+              "macromedia.com",
+              "magentoliveconference.com",
+              "marketing-nirvana.com",
+              "omniture.com",
+              "omtrdc.net",
+              "photoshop.com",
+              "placesdocs.com",
+              "sundanceignite2016.com",
+              "worldsecureemail.com",
+              "worldsecuresystems.com",
+              "developria.com",
+              "behance.net",
+              "s2stagehance.com",
+              "adobecc.com",
+              "adobecce.com",
+              "adobeccstatic.com",
+              "creativecloud.com",
+              "creativesdk.com",
+              "cotolia.com",
+              "ffotolia.com",
+              "fiotolia.com",
+              "foftolia.com",
+              "fonolia.com",
+              "fotiolia.com",
+              "fotoiia.com",
+              "fotolia-noticias.com",
+              "fotolia.cc",
+              "fotolia.com",
+              "fotolia.tv",
+              "fotolja.com",
+              "fptolia.com",
+              "gfotolia.com",
+              "motolia.com",
+              "photolia.net",
+              "tenbyfotolia.com",
+              "votolia.com",
+              "bluefootcms.com",
+              "mageconf.com",
+              "magento.com",
+              "magento.net",
+              "magentocommerce.com",
+              "magentomobile.com",
+              "marketing-cloud.com",
+              "marketo.com",
+              "marketo.net",
+              "marketo.tv",
+              "marketodesigner.com",
+              "marketolive.com",
+              "mktdns.com",
+              "mkto-c0100.com",
+              "mktorest.com",
+              "mktroute.com",
+              "mobilemarketo.com",
+              "revenue-performance-management.com",
+              "toutapp.com",
+              "compresspdf.new",
+              "pdf.new",
+              "sign.new",
+              "scene7.com",
+              "adobestats.io",
+              "typekit.com",
+              "typekit.net",
+              "mageconf.com.ua",
+              "marketo.co.uk",
+              "adobedc.cn",
+              "advertising.adobe.com",
+              "tubemogul.com",
+              "avextube.com",
+              "scorecardresearch.com"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "docker_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "docker.io",
+              "docker.com",
+              "hub.docker.com",
+              "dockerhub.com",
+              "registry-1.docker.io",
+              "auth.docker.io",
+              "index.docker.io",
+              "production.cloudflare.docker.com",
+              "dockerpull.pw",
+              "dockerpull.org",
+              "compose-spec.io",
+              "dockerstatic.com"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "proxy_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "themoviedb.org",
+              "tmdb.org",
+              "thetvdb.com",
+              "api.thetvdb.com",
+              "anilist.co",
+              "undo.jp",
+              "sourceforge.net",
+              "freedb.org",
+              "nousresearch.com",
+              "tavily.com",
+              "bitwarden.com",
+              "pinterest.com",
+              "81-web.com",
+              "tao18.tv",
+              "wsyzy.org",
+              "wsyzym3u8.com",
+              "freemdict.com",
+              "sharepoint.com",
+              "qichiyu.com",
+              "claw.cloud",
+              "1e100.net",
+              "1e100.com",
+              "nodeseek.com",
+              "wallhaven.cc",
+              "mypikpak.com",
+              "linux.do",
+              "v2ex.com",
+              "ipleak.net",
+              "urlert.com",
+              "scrape.do",
+              "skk.moe",
+              "ip.sb",
+              "ipify.org",
+              "hostloc.com",
+              "adtidy.org",
+              "gravatar.com",
+              "wootric.com",
+              "heap-api.com",
+              "grafana.net",
+              "home-assistant.io",
+              "utdstc.com",
+              "uptodown.com",
+              "googo.win",
+              "notionusercontent.com",
+              "acdb.tv",
+              "chinatsu1124.com",
+              "posthog.com",
+              "kakao.com",
+              "lyrical-nonsense.com",
+              "static-bluray.com",
+              "media-amazon.com",
+              "sda1.dev",
+              "ghostchu-services.top",
+              "skartinx.com",
+              "extyy.com",
+              "mapbox.com",
+              "ctfassets.net",
+              "musixmatch.com",
+              "imtintl.com",
+              "go-mpulse.net",
+              "ldkms.la",
+              "devvit.net",
+              "qiuchenly.us.kg",
+              "dicebear.com",
+              "hlx.page",
+              "vidyard.com",
+              "met.no",
+              "frenck.dev",
+              "dummyimage.com",
+              "star-history.com",
+              "apkmirror.com",
+              "ippure.com",
+              "vercel-storage.com",
+              "element-plus.org",
+              "foxel.cc",
+              "tikfork.com",
+              "icons8.com",
+              "wikimedia.org",
+              "astockcdn.net",
+              "unhook.app",
+              "thetradersden.org",
+              "openbittorrent.com",
+              "leech.ie",
+              "rarbg.com",
+              "macos-developer.com",
+              "softonic.com",
+              "aidevmac.com",
+              "sftcdn.net",
+              "swiftgram.app",
+              "notificationsounds.com",
+              "github.io",
+              "gmailapp.store",
+              "vercel.app",
+              "openclawlab.com",
+              "wikipedia.org",
+              "hsforms.com",
+              "hsforms.net",
+              "balena.io",
+              "immortalwrt.org",
+              "dmhy.best",
+              "dmhy.org",
+              "discordapp.com",
+              "edge4k.com",
+              "daumcdn.net",
+              "pbh-btn.com",
+              "ipaddress.my",
+              "bandwagonhost.com",
+              "scl168.club",
+              "shunc.xyz",
+              "xn--4gq62f52gdss.ink",
+              "xn--9kqy92aw5h.net",
+              "greasyfork.org",
+              "freshchat.com",
+              "dns.google",
+              "1dot1dot1dot1.cloudflare-dns.com",
+              "dot.sb",
+              "dns.umbrella.com",
+              "dns.quad9.net",
+              "cloudflare-dns.com",
+              "doh.dns.sb",
+              "doh.opendns.com",
+              "hk-hkg.doh.sb"
+            ],
+            "ip_cidr": [
+              "8.8.8.8/32",
+              "8.8.4.4/32",
+              "1.1.1.1/32",
+              "1.0.0.1/32",
+              "185.222.222.222/32",
+              "208.67.222.222/32",
+              "208.67.220.220/32"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "chatgpt_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/openai.srs"
+      },
+      {
+        "tag": "claude_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "claude.ai",
+              "claude.com",
+              "anthropic.com",
+              "clau.de",
+              "claudeusercontent.com",
+              "claudemcpclient.com"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "gemini_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google-gemini.srs"
+      },
+      {
+        "tag": "grok_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "grok.com",
+              "x.ai",
+              "grokusercontent.com",
+              "grokipedia.com"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "ai_other_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "perplexity.ai",
+              "perplexity.com",
+              "pplx.ai",
+              "ppl-ai-file-upload.s3.amazonaws.com",
+              "pplx-res.cloudinary.com",
+              "githubcopilot.com",
+              "copilot.microsoft.com",
+              "copilot-workspace.githubnext.com",
+              "copilotprodattachments.blob.core.windows.net",
+              "cursor.com",
+              "cursor.sh",
+              "cursorapi.com",
+              "cursor-cdn.com",
+              "windsurf.com",
+              "windsurf.build",
+              "codeium.com",
+              "codeiumdata.com",
+              "poe.com",
+              "poecdn.net",
+              "cohere.com",
+              "cohere.ai",
+              "huggingface.co",
+              "hf.space",
+              "hf.co",
+              "devin.ai",
+              "midjourney.com",
+              "elevenlabs.com",
+              "elevenlabs.io",
+              "groq.com",
+              "meta.ai",
+              "manus.im",
+              "manuscdn.com",
+              "mistral.ai",
+              "openrouter.ai",
+              "lmstudio.ai",
+              "ollama.com",
+              "dify.ai",
+              "langchain.com",
+              "anythingllm.com",
+              "crewai.com",
+              "h2o.ai",
+              "openart.ai",
+              "clipdrop.co",
+              "cerebras.ai",
+              "kiro.dev",
+              "youmind.ai",
+              "youmind.com",
+              "youmind.site",
+              "openclaw.ai",
+              "arena.ai",
+              "chutes.ai",
+              "clawhub.ai",
+              "agentclientprotocol.com",
+              "openspec.dev",
+              "lovart.ai",
+              "plannotator.ai",
+              "coderabbit.ai",
+              "coderabbit.gallery.vsassets.io",
+              "tapnow.ai",
+              "mozilla.ai",
+              "minimax.io",
+              "comfy.org",
+              "comfyci.org",
+              "comfyregistry.org",
+              "envato.com",
+              "envato-static.com",
+              "envatousercontent.com",
+              "themeforest.net",
+              "coze.com",
+              "marscode.com",
+              "trae.ai",
+              "cici.com",
+              "ciciai.com",
+              "ciciaicdn.com",
+              "dola.com",
+              "gateway.ai.cloudflare.com"
+            ],
+            "domain": [
+              "copilot-proxy.githubusercontent.com"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "reddit_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/reddit.srs"
+      },
+      {
+        "tag": "discord_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/discord.srs"
+      },
+      {
+        "tag": "byte_domain",
+        "type": "inline",
+        "rules": [
+          {
+            "domain_suffix": [
+              "avbase.net",
+              "attackers.net",
+              "btyjscl.com",
+              "co.jp",
+              "dasdas.jp",
+              "ffaoa.com",
+              "honnaka.jp",
+              "ideapocket.com",
+              "moodyz.com",
+              "madonna-av.com",
+              "javbus.com",
+              "javdb.com",
+              "jdbstatic.com",
+              "javlibrary.com",
+              "premium-beauty.com",
+              "s1s1s1.com",
+              "wanz-factory.com"
+            ]
+          }
+        ]
+      },
+      {
+        "tag": "private_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/private.srs"
+      },
+      {
+        "tag": "youtube_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/youtube.srs"
+      },
+      {
+        "tag": "google_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/google.srs"
+      },
+      {
+        "tag": "google_ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/google.srs"
+      },
+      {
+        "tag": "twitter_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/twitter.srs"
+      },
+      {
+        "tag": "twitter_ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/twitter.srs"
+      },
+      {
+        "tag": "github_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/github.srs"
+      },
+      {
+        "tag": "telegram_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/telegram.srs"
+      },
+      {
+        "tag": "instagram_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/instagram.srs"
+      },
+      {
+        "tag": "telegram_ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"
+      },
+      {
+        "tag": "netflix_ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/netflix.srs"
+      },
+      {
+        "tag": "steam_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/steam.srs"
+      },
+      {
+        "tag": "facebook_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/facebook.srs"
+      },
+      {
+        "tag": "netflix_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/netflix.srs"
+      },
+      {
+        "tag": "paypal_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/paypal.srs"
+      },
+      {
+        "tag": "onedrive_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/onedrive.srs"
+      },
+      {
+        "tag": "microsoft_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/microsoft.srs"
+      },
+      {
+        "tag": "apple_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/apple-cn.srs"
+      },
+      {
+        "tag": "speedtest_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/ookla-speedtest.srs"
+      },
+      {
+        "tag": "tiktok_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/tiktok.srs"
+      },
+      {
+        "tag": "cloudflare_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cloudflare.srs"
+      },
+      {
+        "tag": "pornhub_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/pornhub.srs"
+      },
+      {
+        "tag": "private_ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/private.srs"
+      },
+      {
+        "tag": "gfw_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/gfw.srs"
+      },
+      {
+        "tag": "geolocation-!cn",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/geolocation-!cn.srs"
+      },
+      {
+        "tag": "cn_domain",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geosite/cn.srs"
+      },
+      {
+        "tag": "cn_ip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/cn.srs"
+      }
+    ],
+    "final": "🐟 漏网之鱼",
+    "default_http_client": "直连下载",
+    "auto_detect_interface": true,
+    "default_domain_resolver": {
+      "server": "ali"
+    }
+  },
+  "inbounds": [
+    {
+      "tag": "tun-in",
+      "type": "tun",
+      "address": [
+        "172.19.0.1/30",
+        "fdfe:dcba:9876::1/126"
+      ],
+      "auto_route": true,
+      "platform": {
+        "http_proxy": {
+          "enabled": true,
+          "server": "127.0.0.1",
+          "server_port": 7890
+        }
+      }
+    },
+    {
+      "tag": "mixed-in",
+      "type": "mixed",
+      "listen": "127.0.0.1",
+      "listen_port": 7890
+    }
+  ],
+  "experimental": {
+    "cache_file": {
+      "enabled": true
+    }
+  },
+  "log": {
+    "disabled": false,
+    "level": "info",
+    "timestamp": true
+  }
+}
