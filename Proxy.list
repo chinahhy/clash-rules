@@ -4,6 +4,10 @@ DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,api.thetvdb.com
 
+# Oyunfor
+DOMAIN-SUFFIX,oyunfor.com
+DOMAIN-SUFFIX,ffsssls.buzz
+
 #anilist
 DOMAIN-SUFFIX,anilist.co
 
