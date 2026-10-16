@@ -4,6 +4,11 @@ DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,api.thetvdb.com
 
+# singbox
+DOMAIN-SUFFIX,sagernet.org
+DOMAIN-SUFFIX,jiedddym.com
+DOMAIN-SUFFIX,sing-box.app
+
 # Oyunfor
 DOMAIN-SUFFIX,oyunfor.com
 DOMAIN-SUFFIX,ffsssls.buzz
