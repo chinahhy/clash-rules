@@ -984,294 +984,294 @@
         "tag": "pt_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/pt_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/pt_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "giffgaff_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/giffgaff_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/giffgaff_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "slack_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/slack_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/slack_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "whatsapp_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/whatsapp_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/whatsapp_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "direct_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/direct_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/direct_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "docker_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/docker_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/docker_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "proxy_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/proxy_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/proxy_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "chatgpt_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/chatgpt_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/chatgpt_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "claude_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/claude_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/claude_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "gemini_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/gemini_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/gemini_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "grok_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/grok_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/grok_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "ai_other_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/ai_other_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/ai_other_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "reddit_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/reddit_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/reddit_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "discord_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/discord_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/discord_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "byte_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/byte_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/byte_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "private_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/private_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/private_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "youtube_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/youtube_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/youtube_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "google_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/google_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/google_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "google_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/google_ip.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/google_ip.srs",
         "update_interval": "24h"
       },
       {
         "tag": "twitter_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/twitter_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/twitter_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "twitter_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/twitter_ip.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/twitter_ip.srs",
         "update_interval": "24h"
       },
       {
         "tag": "github_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/github_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/github_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "telegram_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/telegram_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/telegram_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "instagram_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/instagram_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/instagram_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "telegram_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/telegram_ip.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/telegram_ip.srs",
         "update_interval": "24h"
       },
       {
         "tag": "netflix_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/netflix_ip.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/netflix_ip.srs",
         "update_interval": "24h"
       },
       {
         "tag": "steam_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/steam_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/steam_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "facebook_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/facebook_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/facebook_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "netflix_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/netflix_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/netflix_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "paypal_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/paypal_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/paypal_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "onedrive_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/onedrive_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/onedrive_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "microsoft_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/microsoft_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/microsoft_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "apple_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/apple_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/apple_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "speedtest_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/speedtest_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/speedtest_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "tiktok_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/tiktok_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/tiktok_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "cloudflare_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/cloudflare_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/cloudflare_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "pornhub_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/pornhub_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/pornhub_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "private_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/private_ip.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/private_ip.srs",
         "update_interval": "24h"
       },
       {
         "tag": "gfw_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/gfw_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/gfw_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "geolocation-!cn",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/geolocation-!cn.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/geolocation-!cn.srs",
         "update_interval": "24h"
       },
       {
         "tag": "cn_domain",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/cn_domain.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/cn_domain.srs",
         "update_interval": "24h"
       },
       {
         "tag": "cn_ip",
         "type": "remote",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/rules/cn_ip.srs",
+        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/cn_ip.srs",
         "update_interval": "24h"
       }
     ],

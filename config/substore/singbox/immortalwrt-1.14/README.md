@@ -1,6 +1,6 @@
 # Hoya · ImmortalWrt 裸核 sing-box 1.14
 
-以用户提供的 `openclash-config.yaml` 迁移个人规则与策略组，基于用户确认的七尺宇当前 Linux 模板。**保留教程核心，尚未在真实路由器启动验证。** 原仓库文件均保留；本目录为独立新增内容。
+以用户提供的 `openclash-config.yaml` 迁移个人规则与策略组，基于用户确认的七尺宇当前 Linux 模板。**保留教程核心，尚未在真实路由器启动验证。** 原仓库文件均保留；本目录已发布到 main 分支。
 
 ## 使用范围与优先级
 
@@ -21,13 +21,13 @@ Mihomo `no-resolve` 的五处规则之前不主动插入解析；最后 `cn_ip` 
 3. 在**文件管理**中新建文件，例如 `hoya-singbox-immortalwrt`；选择**远程文件**，URL 填入：
 
    ```text
-   https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/template.json
+   https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/template.json
    ```
 
 4. 在这个文件上添加**脚本操作 / Script Operator**，选择链接，填入：
 
    ```text
-   https://raw.githubusercontent.com/chinahhy/clash-rules/feat/immortalwrt-singbox-1.14/config/substore/singbox/immortalwrt-1.14/inject.js
+   https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/inject.js
    ```
 
 5. 使用脚本的可视化参数编辑，设置 `name=singbox`、`secret=你自己的至少12位面板口令`。口令仅存在 Sub-Store 私有参数中，不要填进 GitHub 文件、公开脚本 URL 或本仓库。它会同时填入教程原生 API 与 Clash API 的 secret。组合订阅名称不同则相应修改 name。
@@ -89,7 +89,7 @@ OpenWrt 本机接口上的 53 端口（如 dnsmasq 接收的 LAN DNS）不能仅
 - 每组同时保留可审阅 JSON 与编译 SRS；[rule-sources.json](rule-sources.json) 记录来源，[rule-lock.json](rule-lock.json) 记录输入与输出 SHA256、源记录数。规则是此时刻的快照，不冒称上传 YAML 当时的 MRS 缓存内容。
 - 教程 DNS 与核心所需的另外 25 个规则集保持原远程 URL，包括 gh-proxy 路径；已实际下载并经官方核心读取。它们会随上游更新，未冻结为个人规则快照。
 
-模板以此独立分支 URL 下载个人 SRS，保留分支即可使用。迁移到 main 或改分支名称时，须同步修改 `template.json` 中 42 个规则 URL 及 Sub-Store 文件/脚本 URL。个人根目录 LIST 后续改变不会自动改写本目录快照；需要重新运行转换工具并提交新规则文件，路由器才会获取新快照。
+模板以 main 分支 URL 下载个人 SRS。以后如需改分支名称，须同步修改 `template.json` 中 42 个规则 URL 及 Sub-Store 文件/脚本 URL。个人根目录 LIST 后续改变不会自动改写本目录快照；需要重新运行转换工具并提交新规则文件，路由器才会获取新快照。
 
 转换工具仅使用 Python 标准库；自行下载并核对两款官方核心后运行（占位路径需替换）：
 

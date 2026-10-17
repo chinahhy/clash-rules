@@ -1,6 +1,6 @@
 {
   "validated_on": "2026-10-17 Asia/Shanghai",
-  "branch": "feat/immortalwrt-singbox-1.14",
+  "branch": "main",
   "repository_base": "6da22ec272630e5981e3e4596c594d3dbeba0590",
   "source_yaml_sha256": "e35d78f7b1e45192f18abcfc26d18cb0674a042b955920d5b4ee2e74a4ddb021",
   "qichi_template_commit": "9477bb620036e183e09d53c017a9c196d6f7f8ba",
