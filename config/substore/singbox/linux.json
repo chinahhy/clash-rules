@@ -149,7 +149,7 @@
   },
   "inbounds": [
     {"tag": "tun-in", "type": "tun", "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"], "auto_route": true, "auto_redirect": true},
-    {"tag": "mixed-in", "type": "mixed", "listen": "0.0.0.0", "listen_port": 7893}
+    {"tag": "mixed-in", "type": "mixed", "listen": "0.0.0.0", "listen_port": 6666}
   ],
   "services": [
     {"type": "api", "listen": "0.0.0.0", "listen_port": 9090, "secret": "HHYlove142536", "dashboard": {"enabled": true, "path": "/etc/sing-box/dashboard", "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip"}}

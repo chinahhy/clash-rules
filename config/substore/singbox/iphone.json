@@ -147,8 +147,8 @@
     }
   },
   "inbounds": [
-    {"tag": "tun-in", "type": "tun", "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"], "auto_route": true, "platform": {"http_proxy": {"enabled": true, "server": "127.0.0.1", "server_port": 7893}}},
-    {"tag": "mixed-in", "type": "mixed", "listen": "127.0.0.1", "listen_port": 7893}
+    {"tag": "tun-in", "type": "tun", "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"], "auto_route": true, "platform": {"http_proxy": {"enabled": true, "server": "127.0.0.1", "server_port": 6666}}},
+    {"tag": "mixed-in", "type": "mixed", "listen": "127.0.0.1", "listen_port": 6666}
   ],
   "experimental": {
     "cache_file": {
