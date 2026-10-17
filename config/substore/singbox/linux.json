@@ -164,7 +164,7 @@
       "external_controller": "0.0.0.0:9095",
       "external_ui": "/etc/sing-box/ui",
       "external_ui_download_url": "https://gh-proxy.com/https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip",
-      "secret": "__SET_PRIVATE_API_SECRET__",
+      "secret": "HHYlove142536",
       "default_mode": "Rule"
     }
   },
