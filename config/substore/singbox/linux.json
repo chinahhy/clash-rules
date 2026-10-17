@@ -152,7 +152,7 @@
     {"tag": "mixed-in", "type": "mixed", "listen": "0.0.0.0", "listen_port": 7893}
   ],
   "services": [
-    {"type": "api", "listen": "0.0.0.0", "listen_port": 9090, "secret": "__SET_PRIVATE_API_SECRET__", "dashboard": {"enabled": true, "path": "/etc/sing-box/dashboard", "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip"}}
+    {"type": "api", "listen": "0.0.0.0", "listen_port": 9090, "secret": "HHYlove142536", "dashboard": {"enabled": true, "path": "/etc/sing-box/dashboard", "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip"}}
   ],
   "experimental": {
     "cache_file": {
