@@ -1,0 +1,12 @@
+{
+  "version": 4,
+  "rules": [
+    {
+      "domain_suffix": [
+        "gaff.ly",
+        "giff.ly",
+        "giffgaff.com"
+      ]
+    }
+  ]
+}
