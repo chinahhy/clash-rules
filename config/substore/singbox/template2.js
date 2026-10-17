@@ -3,6 +3,7 @@
 // Sub-Store 脚本操作链接：
 // https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/template2.js
 // 默认读取组合订阅 singbox2，匹配自动选择、全部节点和六个地区组。
+// 面向 sing-box 1.14：跳过需 1.15 整证书指纹校验的节点及依赖它们的节点。
 // 可通过链接参数覆盖 name、type、outbound；不在日志中输出节点数据或订阅 URL。
 log(`🚀 开始`)
 
@@ -71,7 +72,37 @@ if (url) {
 data = JSON.parse(data)
 outbounds = data.outbounds ?? []
 endpoints = data.endpoints ?? []
+// certificate_sha256 是 1.15 字段，不能改名为公钥指纹或删除实际校验值。
+const candidates = [...outbounds, ...endpoints]
+const unsupported = new Set()
+for (const node of candidates) {
+  if (!node.tls || !Object.prototype.hasOwnProperty.call(node.tls, 'certificate_sha256')) continue
+  const pin = node.tls.certificate_sha256
+  if (pin == null || pin === '' || (Array.isArray(pin) && pin.length === 0)) {
+    delete node.tls.certificate_sha256
+  } else {
+    unsupported.add(node.tag)
+  }
+}
+let dependencyChanged
+do {
+  dependencyChanged = false
+  for (const node of candidates) {
+    if (node.detour && unsupported.has(node.detour) && !unsupported.has(node.tag)) {
+      unsupported.add(node.tag)
+      dependencyChanged = true
+    }
+  }
+} while (dependencyChanged)
+outbounds = outbounds.filter(node => !unsupported.has(node.tag))
+endpoints = endpoints.filter(node => !unsupported.has(node.tag))
 proxies = [...outbounds, ...endpoints]
+if (unsupported.size > 0) {
+  log(`sing-box 1.14 兼容检查：跳过 ${unsupported.size} 个整证书指纹节点或其依赖节点，保留原订阅的证书校验要求`)
+  if (proxies.length === 0) {
+    throw new Error('所有节点均依赖 sing-box 1.15 的整证书指纹校验，已停止生成配置；请保留旧配置并调整组合订阅')
+  }
+}
 log(`获取到 ${outbounds.length} 个节点, ${endpoints.length} 个端点`)
 
 log(`③ outbound 规则解析`)
@@ -98,6 +129,9 @@ config.outbounds.map(outbound => {
         outbound.outbounds = []
       }
       const tags = getTags(proxies, tagRegex)
+      if (unsupported.size > 0 && tags.length === 0 && outbound.outbounds.length === 0 && getTags(candidates, tagRegex).length > 0) {
+        throw new Error(`节点组 ${outbound.tag} 仅有不兼容的整证书指纹节点，已停止生成配置；请调整组合订阅，避免该组退回直连`)
+      }
       log(`🕳 ${outbound.tag} 匹配 ${outboundRegex}, 插入 ${tags.length} 个 🏷 匹配 ${tagRegex} 的节点`)
       outbound.outbounds.push(...tags)
     }
