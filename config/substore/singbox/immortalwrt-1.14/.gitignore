@@ -1,6 +1,0 @@
-__pycache__/
-*.pyc
-rendered*.json
-schema.json
-substore.curl
-*.private.json

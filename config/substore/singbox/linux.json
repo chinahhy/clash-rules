@@ -2,107 +2,22 @@
   "$schema": "https://sing-box.sagernet.org/schema.json",
   "dns": {
     "servers": [
-      {
-        "tag": "local",
-        "type": "local",
-        "prefer_go": true
-      },
-      {
-        "tag": "ali",
-        "type": "https",
-        "server": "223.5.5.5"
-      },
-      {
-        "tag": "tx",
-        "type": "https",
-        "server": "doh.pub",
-        "domain_resolver": "hosts"
-      },
-      {
-        "tag": "google",
-        "type": "https",
-        "server": "8.8.8.8",
-        "detour": "默认代理"
-      },
-      {
-        "tag": "fakeip",
-        "type": "fakeip",
-        "inet4_range": "198.19.0.0/16"
-      },
-      {
-        "type": "hosts",
-        "tag": "hosts",
-        "predefined": {
-          "doh.pub": [
-            "1.12.12.21",
-            "120.53.53.53"
-          ]
-        }
-      }
+      {"tag": "local", "type": "local", "prefer_go": true},
+      {"tag": "ali", "type": "https", "server": "223.5.5.5"},
+      {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
+      {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "默认代理"},
+      {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16"},
+      {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
     ],
     "rules": [
-      {
-        "query_type": [
-          "HTTPS",
-          "SVCB"
-        ],
-        "action": "reject"
-      },
-      {
-        "clash_mode": "Direct",
-        "server": "ali"
-      },
-      {
-        "clash_mode": "Global",
-        "server": "fakeip"
-      },
-      {
-        "rule_set": [
-          "fakeipfilter-cn",
-          "geosite-cn",
-          "geosite-microsoft@cn",
-          "geosite-apple@cn",
-          "geosite-private"
-        ],
-        "server": "ali"
-      },
-      {
-        "rule_set": "fakeipfilter-!cn",
-        "server": "google"
-      },
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "query_type": [
-              "A",
-              "AAAA"
-            ]
-          },
-          {
-            "rule_set": "geosite-geolocation-!cn",
-            "invert": true
-          }
-        ],
-        "action": "evaluate",
-        "server": "google",
-        "client_subnet": "223.5.5.0/24",
-        "timeout": "2s"
-      },
-      {
-        "match_response": true,
-        "rule_set": "geoip-cn",
-        "server": "ali"
-      },
-      {
-        "query_type": [
-          "A",
-          "AAAA"
-        ],
-        "server": "fakeip",
-        "rewrite_ttl": 1
-      }
+      {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
+      {"clash_mode": "Direct", "server": "ali"},
+      {"clash_mode": "Global", "server": "fakeip"},
+      {"rule_set": ["fakeipfilter-cn", "geosite-cn", "geosite-microsoft@cn", "geosite-apple@cn", "geosite-private"], "server": "ali"},
+      {"rule_set": "fakeipfilter-!cn", "server": "google"},
+      {"type": "logical", "mode": "and", "rules": [{"query_type": ["A", "AAAA"]}, {"rule_set": "geosite-geolocation-!cn", "invert": true}], "action": "evaluate", "server": "google", "client_subnet": "223.5.5.0/24", "timeout": "2s"},
+      {"match_response": true, "rule_set": "geoip-cn", "server": "ali"},
+      {"query_type": ["A", "AAAA"], "server": "fakeip", "rewrite_ttl": 1}
     ],
     "final": "google",
     "strategy": "ipv4_only",
@@ -113,1167 +28,158 @@
     "reverse_mapping": true
   },
   "outbounds": [
-    {
-      "tag": "🫎 Proxy",
-      "type": "selector",
-      "outbounds": [
-        "🇹🇼 台湾节点",
-        "🇯🇵 日本节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "📹 YouTube",
-      "type": "selector",
-      "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🍀 Google",
-      "type": "selector",
-      "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "👨🏿‍💻 GitHub",
-      "type": "selector",
-      "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🫆 ChatGPT",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🧢 Gemini",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🧶 Grok",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "👒 ClaudeCode",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🤖 AI其它",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🦀 Twitter",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "📲 Telegram",
-      "type": "selector",
-      "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "☁️ CloudFlare",
-      "type": "selector",
-      "outbounds": [
-        "♻️ 自动选择",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "🇯🇵 日本节点",
-        "直连"
-      ]
-    },
-    {
-      "tag": "🐱 Instagram",
-      "type": "selector",
-      "outbounds": [
-        "♻️ 自动选择",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "🇯🇵 日本节点"
-      ]
-    },
-    {
-      "tag": "👹 PT",
-      "type": "selector",
-      "outbounds": [
-        "直连"
-      ]
-    },
-    {
-      "tag": "👟 Slack",
-      "type": "selector",
-      "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🕸️ Direct",
-      "type": "selector",
-      "outbounds": [
-        "直连"
-      ]
-    },
-    {
-      "tag": "🚢 Docker",
-      "type": "selector",
-      "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "💠 GiffGaff",
-      "type": "selector",
-      "outbounds": [
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "📞 Whatsapp",
-      "type": "selector",
-      "outbounds": [
-        "🇭🇰 香港节点",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择",
-        "直连"
-      ]
-    },
-    {
-      "tag": "📌 Reddit",
-      "type": "selector",
-      "outbounds": [
-        "♻️ 自动选择",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "🇯🇵 日本节点"
-      ]
-    },
-    {
-      "tag": "🎈 Discord",
-      "type": "selector",
-      "outbounds": [
-        "♻️ 自动选择",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "🇯🇵 日本节点"
-      ]
-    },
-    {
-      "tag": "😉 Byte-Muse",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🧩 Facebook",
-      "type": "selector",
-      "outbounds": [
-        "♻️ 自动选择",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "🇯🇵 日本节点"
-      ]
-    },
-    {
-      "tag": "🦉 Steam",
-      "type": "selector",
-      "outbounds": [
-        "直连",
-        "♻️ 自动选择",
-        "🇯🇵 日本节点",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点"
-      ]
-    },
-    {
-      "tag": "🐬 OneDrive",
-      "type": "selector",
-      "outbounds": [
-        "直连",
-        "♻️ 自动选择",
-        "🇯🇵 日本节点",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点"
-      ]
-    },
-    {
-      "tag": "🪟 Microsoft",
-      "type": "selector",
-      "outbounds": [
-        "直连",
-        "♻️ 自动选择",
-        "🇯🇵 日本节点",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点"
-      ]
-    },
-    {
-      "tag": "🎵 TikTok",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择",
-        "直连"
-      ]
-    },
-    {
-      "tag": "🎥 NETFLIX",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "✈️ Speedtest",
-      "type": "selector",
-      "outbounds": [
-        "直连",
-        "♻️ 自动选择",
-        "🇯🇵 日本节点",
-        "🇭🇰 香港节点",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点"
-      ]
-    },
-    {
-      "tag": "💶 PayPal",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "♻️ 自动选择",
-        "直连"
-      ]
-    },
-    {
-      "tag": "🥰 Pornhub",
-      "type": "selector",
-      "outbounds": [
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "♻️ 自动选择"
-      ]
-    },
-    {
-      "tag": "🍎 Apple",
-      "type": "selector",
-      "outbounds": [
-        "直连"
-      ]
-    },
-    {
-      "tag": "♻️ 自动选择",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 20
-    },
-    {
-      "tag": "🐟 漏网之鱼",
-      "type": "selector",
-      "outbounds": [
-        "♻️ 自动选择",
-        "🇹🇼 台湾节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "🇯🇵 日本节点",
-        "直连"
-      ]
-    },
-    {
-      "tag": "🇯🇵 日本节点",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "60s",
-      "tolerance": 20
-    },
-    {
-      "tag": "🇹🇼 台湾节点",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 20
-    },
-    {
-      "tag": "🇭🇰 香港节点",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 20
-    },
-    {
-      "tag": "🇸🇬 狮城节点",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 20
-    },
-    {
-      "tag": "🇺🇲 美国节点",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 20
-    },
-    {
-      "tag": "🇬🇧 英国节点",
-      "type": "urltest",
-      "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "300s",
-      "tolerance": 20
-    },
-    {
-      "tag": "🌐 全部节点",
-      "type": "selector",
-      "outbounds": [
-        "直连"
-      ]
-    },
-    {
-      "tag": "默认代理",
-      "type": "selector",
-      "outbounds": [
-        "🫎 Proxy"
-      ]
-    },
-    {
-      "tag": "延迟辅助",
-      "type": "urltest",
-      "outbounds": [
-        "直连"
-      ],
-      "url": "http://connect.rom.miui.com/generate_204",
-      "interval": "30m"
-    },
-    {
-      "tag": "GLOBAL",
-      "type": "selector",
-      "outbounds": [
-        "🫎 Proxy",
-        "📹 YouTube",
-        "🍀 Google",
-        "👨🏿‍💻 GitHub",
-        "🫆 ChatGPT",
-        "🧢 Gemini",
-        "🧶 Grok",
-        "👒 ClaudeCode",
-        "🤖 AI其它",
-        "🦀 Twitter",
-        "📲 Telegram",
-        "☁️ CloudFlare",
-        "🐱 Instagram",
-        "👹 PT",
-        "👟 Slack",
-        "🕸️ Direct",
-        "🚢 Docker",
-        "💠 GiffGaff",
-        "📞 Whatsapp",
-        "📌 Reddit",
-        "🎈 Discord",
-        "😉 Byte-Muse",
-        "🧩 Facebook",
-        "🦉 Steam",
-        "🐬 OneDrive",
-        "🪟 Microsoft",
-        "🎵 TikTok",
-        "🎥 NETFLIX",
-        "✈️ Speedtest",
-        "💶 PayPal",
-        "🥰 Pornhub",
-        "🍎 Apple",
-        "♻️ 自动选择",
-        "🐟 漏网之鱼",
-        "🇯🇵 日本节点",
-        "🇹🇼 台湾节点",
-        "🇭🇰 香港节点",
-        "🇸🇬 狮城节点",
-        "🇺🇲 美国节点",
-        "🇬🇧 英国节点",
-        "🌐 全部节点",
-        "直连"
-      ]
-    },
-    {
-      "tag": "直连",
-      "type": "direct",
-      "domain_resolver": "ali"
-    }
+    {"tag": "🫎 Proxy", "type": "selector", "outbounds": ["🇹🇼 台湾节点", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "📹 YouTube", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🍀 Google", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "👨🏿‍💻 GitHub", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🫆 ChatGPT", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🧢 Gemini", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🧶 Grok", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "👒 ClaudeCode", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🤖 AI其它", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🦀 Twitter", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "📲 Telegram", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "☁️ CloudFlare", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点", "直连"]},
+    {"tag": "🐱 Instagram", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点"]},
+    {"tag": "👹 PT", "type": "selector", "outbounds": ["直连"]},
+    {"tag": "👟 Slack", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🕸️ Direct", "type": "selector", "outbounds": ["直连"]},
+    {"tag": "🚢 Docker", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "💠 GiffGaff", "type": "selector", "outbounds": ["🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "📞 Whatsapp", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择", "直连"]},
+    {"tag": "📌 Reddit", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点"]},
+    {"tag": "🎈 Discord", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点"]},
+    {"tag": "😉 Byte-Muse", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🧩 Facebook", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点"]},
+    {"tag": "🦉 Steam", "type": "selector", "outbounds": ["直连", "♻️ 自动选择", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点"]},
+    {"tag": "🐬 OneDrive", "type": "selector", "outbounds": ["直连", "♻️ 自动选择", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点"]},
+    {"tag": "🪟 Microsoft", "type": "selector", "outbounds": ["直连", "♻️ 自动选择", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点"]},
+    {"tag": "🎵 TikTok", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择", "直连"]},
+    {"tag": "🎥 NETFLIX", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "✈️ Speedtest", "type": "selector", "outbounds": ["直连", "♻️ 自动选择", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点"]},
+    {"tag": "💶 PayPal", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择", "直连"]},
+    {"tag": "🥰 Pornhub", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "♻️ 自动选择"]},
+    {"tag": "🍎 Apple", "type": "selector", "outbounds": ["直连"]},
+    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点", "直连"]},
+    {"tag": "🇯🇵 日本节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60s", "tolerance": 20},
+    {"tag": "🇹🇼 台湾节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "🇭🇰 香港节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "🇸🇬 狮城节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "🇺🇲 美国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "🇬🇧 英国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "🌐 全部节点", "type": "selector", "outbounds": ["直连"]},
+    {"tag": "默认代理", "type": "selector", "outbounds": ["🫎 Proxy"]},
+    {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
+    {"tag": "GLOBAL", "type": "selector", "outbounds": ["🫎 Proxy", "📹 YouTube", "🍀 Google", "👨🏿‍💻 GitHub", "🫆 ChatGPT", "🧢 Gemini", "🧶 Grok", "👒 ClaudeCode", "🤖 AI其它", "🦀 Twitter", "📲 Telegram", "☁️ CloudFlare", "🐱 Instagram", "👹 PT", "👟 Slack", "🕸️ Direct", "🚢 Docker", "💠 GiffGaff", "📞 Whatsapp", "📌 Reddit", "🎈 Discord", "😉 Byte-Muse", "🧩 Facebook", "🦉 Steam", "🐬 OneDrive", "🪟 Microsoft", "🎵 TikTok", "🎥 NETFLIX", "✈️ Speedtest", "💶 PayPal", "🥰 Pornhub", "🍎 Apple", "♻️ 自动选择", "🐟 漏网之鱼", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🌐 全部节点", "直连"]},
+    {"tag": "直连", "type": "direct", "domain_resolver": "ali"}
   ],
   "http_clients": [
-    {
-      "tag": "直连下载",
-      "detour": "直连"
-    }
+    {"tag": "直连下载", "detour": "直连"}
   ],
   "route": {
     "rules": [
-      {
-        "type": "logical",
-        "mode": "and",
-        "rules": [
-          {
-            "port": [
-              53,
-              853
-            ],
-            "invert": true
-          },
-          {
-            "clash_mode": "Global",
-            "invert": true
-          },
-          {
-            "type": "logical",
-            "mode": "or",
-            "rules": [
-              {
-                "ip_is_private": true
-              },
-              {
-                "rule_set": "geoip-cn"
-              }
-            ]
-          }
-        ],
-        "action": "bypass"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "domain_suffix": "push.apple.com"
-          },
-          {
-            "rule_set": "geoip-telegram"
-          }
-        ],
-        "invert": true,
-        "action": "sniff",
-        "sniffer": [
-          "http",
-          "tls",
-          "stun",
-          "quic",
-          "dns"
-        ],
-        "timeout": "100ms"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "port": 53
-          },
-          {
-            "protocol": "dns"
-          }
-        ],
-        "action": "hijack-dns"
-      },
-      {
-        "ip_is_private": true,
-        "outbound": "直连"
-      },
-      {
-        "type": "logical",
-        "mode": "or",
-        "rules": [
-          {
-            "port": 853
-          },
-          {
-            "protocol": [
-              "stun",
-              "quic"
-            ]
-          }
-        ],
-        "action": "reject",
-        "no_drop": true
-      },
-      {
-        "network": "icmp",
-        "action": "resolve"
-      },
-      {
-        "network": "icmp",
-        "outbound": "直连"
-      },
-      {
-        "clash_mode": "Direct",
-        "outbound": "直连"
-      },
-      {
-        "clash_mode": "Global",
-        "outbound": "GLOBAL"
-      },
-      {
-        "rule_set": "pt_domain",
-        "outbound": "👹 PT"
-      },
-      {
-        "rule_set": "direct_domain",
-        "outbound": "🕸️ Direct"
-      },
-      {
-        "rule_set": "github_domain",
-        "outbound": "👨🏿‍💻 GitHub"
-      },
-      {
-        "rule_set": "youtube_domain",
-        "outbound": "📹 YouTube"
-      },
-      {
-        "rule_set": "gemini_domain",
-        "outbound": "🧢 Gemini"
-      },
-      {
-        "rule_set": "google_domain",
-        "outbound": "🍀 Google"
-      },
-      {
-        "rule_set": "docker_domain",
-        "outbound": "🚢 Docker"
-      },
-      {
-        "rule_set": "chatgpt_domain",
-        "outbound": "🫆 ChatGPT"
-      },
-      {
-        "rule_set": "claude_domain",
-        "outbound": "👒 ClaudeCode"
-      },
-      {
-        "rule_set": "grok_domain",
-        "outbound": "🧶 Grok"
-      },
-      {
-        "rule_set": "ai_other_domain",
-        "outbound": "🤖 AI其它"
-      },
-      {
-        "rule_set": "slack_domain",
-        "outbound": "👟 Slack"
-      },
-      {
-        "rule_set": "giffgaff_domain",
-        "outbound": "💠 GiffGaff"
-      },
-      {
-        "rule_set": "whatsapp_domain",
-        "outbound": "📞 Whatsapp"
-      },
-      {
-        "rule_set": "reddit_domain",
-        "outbound": "📌 Reddit"
-      },
-      {
-        "rule_set": "discord_domain",
-        "outbound": "🎈 Discord"
-      },
-      {
-        "rule_set": "byte_domain",
-        "outbound": "😉 Byte-Muse"
-      },
-      {
-        "rule_set": "proxy_domain",
-        "outbound": "🫎 Proxy"
-      },
-      {
-        "rule_set": "twitter_domain",
-        "outbound": "🦀 Twitter"
-      },
-      {
-        "rule_set": "private_domain",
-        "outbound": "直连"
-      },
-      {
-        "rule_set": "apple_domain",
-        "outbound": "🍎 Apple"
-      },
-      {
-        "rule_set": "onedrive_domain",
-        "outbound": "🐬 OneDrive"
-      },
-      {
-        "rule_set": "microsoft_domain",
-        "outbound": "🪟 Microsoft"
-      },
-      {
-        "rule_set": "tiktok_domain",
-        "outbound": "🎵 TikTok"
-      },
-      {
-        "rule_set": "instagram_domain",
-        "outbound": "🐱 Instagram"
-      },
-      {
-        "rule_set": "speedtest_domain",
-        "outbound": "✈️ Speedtest"
-      },
-      {
-        "rule_set": "telegram_domain",
-        "outbound": "📲 Telegram"
-      },
-      {
-        "rule_set": "facebook_domain",
-        "outbound": "🧩 Facebook"
-      },
-      {
-        "rule_set": "netflix_domain",
-        "outbound": "🎥 NETFLIX"
-      },
-      {
-        "rule_set": "paypal_domain",
-        "outbound": "💶 PayPal"
-      },
-      {
-        "rule_set": "steam_domain",
-        "outbound": "🦉 Steam"
-      },
-      {
-        "rule_set": "cloudflare_domain",
-        "outbound": "☁️ CloudFlare"
-      },
-      {
-        "rule_set": "pornhub_domain",
-        "outbound": "🥰 Pornhub"
-      },
-      {
-        "rule_set": "google_ip",
-        "outbound": "🍀 Google"
-      },
-      {
-        "rule_set": "twitter_ip",
-        "outbound": "🦀 Twitter"
-      },
-      {
-        "rule_set": "netflix_ip",
-        "outbound": "🎥 NETFLIX"
-      },
-      {
-        "rule_set": "telegram_ip",
-        "outbound": "📲 Telegram"
-      },
-      {
-        "rule_set": "gfw_domain",
-        "outbound": "🫎 Proxy"
-      },
-      {
-        "rule_set": "geolocation-!cn",
-        "outbound": "🫎 Proxy"
-      },
-      {
-        "rule_set": "private_ip",
-        "outbound": "直连"
-      },
-      {
-        "rule_set": "cn_domain",
-        "outbound": "直连"
-      },
-      {
-        "inbound": "mixed-in",
-        "action": "resolve"
-      },
-      {
-        "action": "resolve"
-      },
-      {
-        "rule_set": "cn_ip",
-        "outbound": "直连"
-      }
+      {"type": "logical", "mode": "and", "rules": [{"port": [53, 853], "invert": true}, {"clash_mode": "Global", "invert": true}, {"type": "logical", "mode": "or", "rules": [{"ip_is_private": true}, {"rule_set": "geoip-cn"}]}], "action": "bypass"},
+      {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
+      {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
+      {"ip_is_private": true, "outbound": "直连"},
+      {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
+      {"network": "icmp", "action": "resolve"},
+      {"network": "icmp", "outbound": "直连"},
+      {"clash_mode": "Direct", "outbound": "直连"},
+      {"clash_mode": "Global", "outbound": "GLOBAL"},
+      {"rule_set": "pt_domain", "outbound": "👹 PT"},
+      {"rule_set": "direct_domain", "outbound": "🕸️ Direct"},
+      {"rule_set": "github_domain", "outbound": "👨🏿‍💻 GitHub"},
+      {"rule_set": "youtube_domain", "outbound": "📹 YouTube"},
+      {"rule_set": "gemini_domain", "outbound": "🧢 Gemini"},
+      {"rule_set": "google_domain", "outbound": "🍀 Google"},
+      {"rule_set": "docker_domain", "outbound": "🚢 Docker"},
+      {"rule_set": "chatgpt_domain", "outbound": "🫆 ChatGPT"},
+      {"rule_set": "claude_domain", "outbound": "👒 ClaudeCode"},
+      {"rule_set": "grok_domain", "outbound": "🧶 Grok"},
+      {"rule_set": "ai_other_domain", "outbound": "🤖 AI其它"},
+      {"rule_set": "slack_domain", "outbound": "👟 Slack"},
+      {"rule_set": "giffgaff_domain", "outbound": "💠 GiffGaff"},
+      {"rule_set": "whatsapp_domain", "outbound": "📞 Whatsapp"},
+      {"rule_set": "reddit_domain", "outbound": "📌 Reddit"},
+      {"rule_set": "discord_domain", "outbound": "🎈 Discord"},
+      {"rule_set": "byte_domain", "outbound": "😉 Byte-Muse"},
+      {"rule_set": "proxy_domain", "outbound": "🫎 Proxy"},
+      {"rule_set": "twitter_domain", "outbound": "🦀 Twitter"},
+      {"rule_set": "private_domain", "outbound": "直连"},
+      {"rule_set": "apple_domain", "outbound": "🍎 Apple"},
+      {"rule_set": "onedrive_domain", "outbound": "🐬 OneDrive"},
+      {"rule_set": "microsoft_domain", "outbound": "🪟 Microsoft"},
+      {"rule_set": "tiktok_domain", "outbound": "🎵 TikTok"},
+      {"rule_set": "instagram_domain", "outbound": "🐱 Instagram"},
+      {"rule_set": "speedtest_domain", "outbound": "✈️ Speedtest"},
+      {"rule_set": "telegram_domain", "outbound": "📲 Telegram"},
+      {"rule_set": "facebook_domain", "outbound": "🧩 Facebook"},
+      {"rule_set": "netflix_domain", "outbound": "🎥 NETFLIX"},
+      {"rule_set": "paypal_domain", "outbound": "💶 PayPal"},
+      {"rule_set": "steam_domain", "outbound": "🦉 Steam"},
+      {"rule_set": "cloudflare_domain", "outbound": "☁️ CloudFlare"},
+      {"rule_set": "pornhub_domain", "outbound": "🥰 Pornhub"},
+      {"rule_set": "google_ip", "outbound": "🍀 Google"},
+      {"rule_set": "twitter_ip", "outbound": "🦀 Twitter"},
+      {"rule_set": "netflix_ip", "outbound": "🎥 NETFLIX"},
+      {"rule_set": "telegram_ip", "outbound": "📲 Telegram"},
+      {"rule_set": "gfw_domain", "outbound": "🫎 Proxy"},
+      {"rule_set": "geolocation-!cn", "outbound": "🫎 Proxy"},
+      {"rule_set": "private_ip", "outbound": "直连"},
+      {"rule_set": "cn_domain", "outbound": "直连"},
+      {"inbound": "mixed-in", "action": "resolve"},
+      {"action": "resolve"},
+      {"rule_set": "cn_ip", "outbound": "直连"}
     ],
     "rule_set": [
-      {
-        "tag": [
-          "fakeipfilter-cn",
-          "fakeipfilter-!cn"
-        ],
-        "type": "remote",
-        "format": "source",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"
-      },
-      {
-        "tag": [
-          "geosite-category-ai-!cn",
-          "geosite-youtube",
-          "geosite-google",
-          "geosite-github",
-          "geosite-onedrive",
-          "geosite-microsoft",
-          "geosite-microsoft@cn",
-          "geosite-apple",
-          "geosite-apple@cn",
-          "geosite-telegram",
-          "geosite-tiktok",
-          "geosite-netflix",
-          "geosite-paypal",
-          "geosite-binance",
-          "geosite-okx",
-          "geosite-category-cryptocurrency",
-          "geosite-steam@cn",
-          "geosite-steam",
-          "geosite-geolocation-!cn",
-          "geosite-cn",
-          "geosite-private"
-        ],
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"
-      },
-      {
-        "tag": "geoip-telegram",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"
-      },
-      {
-        "tag": "geoip-cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
-      },
-      {
-        "tag": "pt_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/pt_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "giffgaff_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/giffgaff_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "slack_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/slack_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "whatsapp_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/whatsapp_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "direct_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/direct_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "docker_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/docker_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "proxy_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/proxy_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "chatgpt_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/chatgpt_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "claude_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/claude_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "gemini_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/gemini_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "grok_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/grok_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "ai_other_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/ai_other_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "reddit_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/reddit_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "discord_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/discord_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "byte_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/byte_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "private_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/private_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "youtube_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/youtube_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "google_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/google_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "google_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/google_ip.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "twitter_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/twitter_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "twitter_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/twitter_ip.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "github_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/github_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "telegram_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/telegram_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "instagram_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/instagram_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "telegram_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/telegram_ip.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "netflix_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/netflix_ip.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "steam_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/steam_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "facebook_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/facebook_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "netflix_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/netflix_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "paypal_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/paypal_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "onedrive_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/onedrive_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "microsoft_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/microsoft_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "apple_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/apple_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "speedtest_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/speedtest_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "tiktok_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/tiktok_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "cloudflare_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/cloudflare_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "pornhub_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/pornhub_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "private_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/private_ip.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "gfw_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/gfw_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "geolocation-!cn",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/geolocation-!cn.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "cn_domain",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/cn_domain.srs",
-        "update_interval": "24h"
-      },
-      {
-        "tag": "cn_ip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/immortalwrt-1.14/rules/cn_ip.srs",
-        "update_interval": "24h"
-      }
+      {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
+      {"tag": ["geosite-category-ai-!cn", "geosite-youtube", "geosite-google", "geosite-github", "geosite-onedrive", "geosite-microsoft", "geosite-microsoft@cn", "geosite-apple", "geosite-apple@cn", "geosite-telegram", "geosite-tiktok", "geosite-netflix", "geosite-paypal", "geosite-binance", "geosite-okx", "geosite-category-cryptocurrency", "geosite-steam@cn", "geosite-steam", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
+      {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
+      {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
+      {"tag": "pt_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/pt_domain.srs", "update_interval": "24h"},
+      {"tag": "giffgaff_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/giffgaff_domain.srs", "update_interval": "24h"},
+      {"tag": "slack_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/slack_domain.srs", "update_interval": "24h"},
+      {"tag": "whatsapp_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/whatsapp_domain.srs", "update_interval": "24h"},
+      {"tag": "direct_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/direct_domain.srs", "update_interval": "24h"},
+      {"tag": "docker_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/docker_domain.srs", "update_interval": "24h"},
+      {"tag": "proxy_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/proxy_domain.srs", "update_interval": "24h"},
+      {"tag": "chatgpt_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/chatgpt_domain.srs", "update_interval": "24h"},
+      {"tag": "claude_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/claude_domain.srs", "update_interval": "24h"},
+      {"tag": "gemini_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/gemini_domain.srs", "update_interval": "24h"},
+      {"tag": "grok_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/grok_domain.srs", "update_interval": "24h"},
+      {"tag": "ai_other_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/ai_other_domain.srs", "update_interval": "24h"},
+      {"tag": "reddit_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/reddit_domain.srs", "update_interval": "24h"},
+      {"tag": "discord_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/discord_domain.srs", "update_interval": "24h"},
+      {"tag": "byte_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/byte_domain.srs", "update_interval": "24h"},
+      {"tag": "private_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/private_domain.srs", "update_interval": "24h"},
+      {"tag": "youtube_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/youtube_domain.srs", "update_interval": "24h"},
+      {"tag": "google_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/google_domain.srs", "update_interval": "24h"},
+      {"tag": "google_ip", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/google_ip.srs", "update_interval": "24h"},
+      {"tag": "twitter_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/twitter_domain.srs", "update_interval": "24h"},
+      {"tag": "twitter_ip", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/twitter_ip.srs", "update_interval": "24h"},
+      {"tag": "github_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/github_domain.srs", "update_interval": "24h"},
+      {"tag": "telegram_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/telegram_domain.srs", "update_interval": "24h"},
+      {"tag": "instagram_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/instagram_domain.srs", "update_interval": "24h"},
+      {"tag": "telegram_ip", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/telegram_ip.srs", "update_interval": "24h"},
+      {"tag": "netflix_ip", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/netflix_ip.srs", "update_interval": "24h"},
+      {"tag": "steam_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/steam_domain.srs", "update_interval": "24h"},
+      {"tag": "facebook_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/facebook_domain.srs", "update_interval": "24h"},
+      {"tag": "netflix_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/netflix_domain.srs", "update_interval": "24h"},
+      {"tag": "paypal_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/paypal_domain.srs", "update_interval": "24h"},
+      {"tag": "onedrive_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/onedrive_domain.srs", "update_interval": "24h"},
+      {"tag": "microsoft_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/microsoft_domain.srs", "update_interval": "24h"},
+      {"tag": "apple_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/apple_domain.srs", "update_interval": "24h"},
+      {"tag": "speedtest_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/speedtest_domain.srs", "update_interval": "24h"},
+      {"tag": "tiktok_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/tiktok_domain.srs", "update_interval": "24h"},
+      {"tag": "cloudflare_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/cloudflare_domain.srs", "update_interval": "24h"},
+      {"tag": "pornhub_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/pornhub_domain.srs", "update_interval": "24h"},
+      {"tag": "private_ip", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/private_ip.srs", "update_interval": "24h"},
+      {"tag": "gfw_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/gfw_domain.srs", "update_interval": "24h"},
+      {"tag": "geolocation-!cn", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/geolocation-!cn.srs", "update_interval": "24h"},
+      {"tag": "cn_domain", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/cn_domain.srs", "update_interval": "24h"},
+      {"tag": "cn_ip", "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/cn_ip.srs", "update_interval": "24h"}
     ],
     "final": "🐟 漏网之鱼",
     "default_http_client": "直连下载",
@@ -1283,35 +189,11 @@
     }
   },
   "inbounds": [
-    {
-      "tag": "tun-in",
-      "type": "tun",
-      "address": [
-        "172.19.0.1/30",
-        "fdfe:dcba:9876::1/126"
-      ],
-      "auto_route": true,
-      "auto_redirect": true
-    },
-    {
-      "tag": "mixed-in",
-      "type": "mixed",
-      "listen": "0.0.0.0",
-      "listen_port": 7893
-    }
+    {"tag": "tun-in", "type": "tun", "address": ["172.19.0.1/30", "fdfe:dcba:9876::1/126"], "auto_route": true, "auto_redirect": true},
+    {"tag": "mixed-in", "type": "mixed", "listen": "0.0.0.0", "listen_port": 7893}
   ],
   "services": [
-    {
-      "type": "api",
-      "listen": "0.0.0.0",
-      "listen_port": 9090,
-      "secret": "__SET_PRIVATE_API_SECRET__",
-      "dashboard": {
-        "enabled": true,
-        "path": "/etc/sing-box/dashboard",
-        "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip"
-      }
-    }
+    {"type": "api", "listen": "0.0.0.0", "listen_port": 9090, "secret": "__SET_PRIVATE_API_SECRET__", "dashboard": {"enabled": true, "path": "/etc/sing-box/dashboard", "download_url": "https://gh-proxy.com/https://github.com/SagerNet/sing-box-dashboard/archive/refs/heads/gh-pages.zip"}}
   ],
   "experimental": {
     "cache_file": {

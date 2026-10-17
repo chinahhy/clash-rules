@@ -1,38 +1,25 @@
-# sing-box 配置
+# sing-box
 
-日常使用只看两个文件：
+- [linux.json](linux.json)：ImmortalWrt 裸核配置，mixed 端口 7893。
+- [substore.js](substore.js)：组合订阅节点注入脚本。
+- [iphone.json](iphone.json)：原有 iPhone 配置。
 
-| 文件 | 用途 |
-| --- | --- |
-| [linux.json](linux.json) | ImmortalWrt 裸核配置模板，包含你的策略组和分流规则 |
-| [substore.js](substore.js) | Sub-Store 注入组合订阅节点的脚本 |
+在 Sub-Store 新建组合订阅，名称设为 `singbox`。
 
-原有 [iphone.json](iphone.json) 保留。
+文件管理 → 新建远程文件，填写模板地址：
 
-## Sub-Store 设置
+```text
+https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/linux.json
+```
 
-1. 创建名为 `singbox` 的组合订阅，选择你的机场订阅。
-2. 在文件管理新建远程文件，地址填写：
+添加脚本操作，填写脚本地址：
 
-   ```text
-   https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/linux.json
-   ```
+```text
+https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/substore.js
+```
 
-3. 添加脚本操作，地址填写：
+脚本私有参数设置 `name=singbox`、`secret=至少12位的面板口令`。预览确认六地区节点后，复制生成文件的下载链接给路由器；不要直接使用未经注入的模板。
 
-   ```text
-   https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/substore.js
-   ```
+规则由配置自动读取仓库 `rules/singbox/`。更新过旧模板的用户请在 Sub-Store 刷新一次远程文件。
 
-4. 在脚本的私有参数中设置 `name=singbox` 和至少 12 位的 `secret` 面板口令。
-5. 预览确认六个地区都有节点后，复制**生成文件的下载链接**给路由器。未经注入的模板不能直接使用。
-
-## 其他内容不用手动操作
-
-- `immortalwrt-1.14/rules/`：配置自动下载的 42 个 SRS 规则文件。
-- [maintenance.zip](immortalwrt-1.14/maintenance.zip)：转换来源、校验记录、维护工具和详细部署说明，需要维护时才解压。
-- `immortalwrt-1.14/template.json` 与 `inject.js`：保留旧链接，内容与新入口一致。
-
-维护时将压缩包解压到 `immortalwrt-1.14/`，得到 `maintenance/`，再查看其中的 README。
-
-教程的国内 IP 提前绕过、QUIC/STUN 阻断、DNS/TUN 核心行为保持不变，mixed 端口为 7893。已通过官方 1.14.3 Schema、规则转换和模拟节点注入检查；真实 Sub-Store 实例、ImmortalWrt 启动及网络行为仍需实测。
+保留教程的 DNS/TUN、国内 IP 提前绕过和 QUIC/STUN 阻断。已通过官方 1.14.3 Schema 和离线检查，真实 Sub-Store 与 ImmortalWrt 运行仍需实测。
