@@ -187,3 +187,101 @@ ssh -p 20221 root@10.0.0.2
 nslookup chatgpt.com                       # 应返回 198.19.x.x（fake-ip）
 route print -4 | Select-String "0.0.0.0"   # 只应有一个默认网关
 ```
+
+---
+
+## 9. 2026-10-18 22:15 网页图片大面积加载失败（fake-ip 映射丢失）
+
+### 9.1 症状
+
+- 网页正文能打开，但图片/静态资源大量裂图、转圈
+- 与节点质量无关：同时刻从路由器 `curl -x 127.0.0.1:6666` 拉 google/hdslb 图片均 200
+
+### 9.2 根因（两个叠加）
+
+1. `experimental.cache_file` 只开了 `store_dns: true`，**没开 `store_fakeip`**
+   → DNS 缓存（含 fake-ip 的 A 记录）跨重启保留，但「fake-ip → 域名」反向映射只存在内存里，重启即丢。
+2. 22:01 因改配置重启 sing-box，此前的 fake-ip 记录全成「无主地址」。
+
+证据（sing-box 自己的报错）：
+
+```
+ERROR router: missing fakeip record, try enable `experimental.cache_file`
+ERROR connection: open connection to 198.19.1.177:443 ...: i/o timeout
+ERROR connection: open connection to 198.18.0.84:443 using outbound/direct[直连]: i/o timeout
+```
+
+20 分钟内累计 300+ 次发往 198.18.0.x / 198.19.1.x 的连接超时。
+198.18.0.0/16 是**上一版** fake-ip 段（现为 198.19.0.0/16），客户端旧缓存里的地址同样无映射。
+
+### 9.3 修复
+
+```sh
+# 1. /etc/momo/run/config.json 的 experimental.cache_file 增加 store_fakeip
+"cache_file": { "enabled": true, "path": "/etc/sing-box/cache.db",
+                "store_dns": true, "store_fakeip": true }
+
+# 2. 丢掉已被污染的缓存
+mv /etc/sing-box/cache.db /etc/sing-box/cache.db.poisoned
+
+# 3. 只重启内核（procd 自动拉起，不会重新拉订阅覆盖配置）
+kill $(cat /var/run/momo/momo.pid)
+```
+
+客户端侧：`ipconfig /flushdns` + 重启浏览器；iPhone 关一次 Wi-Fi 再开。
+
+### 9.4 注意事项
+
+- 只能 `kill` 内核进程重启；`/etc/init.d/momo restart` 在 `prefer=remote` 时会重新拉订阅并覆盖 `run/config.json` 的手改。
+- 改 fake-ip 段（198.18 → 198.19）等于让全网旧缓存全部作废，**非必要不要换段**。
+- 长期修复必须写回 `config/substore/singbox/linux.json`，否则下次 momo 重启后手改丢失、故障复现。
+
+---
+
+## 10. 2026-10-18 22:40 DNS 出站与 Proxy 解耦（台湾节点抖动 → DNS 全断）
+
+### 10.1 病因
+
+`dns.servers.google`（8.8.8.8 DoH）的 `detour` 是 `默认代理` → `🫎 Proxy`，而 `🫎 Proxy` 没写 `default`，
+sing-box 默认选**成员列表第一个 = `🇹🇼 台湾节点`**。所以：
+
+```
+DNS(8.8.8.8) → 默认代理 → 🫎 Proxy → 🇹🇼 台湾节点(urltest)
+```
+
+`[SCNET] 🇹🇼 台湾 09`（`twszgbkfgybwzggcdwsqqnbqw.jiedddym.com` → `1.165.2.48`，HiNet）在 14:03–14:10 抖动，
+而 urltest 要等下一轮（5m）才换节点，期间所有走 google 的 DNS 全部超时：
+
+```
+ERROR [2386119206 7.29s] dns: exchange failed for getsharex.com. IN A: dial tcp 1.165.2.48:443: i/o timeout
+```
+
+表现：**正文能开、图片裂**（图片域名要现场解析，DNS 卡在台湾组；正文走 `♻️ 自动选择` 有 130 个节点兜底）。
+
+### 10.2 改动
+
+| 项 | 改前 | 改后 |
+|---|---|---|
+| DNS 出站 | `默认代理`（→ Proxy → 台湾） | 新增 `DNS出站` selector，成员 香港/日本/狮城/自动选择，`default: 🇭🇰 香港节点` |
+| `🫎 Proxy` 默认 | 无（= 数组第一个 台湾） | `"default": "♻️ 自动选择"` |
+| `🇹🇼 台湾节点` interval | 5m | 2m |
+| `🇭🇰 香港节点` interval | 5m | 2m（DNS 现在骑在它上面，必须更快收敛） |
+
+其余地区组保持 5m：探测开销 = 成员数 × 频率，全改 2m 会让 175 个节点探测频率翻 2.5 倍，而收益只是
+“不用手动切的组更快发现死节点”。
+
+### 10.3 验证
+
+```
+GET /proxies/DNS出站  → now = 🇭🇰 香港节点
+GET /proxies/🫎 Proxy   → now = ♻️ 自动选择
+日志：outbound/anytls[[SCNET] 🇭🇰 香港 07]: outbound connection to 8.8.8.8:443
+重启后 ERROR：0（只剩 3 条旧的 “did not closed properly” 与客户端残留 198.18 旧地址）
+```
+
+### 10.4 回滚
+
+```sh
+cp -f /etc/momo/run/config.json.bak.before_dnsout /etc/momo/run/config.json
+kill $(cat /var/run/momo/momo.pid)
+```
