@@ -7,6 +7,9 @@ DOMAIN-SUFFIX,api.thetvdb.com
 # CyberAirpot机场
 DOMAIN-SUFFIX,cyberairport.net
 
+# 早安云机场
+DOMAIN-SUFFIX,artislg.com
+
 # singbox
 DOMAIN-SUFFIX,sagernet.org
 DOMAIN-SUFFIX,jiedddym.com
