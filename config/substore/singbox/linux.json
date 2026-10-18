@@ -42,7 +42,7 @@
     {"tag": "📲 Telegram", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
     {"tag": "☁️ CloudFlare", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点", "直连"]},
     {"tag": "🐱 Instagram", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点"]},
-    {"tag": "👹 PT", "type": "selector", "outbounds": ["直连"]},
+    {"tag": "👹 PT", "type": "selector", "outbounds": ["直连", "🇭🇰 香港节点", "🇯🇵 日本节点", "♻️ 自动选择"], "default": "🇭🇰 香港节点"},
     {"tag": "👟 Slack", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
     {"tag": "🕸️ Direct", "type": "selector", "outbounds": ["直连"]},
     {"tag": "🚢 Docker", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},

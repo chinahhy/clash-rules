@@ -332,3 +332,82 @@ curl -s -X PATCH "$H/api/file/singbox-linux" \
 - 或命令行：`/etc/init.d/momo restart`（= 重新拉订阅 + 重新生成 + 重启内核，全屋断网 3–5 秒）
 
 **顺序不能反**：先确认订阅内容已经是新的，再重载 momo；否则旧订阅会把手工改的配置覆盖回去。
+
+---
+
+## 11. 2026-10-19 00:00 PT 站点登录卡死（直连 Cloudflare 丢包）
+
+### 11.1 症状
+
+- sun-panel「🧩PT站点」分类里 28 个站点（34 条入口）集体出问题：打开登录页要么转圈十几秒，
+  要么直接超时；个别站点反复弹 Cloudflare「Just a moment...」验证。
+- 同一时刻，国内站点、ChatGPT、苹果/微软站点全部正常。
+
+### 11.2 证据
+
+```
+# 从家里（NAS 直连 iKuai / 旁路由 shell / Windows 三条路径结果一致）
+ping 223.5.5.5        0% loss, 36ms        ← 国内正常
+ping 8.8.8.8          0% loss, 168ms       ← 非 CF 国际正常
+ping 1.1.1.1          0% loss, 285ms
+ping 104.21.66.50    66% loss, 290ms       ← PT 站所在 CF 段
+ping 172.67.73.30    50% loss, 126ms
+ping 104.26.8.32     50% loss, 122ms
+
+https://springsunday.net/   TLS 0.3~13s 抖动，多次 12s 超时
+https://hhanclub.net/       20s 无响应
+https://hdhome.org/login.php 首次 13s 超时，重试 2.7s
+https://www.hddolby.com/    CF 挑战页（403 challenge）
+```
+
+- 全部 28 个 PT 站都解析到 Cloudflare（104.21.x / 172.67.x / 104.26.x），即 **整批站点同一个出口问题**。
+- `check-host.net` 从境外 20+ 节点测同一批站点：全部 302，耗时 0.05–1.4s → **站点本身没挂**，
+  是家里到 Cloudflare 的链路丢包。
+- 时间线：`pt_domain` 规则集在 21:41 的 `3f680c4`（补 `gh-proxy.com` 前缀）之前**一直没加载成功**，
+  PT 流量实际落到 `🐟 漏网之鱼` → `🫎 Proxy`（走节点）。修好规则集后 PT 改走 `直连`，
+  当晚联通到 CF（LAX 方向）晚高峰丢包严重，问题立刻暴露。
+
+### 11.3 处理
+
+`👹 PT` 分组原来只有一个 `直连`，无法切换。改为：
+
+```json
+{"tag": "👹 PT", "type": "selector",
+ "outbounds": ["直连", "🇭🇰 香港节点", "🇯🇵 日本节点", "♻️ 自动选择"],
+ "default": "🇭🇰 香港节点"}
+```
+
+已同步改到 `config/substore/singbox/linux.json`；线上 `/etc/momo/run/config.json` 手工改了一份并用
+「只重启内核」方式生效（备份 `/etc/momo/run/config.json.bak.before_ptproxy`）。
+
+### 11.4 结果
+
+| 站点 | 改前（直连） | 改后（香港节点） |
+|---|---|---|
+| springsunday.net | TLS 2.9s / 超时 13.9s | 302，0.29s |
+| hhanclub.net | 20s 无响应 | 302，0.37s |
+| pterclub.net | 2.6s TLS + 7s TTFB | 302，0.38s |
+| kp.m-team.cc | 0.3~1.4s（本来就还行） | 200，0.36s |
+| www.hddolby.com | 超时 | CF 挑战页（浏览器可过） |
+| 28 站整体 | 12 站超时/失败 | 全部有响应，多数 <1s，最慢 5.2s |
+
+日志确认：`outbound/hysteria2[[SCNET] 🇭🇰 香港 18]: outbound connection to kp.m-team.cc:443`。
+
+### 11.5 影响面与风险
+
+- **只影响浏览器访问**：NAS 上的 qBittorrent / transmission 网关仍是 iKuai `10.0.0.1`，
+  不走旁路由，tracker announce 和做种出站 IP 不变，刷流/保种不受影响。
+- **PT 站会看到香港 IP 登录**：若某站对异地登录敏感，可在面板把 `👹 PT` 切回 `直连`
+  （现在两选项都在，点一下即可，无需改文件）；等联通→CF 路由恢复后也建议切回。
+- 回滚（文件级）：
+
+```sh
+cp -f /etc/momo/run/config.json.bak.before_ptproxy /etc/momo/run/config.json
+kill $(cat /var/run/momo/momo.pid)
+```
+
+### 11.6 待持久化
+
+仓库已改 `linux.json`，还需要：Sub-Store 里 `singbox-linux` 的 `?v=` 从 4 加到 5 → 保存，
+下次 momo 更新订阅后此改动才永久生效（在此之前别再 `/etc/init.d/momo restart`，
+否则会拉回旧订阅把 `👹 PT` 改回只有 `直连`）。
