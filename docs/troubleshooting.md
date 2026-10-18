@@ -285,3 +285,50 @@ GET /proxies/🫎 Proxy   → now = ♻️ 自动选择
 cp -f /etc/momo/run/config.json.bak.before_dnsout /etc/momo/run/config.json
 kill $(cat /var/run/momo/momo.pid)
 ```
+
+### 10.5 Sub-Store 多文件同源：只刷新一个不算数
+
+**现象**：GitHub 已更新、Sub-Store 里也点了保存、momo 也重载了，订阅内容还是旧的。
+
+**原因**：Sub-Store 里有多个"文件"引用同一个 `linux.json`，各自独立缓存：
+
+| 文件 | 模板 | 谁在用 |
+|---|---|---|
+| `singbox-linux` | `linux.json?v=4` | **10.0.0.2 的 momo（主用）** |
+| `sbdownloader` | `linux.json`（无 `?v=`） | 另一台下载专用 momo |
+| `iphone` | `iphone.json` | iPhone |
+| ~~`singbox3`~~ | `linux.json`（无 `?v=`） | 已删 |
+
+2026-10-18 当晚刷新的是 `singbox3`，而 momo 订的是 `singbox-linux`，于是"看着是新的、实际用的是旧的"。
+
+**正确流程**：
+
+1. 改仓库（`linux.json` / `template.js`）
+2. 只在 **`singbox-linux`** 上把 `?v=` 加 1（当前 **v=4**），保存
+3. 从路由器验证（浏览器可能命中 CDN，路由器看到才是 momo 看到的）：
+
+```sh
+T=684PPUQ3Pr0GBUhH; H="http://10.0.0.104:6969/$T"
+curl -s -A sing-box "$H/api/file/singbox-linux" | grep -c '"DNS'
+curl -s -A sing-box "$H/api/file/singbox-linux" | grep -c '"interval": "120s"'
+```
+
+4. 确认新内容后再重载 momo
+
+**免 UI 的排查方式**（Sub-Store 的 token 就在订阅地址里）：
+
+```sh
+T=684PPUQ3Pr0GBUhH; H="http://10.0.0.104:6969/$T"
+curl -s "$H/api/files"                          # 列出所有文件及其模板 url
+curl -s "$H/api/file/singbox-linux" | head -c 300   # 看某文件当前生成结果
+curl -s -X PATCH "$H/api/file/singbox-linux" \
+     -H 'Content-Type: application/json' \
+     --data-binary @body.json                   # 改 url 并触发重新生成
+```
+
+**momo 侧重载**：
+
+- LuCI → 服务 → Momo → **Profile** → 订阅区块点 **Update**
+- 或命令行：`/etc/init.d/momo restart`（= 重新拉订阅 + 重新生成 + 重启内核，全屋断网 3–5 秒）
+
+**顺序不能反**：先确认订阅内容已经是新的，再重载 momo；否则旧订阅会把手工改的配置覆盖回去。
