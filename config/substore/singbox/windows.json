@@ -5,7 +5,7 @@
       {"tag": "local", "type": "local", "prefer_go": true},
       {"tag": "ali", "type": "https", "server": "223.5.5.5"},
       {"tag": "tx", "type": "https", "server": "doh.pub", "domain_resolver": "hosts"},
-      {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "默认代理"},
+      {"tag": "google", "type": "https", "server": "8.8.8.8", "detour": "DNS出站"},
       {"tag": "fakeip", "type": "fakeip", "inet4_range": "198.19.0.0/16"},
       {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
     ],
@@ -28,7 +28,7 @@
     "reverse_mapping": true
   },
   "outbounds": [
-    {"tag": "🫎 Proxy", "type": "selector", "outbounds": ["🇹🇼 台湾节点", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
+    {"tag": "🫎 Proxy", "type": "selector", "outbounds": ["🇹🇼 台湾节点", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"], "default": "♻️ 自动选择"},
     {"tag": "📹 YouTube", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
     {"tag": "🍀 Google", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
     {"tag": "👨🏿‍💻 GitHub", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
@@ -41,7 +41,7 @@
     {"tag": "📲 Telegram", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
     {"tag": "☁️ CloudFlare", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点", "直连"]},
     {"tag": "🐱 Instagram", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点"]},
-    {"tag": "👹 PT", "type": "selector", "outbounds": ["直连"]},
+    {"tag": "👹 PT", "type": "selector", "outbounds": ["直连", "🇭🇰 香港节点", "🇯🇵 日本节点", "♻️ 自动选择"], "default": "🇭🇰 香港节点"},
     {"tag": "👟 Slack", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
     {"tag": "🕸️ Direct", "type": "selector", "outbounds": ["直连"]},
     {"tag": "🚢 Docker", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择"]},
@@ -60,16 +60,17 @@
     {"tag": "💶 PayPal", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择", "直连"]},
     {"tag": "🥰 Pornhub", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "♻️ 自动选择"]},
     {"tag": "🍎 Apple", "type": "selector", "outbounds": ["直连"]},
-    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 100},
     {"tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点", "直连"]},
-    {"tag": "🇯🇵 日本节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60s", "tolerance": 20},
-    {"tag": "🇹🇼 台湾节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
-    {"tag": "🇭🇰 香港节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
-    {"tag": "🇸🇬 狮城节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
-    {"tag": "🇺🇲 美国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
-    {"tag": "🇬🇧 英国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 20},
+    {"tag": "🇯🇵 日本节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 100},
+    {"tag": "🇹🇼 台湾节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "120s", "tolerance": 100},
+    {"tag": "🇭🇰 香港节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "120s", "tolerance": 100},
+    {"tag": "🇸🇬 狮城节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 100},
+    {"tag": "🇺🇲 美国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 100},
+    {"tag": "🇬🇧 英国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 100},
     {"tag": "🌐 全部节点", "type": "selector", "outbounds": ["直连"]},
     {"tag": "默认代理", "type": "selector", "outbounds": ["🫎 Proxy"]},
+    {"tag": "DNS出站", "type": "selector", "outbounds": ["🇭🇰 香港节点", "🇯🇵 日本节点", "🇸🇬 狮城节点", "♻️ 自动选择"], "default": "🇭🇰 香港节点"},
     {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🫎 Proxy", "📹 YouTube", "🍀 Google", "👨🏿‍💻 GitHub", "🫆 ChatGPT", "🧢 Gemini", "🧶 Grok", "👒 ClaudeCode", "🤖 AI其它", "🦀 Twitter", "📲 Telegram", "☁️ CloudFlare", "🐱 Instagram", "👹 PT", "👟 Slack", "🕸️ Direct", "🚢 Docker", "💠 GiffGaff", "📞 Whatsapp", "📌 Reddit", "🎈 Discord", "😉 Byte-Muse", "🧩 Facebook", "🦉 Steam", "🐬 OneDrive", "🪟 Microsoft", "🎵 TikTok", "🎥 NETFLIX", "✈️ Speedtest", "💶 PayPal", "🥰 Pornhub", "🍎 Apple", "♻️ 自动选择", "🐟 漏网之鱼", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🌐 全部节点", "直连"]},
     {"tag": "直连", "type": "direct", "domain_resolver": "ali"},
@@ -135,12 +136,12 @@
       {"rule_set": "cn_ip", "outbound": "直连"}
     ],
     "rule_set": [
-      {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/rules/{tag}.json"},
+      {"tag": ["fakeipfilter-cn", "fakeipfilter-!cn"], "type": "remote", "format": "source", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/{tag}.json"},
       {"tag": ["geosite-microsoft@cn", "geosite-apple@cn", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
-      {"tag": ["pt_domain", "giffgaff_domain", "direct_domain", "docker_domain", "proxy_domain", "claude_domain", "grok_domain", "ai_other_domain", "byte_domain"], "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/{tag}.srs", "update_interval": "10m"},
-      {"tag": ["slack_domain", "whatsapp_domain", "chatgpt_domain", "gemini_domain", "reddit_domain", "discord_domain", "private_domain", "youtube_domain", "google_domain", "google_ip", "twitter_domain", "twitter_ip", "github_domain", "telegram_domain", "instagram_domain", "telegram_ip", "netflix_ip", "steam_domain", "facebook_domain", "netflix_domain", "paypal_domain", "onedrive_domain", "microsoft_domain", "apple_domain", "speedtest_domain", "tiktok_domain", "cloudflare_domain", "pornhub_domain", "private_ip", "gfw_domain", "geolocation-!cn", "cn_domain", "cn_ip"], "type": "remote", "format": "binary", "url": "https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/{tag}.srs", "update_interval": "24h"}
+      {"tag": ["pt_domain", "giffgaff_domain", "direct_domain", "docker_domain", "proxy_domain", "claude_domain", "grok_domain", "ai_other_domain", "byte_domain"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/{tag}.srs", "update_interval": "10m"},
+      {"tag": ["slack_domain", "whatsapp_domain", "chatgpt_domain", "gemini_domain", "reddit_domain", "discord_domain", "private_domain", "youtube_domain", "google_domain", "google_ip", "twitter_domain", "twitter_ip", "github_domain", "telegram_domain", "instagram_domain", "telegram_ip", "netflix_ip", "steam_domain", "facebook_domain", "netflix_domain", "paypal_domain", "onedrive_domain", "microsoft_domain", "apple_domain", "speedtest_domain", "tiktok_domain", "cloudflare_domain", "pornhub_domain", "private_ip", "gfw_domain", "geolocation-!cn", "cn_domain", "cn_ip"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/rules/singbox/{tag}.srs", "update_interval": "24h"}
     ],
     "final": "🐟 漏网之鱼",
     "default_http_client": "直连下载",
@@ -159,7 +160,8 @@
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "store_dns": true
+      "store_dns": true,
+      "store_fakeip": true
     }
   },
   "certificate": {
