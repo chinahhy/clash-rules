@@ -1,7 +1,8 @@
 """Build sing-box rules from the existing personal LIST files and Mihomo providers.
 
-Personal files are read from this checkout. --upstream also refreshes the original
-third-party providers from one MetaCubeX commit. Only validated SRS files are saved.
+Personal files are read from mihomo/rules; SRS files are saved to sing-box/rules.
+--upstream also refreshes the original third-party providers from one MetaCubeX
+commit. Only validated SRS files are saved.
 Python 3.10+, standard library only; no subscriptions or configuration secrets.
 """
 
@@ -160,7 +161,9 @@ def download(url):
 def build(repo, output, sing_box, mihomo=None, upstream_ref=None, cache=None):
     if not re.search(r"\b1\.14\.3\b", run(sing_box, "version")):
         raise ValueError("Use the pinned sing-box 1.14.3 compiler")
-    inputs = [(tag, "classical", (repo / name).read_text(encoding="utf-8-sig"), name)
+    personal_dir = repo / "mihomo/rules"
+    inputs = [(tag, "classical", (personal_dir / name).read_text(encoding="utf-8-sig"),
+               f"mihomo/rules/{name}")
               for tag, name in PERSONAL.items()]
     with tempfile.TemporaryDirectory(prefix="singbox-rules-") as temporary:
         work = Path(temporary)
@@ -239,7 +242,7 @@ def main():
     if args.upstream and not args.mihomo:
         parser.error("--upstream requires --mihomo")
     repo = args.repo.resolve()
-    build(repo, args.output or repo / "rules/singbox", args.sing_box.resolve(),
+    build(repo, args.output or repo / "sing-box/rules", args.sing_box.resolve(),
           args.mihomo.resolve() if args.upstream else None, args.upstream_ref, args.cache)
 
 

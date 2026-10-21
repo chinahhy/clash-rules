@@ -4,15 +4,15 @@ on:
   push:
     branches: [main]
     paths:
-      - PT.list
-      - giffgaff.list
-      - Direct.list
-      - Docker.list
-      - Proxy.list
-      - Claude.list
-      - Grok.list
-      - AI-other.list
-      - byte-muse.list
+      - mihomo/rules/PT.list
+      - mihomo/rules/giffgaff.list
+      - mihomo/rules/Direct.list
+      - mihomo/rules/Docker.list
+      - mihomo/rules/Proxy.list
+      - mihomo/rules/Claude.list
+      - mihomo/rules/Grok.list
+      - mihomo/rules/AI-other.list
+      - mihomo/rules/byte-muse.list
       - .github/scripts/update_singbox_rules.py
       - .github/workflows/update-singbox-rules.yml
   schedule:
@@ -56,16 +56,20 @@ jobs:
           set -euo pipefail
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          options=()
-          if [[ "$REFRESH_UPSTREAM" == 'true' ]]; then options+=(--upstream); fi
           for attempt in 1 2 3; do
             # A concurrent source edit must be rebuilt, never overwritten or rebased blindly.
             git fetch origin main
             git reset --hard origin/main
+            options=()
+            # An empty rules directory needs all upstream rule sets on the first build.
+            if [[ "$REFRESH_UPSTREAM" == 'true' ]] || ! compgen -G 'sing-box/rules/*.srs' > /dev/null; then
+              options+=(--upstream)
+            fi
             python3 .github/scripts/update_singbox_rules.py \
+              --output sing-box/rules \
               --sing-box "$RUNNER_TEMP/sing-box-1.14.3-linux-amd64/sing-box" \
               --mihomo "$RUNNER_TEMP/mihomo" "${options[@]}"
-            git add -- rules/singbox/*.srs
+            git add -- sing-box/rules/*.srs
             if git diff --cached --quiet; then exit 0; fi
             git commit -m 'chore: update sing-box rule sets'
             if git push origin HEAD:main; then exit 0; fi
