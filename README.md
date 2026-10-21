@@ -106,7 +106,6 @@
 - 节点订阅由 Shadowrocket 单独维护。主配置不包含节点凭证、MITM CA 或 CA 口令。
 - 配置通过 `update-url` 从本仓库 `main` 分支更新；手机中更新配置后，重新连接 VPN，全局路由保持“配置”。
 - 自用规则文件位于 [mihomo/rules](mihomo/rules/)；第三方规则使用 [Shadowrocket/rules](Shadowrocket/rules/) 中的 33 个兼容文本快照，来源说明见 [规则目录 README](Shadowrocket/rules/README.md)。
-- 迁移待办：当前 `hoya.conf` 中的 9 个自用规则地址仍指向已移除的旧位置，使用前需要同步到 `mihomo/rules` 中对应的文件。
 - 修改后先使用“测试规则”核对策略，再做实际连接测试。
 
 可选模块位于 [Shadowrocket/modules](Shadowrocket/modules/)：
