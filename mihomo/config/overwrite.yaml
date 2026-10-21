@@ -159,21 +159,18 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
 rule-providers:
-  pt_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/PT.list", path: "./rule_provider/pt_domain"}
-  giffgaff_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/giffgaff.list", path: "./rule_provider/giffgaff_domain"}
-  slack_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/slack.mrs", path: "./rule_provider/slack_domain"}
-  whatsapp_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs", path: "./rule_provider/whatsapp_domain"}
-  direct_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Direct.list", path: "./rule_provider/direct_domain"}
-  docker_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Docker.list", path: "./rule_provider/docker_domain"}
-  proxy_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Proxy.list", path: "./rule_provider/proxy_domain"}
+  pt_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/PT.list", path: "./rule_provider/pt_domain"}
+  direct_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Direct.list", path: "./rule_provider/direct_domain"}
+  docker_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Docker.list", path: "./rule_provider/docker_domain"}
+  proxy_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Proxy.list", path: "./rule_provider/proxy_domain"}
   chatgpt_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/openai.mrs", path: "./rule_provider/chatgpt_domain"}
-  claude_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Claude.list", path: "./rule_provider/claude_domain"}
+  claude_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Claude.list", path: "./rule_provider/claude_domain"}
   gemini_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/google-gemini.mrs", path: "./rule_provider/gemini_domain"}
-  grok_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Grok.list", path: "./rule_provider/grok_domain"}
-  ai_other_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/AI-other.list", path: "./rule_provider/ai_other_domain"}
+  grok_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Grok.list", path: "./rule_provider/grok_domain"}
+  ai_other_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/AI-other.list", path: "./rule_provider/ai_other_domain"}
   reddit_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/reddit.mrs", path: "./rule_provider/reddit_domain"}
   discord_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/discord.mrs", path: "./rule_provider/discord_domain"}
-  byte_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/byte-muse.list", path: "./rule_provider/byte_domain"}
+  byte_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/byte-muse.list", path: "./rule_provider/byte_domain"}
   private_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs", path: "./rule_provider/private_domain"}
   youtube_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/youtube.mrs", path: "./rule_provider/youtube_domain"}
   google_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/google.mrs", path: "./rule_provider/google_domain"}
@@ -193,6 +190,9 @@ rule-providers:
   microsoft_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/microsoft.mrs", path: "./rule_provider/microsoft_domain"}
   apple_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/apple-cn.mrs", path: "./rule_provider/apple_domain"}
   speedtest_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/ookla-speedtest.mrs", path: "./rule_provider/speedtest_domain"}
+  giffgaff_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/giffgaff.list", path: "./rule_provider/giffgaff_domain"}
+  slack_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/refs/heads/meta/geo/geosite/slack.mrs", path: "./rule_provider/slack_domain"}
+  whatsapp_domain: {<<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/whatsapp.mrs", path: "./rule_provider/whatsapp_domain"}  
   tiktok_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/tiktok.mrs", path: "./rule_provider/tiktok_domain"}
   cloudflare_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/cloudflare.mrs", path: "./rule_provider/cloudflare_domain"}
   pornhub_domain: {<<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/pornhub.mrs", path: "./rule_provider/pornhub_domain"}
