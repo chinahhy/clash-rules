@@ -678,14 +678,14 @@ rule-providers:
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/PT.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/PT.list
     path: "./rule_provider/pt_domain"
   giffgaff_domain:
     type: http
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/giffgaff.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/giffgaff.list
     path: "./rule_provider/giffgaff_domain"
   slack_domain:
     type: http
@@ -706,21 +706,21 @@ rule-providers:
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Direct.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Direct.list
     path: "./rule_provider/direct_domain"
   docker_domain:
     type: http
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Docker.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Docker.list
     path: "./rule_provider/docker_domain"
   proxy_domain:
     type: http
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Proxy.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Proxy.list
     path: "./rule_provider/proxy_domain"
   chatgpt_domain:
     type: http
@@ -734,7 +734,7 @@ rule-providers:
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Claude.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Claude.list
     path: "./rule_provider/claude_domain"
   gemini_domain:
     type: http
@@ -748,14 +748,14 @@ rule-providers:
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/Grok.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Grok.list
     path: "./rule_provider/grok_domain"
   ai_other_domain:
     type: http
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/AI-other.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/AI-other.list
     path: "./rule_provider/ai_other_domain"
   reddit_domain:
     type: http
@@ -776,7 +776,7 @@ rule-providers:
     interval: 86400
     behavior: classical
     format: text
-    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/byte-muse.list
+    url: https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/byte-muse.list
     path: "./rule_provider/byte_domain"
   private_domain:
     type: http
