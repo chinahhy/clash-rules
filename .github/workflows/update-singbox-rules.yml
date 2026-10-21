@@ -14,6 +14,8 @@ on:
       - mihomo/rules/AI-other.list
       - mihomo/rules/byte-muse.list
       - sing-box/规则自动更新/**
+      - sing-box/config/**
+      - sing-box/rules/*.json
       - .github/workflows/update-singbox-rules.yml
   schedule:
     - cron: '47 2 * * *'

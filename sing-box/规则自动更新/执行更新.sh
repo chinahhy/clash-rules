@@ -30,6 +30,7 @@ for attempt in 1 2 3; do
     --output sing-box/rules \
     --sing-box "$RUNNER_TEMP/sing-box-1.14.3-linux-amd64/sing-box" \
     --mihomo "$RUNNER_TEMP/mihomo" "${options[@]}"
+  python3 "sing-box/规则自动更新/检查配置.py"
   git add -- sing-box/rules/*.srs
   if git diff --cached --quiet; then exit 0; fi
   git commit -m 'chore: update sing-box rule sets'

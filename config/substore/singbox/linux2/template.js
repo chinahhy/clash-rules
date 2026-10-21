@@ -1,7 +1,7 @@
 // 基于 xream/scripts 的 sing-box/template.js：
 // https://github.com/xream/scripts/blob/fb62d1d8f23774bb34d4487a2141c9c470466096/surge/modules/sub-store-scripts/sing-box/template.js
 // Sub-Store 脚本操作链接：
-// https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/linux2/template.js
+// https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/template.js
 // linux2 测试版：派生自 ../template.js，唯一差异是「♻️ 自动选择」只收每个地区 01/02/03 三个节点。
 // 维护约定：上游 template.js 改动后，必须把同样的改动合并到本文件，否则两边会漂移。
 // 说明：sub-store 2.34 的脚本操作会忽略 arguments 参数，无法用一份脚本 + 参数实现差异化，故独立成文件。

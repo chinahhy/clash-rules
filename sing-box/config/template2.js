@@ -1,7 +1,7 @@
 // 基于 xream/scripts 的 sing-box/template.js：
 // https://github.com/xream/scripts/blob/fb62d1d8f23774bb34d4487a2141c9c470466096/surge/modules/sub-store-scripts/sing-box/template.js
 // Sub-Store 脚本操作链接：
-// https://raw.githubusercontent.com/chinahhy/clash-rules/main/config/substore/singbox/template2.js
+// https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/template2.js
 // 默认读取组合订阅 singbox2，匹配自动选择、全部节点和六个地区组。
 // 面向 sing-box 1.14：跳过需 1.15 整证书指纹校验的节点及依赖它们的节点。
 // 可通过链接参数覆盖 name、type、outbound；不在日志中输出节点数据或订阅 URL。
