@@ -61,7 +61,7 @@
     {"tag": "💶 PayPal", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "♻️ 自动选择", "直连"]},
     {"tag": "🥰 Pornhub", "type": "selector", "outbounds": ["🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "♻️ 自动选择"]},
     {"tag": "🍎 Apple", "type": "selector", "outbounds": ["直连"]},
-    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": ["🇹🇼 台湾节点", "🇯🇵 日本节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点"], "url": "https://www.gstatic.com/generate_204", "interval": "60s", "tolerance": 50, "interrupt_exist_connections": true},
+    {"tag": "♻️ 自动选择", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "60s", "tolerance": 50, "interrupt_exist_connections": true},
     {"tag": "🐟 漏网之鱼", "type": "selector", "outbounds": ["♻️ 自动选择", "🇹🇼 台湾节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🇯🇵 日本节点", "直连"]},
     {"tag": "🇯🇵 日本节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 50, "interrupt_exist_connections": true},
     {"tag": "🇹🇼 台湾节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 50, "interrupt_exist_connections": true},
