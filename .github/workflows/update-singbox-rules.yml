@@ -52,6 +52,7 @@ jobs:
         shell: bash
         env:
           REFRESH_UPSTREAM: ${{ github.event_name != 'push' }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           set -euo pipefail
           git config user.name 'github-actions[bot]'

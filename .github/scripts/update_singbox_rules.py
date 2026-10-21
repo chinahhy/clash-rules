@@ -10,12 +10,14 @@ import argparse
 from concurrent.futures import ThreadPoolExecutor
 import ipaddress
 import json
+import os
 from pathlib import Path
 import re
 import subprocess
 import tempfile
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 
 
@@ -147,7 +149,12 @@ def run(binary, *arguments):
 
 
 def download(url):
-    request = urllib.request.Request(url, headers={"User-Agent": "clash-rules-singbox-updater"})
+    headers = {"User-Agent": "clash-rules-singbox-updater"}
+    if urllib.parse.urlsplit(url).hostname == "api.github.com":
+        token = os.environ.get("GH_TOKEN") or os.environ.get("GITHUB_TOKEN")
+        if token:
+            headers["Authorization"] = f"Bearer {token}"
+    request = urllib.request.Request(url, headers=headers)
     for attempt in range(3):
         try:
             with urllib.request.urlopen(request, timeout=90) as response:
