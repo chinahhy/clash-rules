@@ -46,6 +46,8 @@
 | [windows.json](sing-box/config/windows.json) | Windows 基础模板 | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/windows.json) |
 | [test.json](sing-box/config/test.json) | 测试基础模板 | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/test.json) |
 
+Windows 模板面向 sing-box 1.14，TUN 需要管理员权限。启用严格路由和 DNS 劫持，并通过 `mixed` 入站设置系统代理；代理端口 `127.0.0.1:6666`、面板 `127.0.0.1:9090` 仅供本机访问。API 密钥占位符须在自己的配置中替换，勿将真实密钥提交到仓库。
+
 ### 节点脚本
 
 | 脚本 | 用途 |
