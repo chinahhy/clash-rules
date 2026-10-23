@@ -1,0 +1,18 @@
+# Mihomo classical 域名屏蔽规则集（behavior: classical，format: text）
+# 每行一条规则，不加 payload:、列表符号或 REJECT 策略。
+# 主配置通过 RULE-SET,reject_domain,REJECT 指定屏蔽策略。
+
+# 已启用：域名及其所有子域名
+DOMAIN-SUFFIX,yourvserver.net
+DOMAIN-SUFFIX,qemow.com
+DOMAIN-SUFFIX,adjust.com
+
+# 以下均为未启用的注释模板；使用前替换示例值，再移除对应规则行开头的 #。
+# 精确域名（仅匹配该域名）
+# DOMAIN,example.com
+
+# 域名后缀（匹配该域名及其所有子域名）
+# DOMAIN-SUFFIX,example.com
+
+# 域名关键词（只匹配域名，不匹配 URL 路径或网页内容；启用前注意误拦截）
+# DOMAIN-KEYWORD,example

@@ -31,6 +31,8 @@ PERSONAL = {
     "grok_domain": "Grok.list",
     "ai_other_domain": "AI-other.list",
     "byte_domain": "byte-muse.list",
+    "reject_domain": "reject_domain.list",
+    "reject_ip": "reject_ip.list",
 }
 
 # Keep the provider mapping from the original OpenClash configuration.

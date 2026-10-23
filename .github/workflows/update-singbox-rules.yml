@@ -13,6 +13,8 @@ on:
       - mihomo/rules/Grok.list
       - mihomo/rules/AI-other.list
       - mihomo/rules/byte-muse.list
+      - mihomo/rules/reject_domain.list
+      - mihomo/rules/reject_ip.list
       - sing-box/规则自动更新/**
       - sing-box/config/**
       - sing-box/rules/*.json

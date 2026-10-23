@@ -65,7 +65,7 @@ Windows 模板面向 sing-box 1.14，TUN 需要管理员权限。启用严格路
 
 [sing-box/rules](sing-box/rules/) 当前保存：
 
-- 42 个 `.srs`：9 个自用规则集，以及 33 个来自 [MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat) 的规则集。
+- 44 个 `.srs`：11 个自用规则集，以及 33 个来自 [MetaCubeX/meta-rules-dat](https://github.com/MetaCubeX/meta-rules-dat) 的规则集。
 - [fakeipfilter-cn.json](sing-box/rules/fakeipfilter-cn.json) 和 [fakeipfilter-!cn.json](sing-box/rules/fakeipfilter-!cn.json)：单独维护的 DNS 规则源文件。
 
 自用规则修改对应的 `.list`，由自动任务生成 `.srs`：
@@ -81,6 +81,10 @@ Windows 模板面向 sing-box 1.14，TUN 需要管理员权限。启用严格路
 | [Grok.list](mihomo/rules/Grok.list) | [grok_domain.srs](sing-box/rules/grok_domain.srs) |
 | [AI-other.list](mihomo/rules/AI-other.list) | [ai_other_domain.srs](sing-box/rules/ai_other_domain.srs) |
 | [byte-muse.list](mihomo/rules/byte-muse.list) | [byte_domain.srs](sing-box/rules/byte_domain.srs) |
+| [reject_domain.list](mihomo/rules/reject_domain.list) | [reject_domain.srs](sing-box/rules/reject_domain.srs) |
+| [reject_ip.list](mihomo/rules/reject_ip.list) | [reject_ip.srs](sing-box/rules/reject_ip.srs) |
+
+域名和 IP 屏蔽规则分别维护于 `reject_domain.list`、`reject_ip.list`，两者均使用 Mihomo `classical` 文本格式，替代原 `reject.list`；外部配置需改用这两个新地址。对应 `.srs` 只保存匹配条件，使用时仍需在客户端配置中指定拒绝策略。注释模板不会参与匹配；IP+端口等组合模板目前仅供 Mihomo 参考，自动转换器暂不支持，须保持注释。
 
 [Tem.list](mihomo/rules/Tem.list) 暂未加入自动编译映射，不会自动生成对应的 `.srs`。
 
@@ -88,8 +92,8 @@ Windows 模板面向 sing-box 1.14，TUN 需要管理员权限。启用严格路
 
 任务入口：[自动更新 sing-box 规则](https://github.com/chinahhy/clash-rules/actions/workflows/update-singbox-rules.yml)。
 
-- 修改上表的 9 个 `.list`、sing-box 基础配置、DNS 规则 JSON 或更新程序后，自动执行检查和更新。
-- 普通提交重建 9 个自用规则集；每天北京时间 10:47 定时全量刷新，也可在 Actions 页面点击 `Run workflow` 手动运行。
+- 修改上表的 11 个 `.list`、sing-box 基础配置、DNS 规则 JSON 或更新程序后，自动执行检查和更新。
+- 普通提交重建 11 个自用规则集；每天北京时间 10:47 定时全量刷新，也可在 Actions 页面点击 `Run workflow` 手动运行。
 - 定时、手动运行以及 `.srs` 输出目录为空时，会同时刷新第三方规则。
 - 编译后执行反编译校验，并检查基础配置引用的本仓库规则文件是否存在；全部通过后才提交生成结果。没有变化时不产生额外提交。
 
