@@ -109,6 +109,8 @@ proxy-groups:
   - {name: "🌐 全部节点", type: select, include-all: true}
 
 rules:
+- RULE-SET,reject_domain,REJECT
+- RULE-SET,reject_ip,REJECT
 - RULE-SET,pt_domain,👹 PT
 - RULE-SET,direct_domain,🕸️ Direct
 - RULE-SET,github_domain,👨🏿‍💻 GitHub
@@ -159,6 +161,8 @@ rule-anchor:
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
   domain_text: &domain_text {type: http, interval: 86400, behavior: domain, format: text}
 rule-providers:
+  reject_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/reject_domain.list", path: "./rule_provider/reject_domain"}
+  reject_ip: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/reject_ip.list", path: "./rule_provider/reject_ip"}
   pt_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/PT.list", path: "./rule_provider/pt_domain"}
   direct_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Direct.list", path: "./rule_provider/direct_domain"}
   docker_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/Docker.list", path: "./rule_provider/docker_domain"}

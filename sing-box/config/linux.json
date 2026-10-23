@@ -10,6 +10,7 @@
       {"type": "hosts", "tag": "hosts", "predefined": {"doh.pub": ["1.12.12.21", "120.53.53.53"]}}
     ],
     "rules": [
+      {"rule_set": "reject_domain", "action": "reject"},
       {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
       {"clash_mode": "Direct", "server": "ali"},
       {"clash_mode": "Global", "server": "fakeip"},
@@ -80,8 +81,10 @@
   ],
   "route": {
     "rules": [
+      {"rule_set": ["reject_domain", "reject_ip"], "action": "reject"},
       {"type": "logical", "mode": "and", "rules": [{"port": [53, 853], "invert": true}, {"clash_mode": "Global", "invert": true}, {"type": "logical", "mode": "or", "rules": [{"ip_is_private": true}, {"rule_set": "geoip-cn"}]}], "action": "bypass"},
       {"type": "logical", "mode": "or", "rules": [{"domain_suffix": "push.apple.com"}, {"rule_set": "geoip-telegram"}], "invert": true, "action": "sniff", "sniffer": ["http", "tls", "stun", "quic", "dns"], "timeout": "100ms"},
+      {"rule_set": "reject_domain", "action": "reject"},
       {"type": "logical", "mode": "or", "rules": [{"port": 53}, {"protocol": "dns"}], "action": "hijack-dns"},
       {"ip_is_private": true, "outbound": "直连"},
       {"type": "logical", "mode": "or", "rules": [{"port": 853}, {"protocol": ["stun", "quic"]}], "action": "reject", "no_drop": true},
@@ -139,7 +142,7 @@
       {"tag": ["geosite-microsoft@cn", "geosite-apple@cn", "geosite-geolocation-!cn", "geosite-cn", "geosite-private"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/{tag}.srs"},
       {"tag": "geoip-telegram", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/sing/geo/geoip/telegram.srs"},
       {"tag": "geoip-cn", "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"},
-      {"tag": ["pt_domain", "giffgaff_domain", "direct_domain", "docker_domain", "proxy_domain", "claude_domain", "grok_domain", "ai_other_domain", "byte_domain"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/rules/{tag}.srs", "update_interval": "10m"},
+      {"tag": ["pt_domain", "giffgaff_domain", "direct_domain", "docker_domain", "proxy_domain", "claude_domain", "grok_domain", "ai_other_domain", "byte_domain", "reject_domain", "reject_ip"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/rules/{tag}.srs", "update_interval": "10m"},
       {"tag": ["slack_domain", "whatsapp_domain", "chatgpt_domain", "gemini_domain", "reddit_domain", "discord_domain", "private_domain", "youtube_domain", "google_domain", "google_ip", "twitter_domain", "twitter_ip", "github_domain", "telegram_domain", "instagram_domain", "telegram_ip", "netflix_ip", "steam_domain", "facebook_domain", "netflix_domain", "paypal_domain", "onedrive_domain", "microsoft_domain", "apple_domain", "speedtest_domain", "tiktok_domain", "cloudflare_domain", "pornhub_domain", "private_ip", "gfw_domain", "geolocation-!cn", "cn_domain", "cn_ip"], "type": "remote", "format": "binary", "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/rules/{tag}.srs", "update_interval": "24h"}
     ],
     "final": "🐟 漏网之鱼",

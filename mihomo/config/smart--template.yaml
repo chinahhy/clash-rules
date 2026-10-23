@@ -134,6 +134,8 @@ proxy-groups:
 # 规则匹配
 # 此规则部分没有做防泄露处理，因为弊严重大于利！
 rules:
+  - RULE-SET,reject_domain,REJECT
+  - RULE-SET,reject_ip,REJECT
   - DOMAIN-SUFFIX,qichiyu.com,🚀 默认代理
   - RULE-SET,private_domain,直连
   - RULE-SET,apple_domain,🍎 Apple
@@ -164,6 +166,8 @@ rule-anchor:
   domain: &domain {type: http, interval: 86400, behavior: domain, format: mrs}
   class: &class {type: http, interval: 86400, behavior: classical, format: text}
 rule-providers: 
+  reject_domain: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/reject_domain.list", path: "./rule_provider/reject_domain"}
+  reject_ip: {<<: *class, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/reject_ip.list", path: "./rule_provider/reject_ip"}
   private_domain: { <<: *domain, url: "https://raw.githubusercontent.com/MetaCubeX/meta-rules-dat/meta/geo/geosite/private.mrs"}
   proxylite: { <<: *class, url: "https://raw.githubusercontent.com/qichiyuhub/rule/refs/heads/main/proxy.list"}
   ai: {  <<: *domain, url: "https://github.com/MetaCubeX/meta-rules-dat/raw/refs/heads/meta/geo/geosite/category-ai-!cn.mrs" }

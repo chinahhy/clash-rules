@@ -586,6 +586,8 @@ proxy-groups:
     include-all: true
 # 防泄漏优先规则：Twitter/X 优先放行 QUIC；其余境外 UDP/443 继续拒绝以强制回落 TCP。
 rules:
+  - RULE-SET,reject_domain,REJECT
+  - RULE-SET,reject_ip,REJECT
   - "RULE-SET,twitter_domain,🦀 Twitter"
   - "RULE-SET,twitter_ip,🦀 Twitter,no-resolve"
   - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),REJECT
@@ -655,6 +657,8 @@ rule-anchor:
     behavior: domain
     format: text
 rule-providers:
+  reject_domain: {type: http, interval: 86400, behavior: classical, format: text, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/reject_domain.list", path: "./rule_provider/reject_domain"}
+  reject_ip: {type: http, interval: 86400, behavior: classical, format: text, url: "https://raw.githubusercontent.com/chinahhy/clash-rules/refs/heads/main/mihomo/rules/reject_ip.list", path: "./rule_provider/reject_ip"}
   fakeipfilter_cn:
     type: http
     interval: 86400
