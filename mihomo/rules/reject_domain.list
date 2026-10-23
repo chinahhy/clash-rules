@@ -7,6 +7,18 @@ DOMAIN-SUFFIX,yourvserver.net
 DOMAIN-SUFFIX,qemow.com
 DOMAIN-SUFFIX,adjust.com
 
+# 已启用：精确广告域名（仅匹配下列域名）
+# Google 广告
+DOMAIN,pagead2.googlesyndication.com
+DOMAIN,googleads.g.doubleclick.net
+
+# 小米广告
+DOMAIN,api.ad.xiaomi.com
+DOMAIN,sdkconfig.ad.xiaomi.com
+
+# 荣耀广告
+DOMAIN,ads-drcn.platform.hihonorcloud.com
+
 # 以下均为未启用的注释模板；使用前替换示例值，再移除对应规则行开头的 #。
 # 精确域名（仅匹配该域名）
 # DOMAIN,example.com
