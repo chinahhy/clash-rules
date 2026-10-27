@@ -92,6 +92,7 @@
       {"clash_mode": "Direct", "outbound": "直连"},
       {"clash_mode": "Global", "outbound": "GLOBAL"},
       {"rule_set": "pt_domain", "outbound": "👹 PT"},
+      {"domain": ["openaiapi-site.azureedge.net", "production-openaicom-storage.azureedge.net", "openaiassets.blob.core.windows.net", "openaicomproductionae4b.blob.core.windows.net"], "outbound": "🫆 ChatGPT"},
       {"rule_set": "direct_domain", "outbound": "🕸️ Direct"},
       {"rule_set": "github_domain", "outbound": "👨🏿‍💻 GitHub"},
       {"rule_set": "youtube_domain", "outbound": "📹 YouTube"},
