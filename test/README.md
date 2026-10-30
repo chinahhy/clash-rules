@@ -1,0 +1,7 @@
+# Isolated test
+
+Baseline: chinahhy/clash-rules main commit ebf23c49f7654c59f041d778f6a886430e3bc379. Config is derived from sing-box/config/linux.json and template.js; rules are copied from the same commit. Automatic selection accepts the same six regions without the numeric suffix constraint. Other routing remains unchanged. The API service and Clash API were removed, including their existing secrets; Clash API interactions are unavailable. TUN is removed, mixed listens only on 127.0.0.1:16666, and persistent cache is disabled. This is not equivalent to production: the bypass action is retained but auto_redirect is absent, so its behavior and compatibility must be checked with the actual sing-box version. This is not a transparent gateway test. Recheck port availability immediately before starting and prepare a rollback plan.
+
+Own rule URLs temporarily target main/test/rules and do not exist until uploaded; main is mutable. Pin and verify a commit before actual testing. Third-party rules still follow their original upstreams and are not isolated snapshots. Keep subscriptions and credentials out of this repository. Not deployed to any device.
+
+Run `node test/config/check-template.cjs` from the repository root to execute offline tests with fictional direct nodes; use `--emit` to print a generated JSON config for further checks. The emitted config contains fictional direct outbounds, not real proxy nodes, and cannot establish actual node connectivity.
