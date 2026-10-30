@@ -71,8 +71,6 @@
     {"tag": "🇺🇲 美国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 100},
     {"tag": "🇬🇧 英国节点", "type": "urltest", "outbounds": [], "url": "https://www.gstatic.com/generate_204", "interval": "300s", "tolerance": 100},
     {"tag": "🌐 全部节点", "type": "selector", "outbounds": ["直连"]},
-    {"tag": "默认代理", "type": "selector", "outbounds": ["🫎 Proxy"]},
-    {"tag": "延迟辅助", "type": "urltest", "outbounds": ["直连"], "url": "http://connect.rom.miui.com/generate_204", "interval": "30m"},
     {"tag": "GLOBAL", "type": "selector", "outbounds": ["🫎 Proxy", "📹 YouTube", "🍀 Google", "👨🏿‍💻 GitHub", "🫆 ChatGPT", "🧢 Gemini", "🧶 Grok", "👒 ClaudeCode", "🤖 AI其它", "🦀 Twitter", "📲 Telegram", "☁️ CloudFlare", "🐱 Instagram", "👹 PT", "👟 Slack", "🕸️ Direct", "🚢 Docker", "💠 GiffGaff", "📞 Whatsapp", "📌 Reddit", "🎈 Discord", "😉 Byte-Muse", "🧩 Facebook", "🦉 Steam", "🐬 OneDrive", "🪟 Microsoft", "🎵 TikTok", "🎥 NETFLIX", "✈️ Speedtest", "💶 PayPal", "🥰 Pornhub", "🍎 Apple", "♻️ 自动选择", "🐟 漏网之鱼", "🇯🇵 日本节点", "🇹🇼 台湾节点", "🇭🇰 香港节点", "🇸🇬 狮城节点", "🇺🇲 美国节点", "🇬🇧 英国节点", "🌐 全部节点", "直连"]},
     {"tag": "直连", "type": "direct", "domain_resolver": "ali"}
   ],
