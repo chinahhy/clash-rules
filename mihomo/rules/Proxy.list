@@ -2,7 +2,6 @@
 DOMAIN-SUFFIX,themoviedb.org
 DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,thetvdb.com
-DOMAIN-SUFFIX,api.thetvdb.com
 
 # APP价格检视网
 DOMAIN-SUFFIX,appstoreprice.org
@@ -197,7 +196,6 @@ DOMAIN-SUFFIX,freshchat.com
 
 # 国外DNS
 DOMAIN-SUFFIX,dns.google
-DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com
 DOMAIN-SUFFIX,dot.sb
 DOMAIN-SUFFIX,dns.umbrella.com
 DOMAIN-SUFFIX,dns.quad9.net
