@@ -2,8 +2,8 @@
 // https://github.com/xream/scripts/blob/fb62d1d8f23774bb34d4487a2141c9c470466096/surge/modules/sub-store-scripts/sing-box/template.js
 // Sub-Store 脚本操作链接：
 // https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/template.js
-// linux2 测试版：派生自 template-default.js，唯一差异是「♻️ 自动选择」只收每个地区 01/02/03 三个节点。
-// 维护约定：默认模板 template-default.js 改动后，必须把同样的改动合并到本文件，否则两边会漂移。
+// 默认读取组合订阅 singbox；Sub-Store 负责地区、编号与无效节点过滤。
+// 自动选择接收组合订阅全部节点；六个地区组仅根据地区名称归类。
 // 说明：sub-store 2.34 的脚本操作会忽略 arguments 参数，无法用一份脚本 + 参数实现差异化，故独立成文件。
 // 可通过链接参数覆盖 name、type、outbound；不在日志中输出节点数据或订阅 URL。
 log(`🚀 开始`)
@@ -12,13 +12,13 @@ let {
   type = '组合订阅',
   name = 'singbox',
   outbound = [
-    "🕳^♻️\\ 自动选择$🏷ℹ️^(?=.*(香港|日本|台湾|新加坡|狮城|美国|英国)).* (01|02|03)$",
-    "🕳^🇯🇵\\ 日本节点$🏷ℹ️^(?!.*(?:日本-中转 02))(?!.*(?:尼日利亚))(?:(?=.*(日本|japan|jp))^((?!(剩余|套餐|官网|专业|3x|更新订阅|5x|最新|5倍|下载)).)*$)",
-    "🕳^🇹🇼\\ 台湾节点$🏷ℹ️(?=.*(台|tw|taiwan|台湾|taipei|台北|taichung|台中|kaohsiung|高雄))^((?!(剩余|套餐|官网|专业|3x|更新订阅|5x|最新|5倍|下载)).)*$",
-    "🕳^🇭🇰\\ 香港节点$🏷ℹ️(?=.*(港|hk|hongkong|hong kong))^((?!(剩余|套餐|官网|专业|3x|更新订阅|5倍|5x|最新|下载)).)*$",
-    "🕳^🇸🇬\\ 狮城节点$🏷ℹ️(?=.*(新加坡|坡|狮城|sg|singapore))^((?!(剩余|套餐|官网|专业|3x|更新订阅|5x|最新|5倍|下载)).)*$",
-    "🕳^🇺🇲\\ 美国节点$🏷ℹ️(?=.*(美|us|usa|unitedstates|united states))^((?!(剩余|套餐|官网|专业|3x|更新订阅|5x|最新|5倍|下载)).)*$",
-    "🕳^🇬🇧\\ 英国节点$🏷ℹ️(?=.*(英|uk|gb|unitedkingdom|greatbritain|great britain|united kingdom))^((?!(剩余|套餐|官网|专业|3x|更新订阅|5x|最新|5倍|下载)).)*$",
+    "🕳^♻️\\ 自动选择$🏷.*",
+    "🕳^🇯🇵\\ 日本节点$🏷ℹ️(日本|日|japan|jp|🇯🇵)",
+    "🕳^🇹🇼\\ 台湾节点$🏷ℹ️(台湾|台北|台中|高雄|台|taiwan|taipei|taichung|kaohsiung|tw|🇹🇼)",
+    "🕳^🇭🇰\\ 香港节点$🏷ℹ️(香港|港|hk|hongkong|hong kong|🇭🇰)",
+    "🕳^🇸🇬\\ 狮城节点$🏷ℹ️(新加坡|狮城|坡|sg|singapore|🇸🇬)",
+    "🕳^🇺🇲\\ 美国节点$🏷ℹ️(美国|美|us|usa|unitedstates|united states|🇺🇸|🇺🇲)",
+    "🕳^🇬🇧\\ 英国节点$🏷ℹ️(英国|英|uk|gb|unitedkingdom|greatbritain|great britain|united kingdom|🇬🇧)",
     "🕳^🌐\\ 全部节点$🏷.*"
   ].join('\n'),
   includeUnsupportedProxy,

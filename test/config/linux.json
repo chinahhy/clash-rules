@@ -522,7 +522,7 @@
       "tag": "♻️ 自动选择",
       "type": "urltest",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://clients1.google.com/generate_204",
       "interval": "300s",
       "tolerance": 100
     },
@@ -543,7 +543,7 @@
       "tag": "🇯🇵 日本节点",
       "type": "urltest",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://clients1.google.com/generate_204",
       "interval": "300s",
       "tolerance": 100
     },
@@ -551,23 +551,23 @@
       "tag": "🇹🇼 台湾节点",
       "type": "urltest",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "120s",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "300s",
       "tolerance": 100
     },
     {
       "tag": "🇭🇰 香港节点",
       "type": "urltest",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
-      "interval": "120s",
+      "url": "https://clients1.google.com/generate_204",
+      "interval": "300s",
       "tolerance": 100
     },
     {
       "tag": "🇸🇬 狮城节点",
       "type": "urltest",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://clients1.google.com/generate_204",
       "interval": "300s",
       "tolerance": 100
     },
@@ -575,7 +575,7 @@
       "tag": "🇺🇲 美国节点",
       "type": "urltest",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://clients1.google.com/generate_204",
       "interval": "300s",
       "tolerance": 100
     },
@@ -583,7 +583,7 @@
       "tag": "🇬🇧 英国节点",
       "type": "urltest",
       "outbounds": [],
-      "url": "https://www.gstatic.com/generate_204",
+      "url": "https://clients1.google.com/generate_204",
       "interval": "300s",
       "tolerance": 100
     },

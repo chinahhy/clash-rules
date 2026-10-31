@@ -54,11 +54,10 @@ Windows 模板面向 sing-box 1.14，TUN 需要管理员权限。启用严格路
 
 | 脚本 | 用途 |
 | --- | --- |
-| [template-default.js](sing-box/config/template-default.js) | 默认脚本，读取组合订阅 `singbox` |
-| [template.js](sing-box/config/template.js) | 区域节点筛选版本，“自动选择”只收各地区 01、02、03 节点 |
-| [template2.js](sing-box/config/template2.js) | 默认读取组合订阅 `singbox2`，包含面向 sing-box 1.14 的节点兼容处理 |
+| [template.js](sing-box/config/template.js) | 读取组合订阅 `singbox`；自动选择接收全部已整理节点，地区组仅进行地区归类 |
+| [template2.js](sing-box/config/template2.js) | 读取组合订阅 `singbox2`；不做节点名称排除，保留 sing-box 1.14 协议兼容检查 |
 
-脚本的原始地址位于各文件开头的“Sub-Store 脚本操作链接”。组合订阅名称需要与自己的 Sub-Store 配置一致。
+脚本的原始地址位于各文件开头的“Sub-Store 脚本操作链接”。组合订阅名称需要与自己的 Sub-Store 配置一致。地区、编号和无效节点由 Sub-Store 预先筛选；脚本不再重复排除节点名称。七个代理 URLTest 组统一使用 `https://clients1.google.com/generate_204`、`300s` 测速间隔；「延迟辅助」仍保留独立的国内直连测试地址。
 
 修改基础配置或脚本后，在 Sub-Store 中重新生成，再让客户端刷新配置并检查实际连接。仓库提交成功不代表设备已经使用新配置。
 

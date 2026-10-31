@@ -23,9 +23,9 @@ function group(config, tag) {
   const test = await generate(path.join(__dirname, 'template.js'));
   const baseline = await generate(path.join(root, 'sing-box/config/template.js'));
   const auto = group(test, '♻️ 自动选择');
-  for (const tag of ['香港 01', '日本 02', '台湾 03', '新加坡 04', '美国 05']) assert(auto.includes(tag), `missing: ${tag}`);
-  assert(!auto.includes('其他地区 04'), 'non-region node entered auto selection');
+  for (const tag of nodes.map(n => n.tag)) assert(auto.includes(tag), `missing Sub-Store node: ${tag}`);
+  assert.deepStrictEqual(auto, group(baseline, '♻️ 自动选择'), 'production and test auto-selection differ');
   for (const tag of ['🇯🇵 日本节点', '🇹🇼 台湾节点', '🇭🇰 香港节点', '🇸🇬 狮城节点', '🇺🇲 美国节点', '🇬🇧 英国节点']) assert.deepStrictEqual(group(test, tag), group(baseline, tag), `region changed: ${tag}`);
   if (process.argv.includes('--emit')) process.stdout.write(JSON.stringify(test, null, 2) + '\n');
-  else console.log('PASS: fictional nodes; suffix expansion and unchanged region groups');
+  else console.log('PASS: fictional nodes; all supplied nodes accepted by auto; unchanged region groups');
 })().catch(error => { console.error(error.message); process.exitCode = 1; });
