@@ -1,6 +1,8 @@
 # 自用域名
 DOMAIN-SUFFIX,199462.xyz
-DOMAIN-SUFFIX,hoyas.dpdns.org
+
+# 土耳其本土支付
+DOMAIN-SUFFIX,paytr.com
 
 # 浏览器
 DOMAIN-SUFFIX,fluxbrowser.cn
