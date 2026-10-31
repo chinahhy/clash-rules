@@ -4,6 +4,9 @@ DOMAIN-SUFFIX,tmdb.org
 DOMAIN-SUFFIX,thetvdb.com
 DOMAIN-SUFFIX,api.thetvdb.com
 
+# APP价格检视网
+DOMAIN-SUFFIX,appstoreprice.org
+
 # CyberAirpot机场
 DOMAIN-SUFFIX,cyberairport.net
 
