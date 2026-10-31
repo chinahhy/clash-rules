@@ -14,6 +14,9 @@
 │   ├── config/            # Sub-Store 基础配置和节点脚本
 │   ├── rules/             # 自动生成的 .srs 和 DNS 规则 JSON
 │   └── 规则自动更新/       # 生成、检查和发布规则的程序
+├── test/
+│   ├── config/            # 测试配置、节点脚本和离线检查
+│   └── rules/             # 隔离测试使用的规则快照
 └── Shadowrocket/
     ├── hoya.conf          # Shadowrocket 主配置
     ├── modules/           # 可选模块
@@ -44,7 +47,6 @@
 | [iphone.json](sing-box/config/iphone.json) | iPhone 基础模板 | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/iphone.json) |
 | [linux.json](sing-box/config/linux.json) | Linux 基础模板 | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/linux.json) |
 | [windows.json](sing-box/config/windows.json) | Windows 基础模板 | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/windows.json) |
-| [test.json](sing-box/config/test.json) | 测试基础模板 | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/config/test.json) |
 
 Windows 模板面向 sing-box 1.14，TUN 需要管理员权限。启用严格路由和 DNS 劫持，并通过 `mixed` 入站设置系统代理；代理端口 `127.0.0.1:6666`、面板 `127.0.0.1:9090` 仅供本机访问。API 密钥占位符须在自己的配置中替换，勿将真实密钥提交到仓库。
 
@@ -55,11 +57,21 @@ Windows 模板面向 sing-box 1.14，TUN 需要管理员权限。启用严格路
 | [template-default.js](sing-box/config/template-default.js) | 默认脚本，读取组合订阅 `singbox` |
 | [template.js](sing-box/config/template.js) | 区域节点筛选版本，“自动选择”只收各地区 01、02、03 节点 |
 | [template2.js](sing-box/config/template2.js) | 默认读取组合订阅 `singbox2`，包含面向 sing-box 1.14 的节点兼容处理 |
-| [test.js](sing-box/config/test.js) | 测试脚本，用于验证节点处理逻辑 |
 
 脚本的原始地址位于各文件开头的“Sub-Store 脚本操作链接”。组合订阅名称需要与自己的 Sub-Store 配置一致。
 
 修改基础配置或脚本后，在 Sub-Store 中重新生成，再让客户端刷新配置并检查实际连接。仓库提交成功不代表设备已经使用新配置。
+
+### 测试文件
+
+测试文件统一放在 [test](test/)，不再放入正式配置目录：
+
+| 文件 | 用途 | 原始文件 |
+| --- | --- | --- |
+| [test.json](test/config/test.json) | 原有测试基础模板（非隔离配置） | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/test/config/test.json) |
+| [test.js](test/config/test.js) | 原有节点处理测试脚本 | [原始地址](https://raw.githubusercontent.com/chinahhy/clash-rules/main/test/config/test.js) |
+
+旧的测试文件地址已迁移；Sub-Store 如有引用，需改为上面的新地址。隔离测试配置、规则快照和离线检查方法见 [测试说明](test/README.md)。
 
 ### 规则文件
 
