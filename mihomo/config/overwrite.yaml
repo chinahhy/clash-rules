@@ -111,14 +111,16 @@ proxy-groups:
 rules:
 - RULE-SET,reject_domain,REJECT
 - RULE-SET,reject_ip,REJECT
+- RULE-SET,private_domain,DIRECT
+- RULE-SET,private_ip,DIRECT,no-resolve
 - RULE-SET,pt_domain,👹 PT
-- RULE-SET,direct_domain,🕸️ Direct
+- RULE-SET,chatgpt_domain,🫆 ChatGPT
 - RULE-SET,github_domain,👨🏿‍💻 GitHub
+- RULE-SET,direct_domain,🕸️ Direct
 - RULE-SET,youtube_domain,📹 YouTube
 - RULE-SET,gemini_domain,🧢 Gemini
 - RULE-SET,google_domain,🍀 Google
 - RULE-SET,docker_domain,🚢 Docker
-- RULE-SET,chatgpt_domain,🫆 ChatGPT
 - RULE-SET,claude_domain,👒 ClaudeCode
 - RULE-SET,grok_domain,🧶 Grok
 - RULE-SET,ai_other_domain,🤖 AI其它
@@ -128,11 +130,11 @@ rules:
 - RULE-SET,reddit_domain,📌 Reddit
 - RULE-SET,discord_domain,🎈 Discord
 - RULE-SET,byte_domain,😉 Byte-Muse
+- RULE-SET,onedrive_domain,🐬 OneDrive
+- RULE-SET,cloudflare_domain,☁️ CloudFlare
 - RULE-SET,proxy_domain,🫎 Proxy
 - RULE-SET,twitter_domain,🦀 Twitter
-- RULE-SET,private_domain,DIRECT
 - RULE-SET,apple_domain,🍎 Apple
-- RULE-SET,onedrive_domain,🐬 OneDrive
 - RULE-SET,microsoft_domain,🪟 Microsoft
 - RULE-SET,tiktok_domain,🎵 TikTok
 - RULE-SET,instagram_domain,🐱 Instagram
@@ -142,7 +144,6 @@ rules:
 - RULE-SET,netflix_domain,🎥 NETFLIX
 - RULE-SET,paypal_domain,💶 PayPal
 - RULE-SET,steam_domain,🦉 Steam
-- RULE-SET,cloudflare_domain,☁️ CloudFlare
 - RULE-SET,pornhub_domain,🥰 Pornhub
 - RULE-SET,google_ip,🍀 Google,no-resolve
 - RULE-SET,twitter_ip,🦀 Twitter,no-resolve
@@ -150,7 +151,6 @@ rules:
 - RULE-SET,telegram_ip,📲 Telegram,no-resolve
 - RULE-SET,gfw_domain,🫎 Proxy
 - RULE-SET,geolocation-!cn,🫎 Proxy
-- RULE-SET,private_ip,DIRECT,no-resolve
 - RULE-SET,cn_domain,DIRECT
 - RULE-SET,cn_ip,DIRECT
 - MATCH,🐟 漏网之鱼

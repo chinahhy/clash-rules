@@ -588,19 +588,21 @@ proxy-groups:
 rules:
   - RULE-SET,reject_domain,REJECT
   - RULE-SET,reject_ip,REJECT
+  - RULE-SET,private_domain,直连
+  - RULE-SET,private_ip,直连,no-resolve
   - "RULE-SET,twitter_domain,🦀 Twitter"
   - "RULE-SET,twitter_ip,🦀 Twitter,no-resolve"
   - AND,((RULE-SET,geolocation-!cn),(DST-PORT,443),(NETWORK,UDP)),REJECT
-  - RULE-SET,private_ip,直连,no-resolve
   - DOMAIN-SUFFIX,googleapis.cn,🍀 Google
   - DOMAIN-SUFFIX,xn--ngstr-lra8j.com,🍀 Google
   - IP-CIDR,10.0.0.0/24,DIRECT,no-resolve
   - "RULE-SET,pt_domain,👹 PT"
+  - "RULE-SET,chatgpt_domain,🫆 ChatGPT"
+  - "RULE-SET,github_domain,👨🏿‍💻 GitHub"
   - "RULE-SET,direct_domain,🕸️ Direct"
   - "RULE-SET,giffgaff_domain,💠 GiffGaff"
   - "RULE-SET,whatsapp_domain,📞 Whatsapp"
   - "RULE-SET,docker_domain,🚢 Docker"
-  - "RULE-SET,chatgpt_domain,🫆 ChatGPT"
   - "RULE-SET,claude_domain,👒 ClaudeCode"
   - "RULE-SET,gemini_domain,🧢 Gemini"
   - "RULE-SET,grok_domain,🧶 Grok"
@@ -609,13 +611,12 @@ rules:
   - "RULE-SET,reddit_domain,📌 Reddit"
   - "RULE-SET,discord_domain,🎈 Discord"
   - "RULE-SET,byte_domain,😉 Byte-Muse"
+  - "RULE-SET,onedrive_domain,🐬 OneDrive"
+  - RULE-SET,cloudflare_domain,☁️ CloudFlare
   - "RULE-SET,proxy_domain,🫎 Proxy"
-  - RULE-SET,private_domain,直连
   - "RULE-SET,apple_domain,🍎 Apple"
-  - "RULE-SET,github_domain,👨🏿‍💻 GitHub"
   - "RULE-SET,youtube_domain,📹 YouTube"
   - "RULE-SET,google_domain,🍀 Google"
-  - "RULE-SET,onedrive_domain,🐬 OneDrive"
   - "RULE-SET,microsoft_domain,🪟 Microsoft"
   - "RULE-SET,tiktok_domain,🎵 TikTok"
   - "RULE-SET,instagram_domain,🐱 Instagram"
@@ -625,7 +626,6 @@ rules:
   - "RULE-SET,netflix_domain,🎥 NETFLIX"
   - "RULE-SET,paypal_domain,💶 PayPal"
   - "RULE-SET,steam_domain,🦉 Steam"
-  - RULE-SET,cloudflare_domain,☁️ CloudFlare
   - "RULE-SET,pornhub_domain,🥰 Pornhub"
   - "RULE-SET,google_ip,🍀 Google,no-resolve"
   - "RULE-SET,netflix_ip,🎥 NETFLIX,no-resolve"
@@ -635,6 +635,7 @@ rules:
   - "RULE-SET,cn_domain,🎯 直连"
   - "RULE-SET,cn_ip,🎯 直连"
   - "MATCH,🐟 漏网之鱼"
+
 rule-anchor:
   ip:
     type: http

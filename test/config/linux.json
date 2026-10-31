@@ -753,6 +753,14 @@
         "outbound": "直连"
       },
       {
+        "rule_set": "private_domain",
+        "outbound": "直连"
+      },
+      {
+        "rule_set": "private_ip",
+        "outbound": "直连"
+      },
+      {
         "type": "logical",
         "mode": "or",
         "rules": [
@@ -790,12 +798,16 @@
         "outbound": "👹 PT"
       },
       {
-        "rule_set": "direct_domain",
-        "outbound": "🕸️ Direct"
+        "rule_set": "chatgpt_domain",
+        "outbound": "🫆 ChatGPT"
       },
       {
         "rule_set": "github_domain",
         "outbound": "👨🏿‍💻 GitHub"
+      },
+      {
+        "rule_set": "direct_domain",
+        "outbound": "🕸️ Direct"
       },
       {
         "rule_set": "youtube_domain",
@@ -812,10 +824,6 @@
       {
         "rule_set": "docker_domain",
         "outbound": "🚢 Docker"
-      },
-      {
-        "rule_set": "chatgpt_domain",
-        "outbound": "🫆 ChatGPT"
       },
       {
         "rule_set": "claude_domain",
@@ -854,6 +862,14 @@
         "outbound": "😉 Byte-Muse"
       },
       {
+        "rule_set": "onedrive_domain",
+        "outbound": "🐬 OneDrive"
+      },
+      {
+        "rule_set": "cloudflare_domain",
+        "outbound": "☁️ CloudFlare"
+      },
+      {
         "rule_set": "proxy_domain",
         "outbound": "🫎 Proxy"
       },
@@ -862,16 +878,8 @@
         "outbound": "🦀 Twitter"
       },
       {
-        "rule_set": "private_domain",
-        "outbound": "直连"
-      },
-      {
         "rule_set": "apple_domain",
         "outbound": "🍎 Apple"
-      },
-      {
-        "rule_set": "onedrive_domain",
-        "outbound": "🐬 OneDrive"
       },
       {
         "rule_set": "microsoft_domain",
@@ -910,10 +918,6 @@
         "outbound": "🦉 Steam"
       },
       {
-        "rule_set": "cloudflare_domain",
-        "outbound": "☁️ CloudFlare"
-      },
-      {
         "rule_set": "pornhub_domain",
         "outbound": "🥰 Pornhub"
       },
@@ -940,10 +944,6 @@
       {
         "rule_set": "geolocation-!cn",
         "outbound": "🫎 Proxy"
-      },
-      {
-        "rule_set": "private_ip",
-        "outbound": "直连"
       },
       {
         "rule_set": "cn_domain",
