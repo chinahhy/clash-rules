@@ -293,6 +293,7 @@ DOMAIN-SUFFIX,programmer.net.cn
 
 # Github加速
 DOMAIN-SUFFIX,ghproxy.net
+DOMAIN-SUFFIX,gh-proxy.com
 DOMAIN-SUFFIX,akams.cn
 DOMAIN-SUFFIX,gitwarp.com
 
