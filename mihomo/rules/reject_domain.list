@@ -1,23 +1,25 @@
-# Mihomo classical 域名屏蔽规则集（behavior: classical，format: text）
-# 每行一条规则，不加 payload:、列表符号或 REJECT 策略。
-# 主配置通过 RULE-SET,reject_domain,REJECT 指定屏蔽策略。
+# reject_domain.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
 
-# 已启用：域名及其所有子域名
-DOMAIN-SUFFIX,yourvserver.net
-DOMAIN-SUFFIX,qemow.com
+# ==================== 域名 / 常用 ====================
+
+# 广告与归因域名（按当前规则）
 DOMAIN-SUFFIX,adjust.com
-
-# 已启用：精确广告域名（仅匹配下列域名）
-# Google 广告
-DOMAIN,pagead2.googlesyndication.com
-DOMAIN,googleads.g.doubleclick.net
-
-# 小米广告
 DOMAIN,api.ad.xiaomi.com
 DOMAIN,sdkconfig.ad.xiaomi.com
-
-# 荣耀广告
+DOMAIN,googleads.g.doubleclick.net
+DOMAIN,pagead2.googlesyndication.com
 DOMAIN,ads-drcn.platform.hihonorcloud.com
+
+# ==================== 域名 / 一般 ====================
+
+# 自定义整域屏蔽（用途待确认）
+DOMAIN-SUFFIX,qemow.com
+DOMAIN-SUFFIX,yourvserver.net
+
+# ==================== 未启用模板（保持注释） ====================
 
 # 以下均为未启用的注释模板；使用前替换示例值，再移除对应规则行开头的 #。
 # 精确域名（仅匹配该域名）

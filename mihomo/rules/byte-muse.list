@@ -1,18 +1,33 @@
-#Byte-Muse
+# byte-muse.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
 
-DOMAIN-SUFFIX,avbase.net
-DOMAIN-SUFFIX,attackers.net
-DOMAIN-SUFFIX,btyjscl.com
+# ==================== 域名 / 一般 ====================
+
+# 成人内容、索引与配套资源（具体归属待核验）
 DOMAIN-SUFFIX,dasdas.jp
 DOMAIN-SUFFIX,ffaoa.com
-DOMAIN-SUFFIX,honnaka.jp
-DOMAIN-SUFFIX,ideapocket.com
-DOMAIN-SUFFIX,moodyz.com
-DOMAIN-SUFFIX,madonna-av.com
-DOMAIN-SUFFIX,javbus.com
 DOMAIN-SUFFIX,javdb.com
-DOMAIN-SUFFIX,jdbstatic.com
-DOMAIN-SUFFIX,javlibrary.com
-DOMAIN-SUFFIX,premium-beauty.com
+DOMAIN-SUFFIX,avbase.net
+DOMAIN-SUFFIX,honnaka.jp
+DOMAIN-SUFFIX,javbus.com
+DOMAIN-SUFFIX,moodyz.com
 DOMAIN-SUFFIX,s1s1s1.com
+DOMAIN-SUFFIX,btyjscl.com
+DOMAIN-SUFFIX,attackers.net
+DOMAIN-SUFFIX,jdbstatic.com
+DOMAIN-SUFFIX,ideapocket.com
+DOMAIN-SUFFIX,javlibrary.com
+DOMAIN-SUFFIX,madonna-av.com
 DOMAIN-SUFFIX,wanz-factory.com
+DOMAIN-SUFFIX,premium-beauty.com
+
+# 补充刮削来源（GFWList收录，未作当地直连实测）
+DOMAIN-SUFFIX,1pondo.tv
+DOMAIN-SUFFIX,dmm.co.jp
+DOMAIN-SUFFIX,jav321.com
+DOMAIN-SUFFIX,javfree.me
+DOMAIN-SUFFIX,mgstage.com
+DOMAIN-SUFFIX,10musume.com
+DOMAIN-SUFFIX,caribbeancom.com

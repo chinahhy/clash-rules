@@ -1,164 +1,105 @@
-# Perplexity
+# AI-other.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
+
+# ==================== 域名 / 常用 ====================
+
+# AI搜索、问答与对话
+DOMAIN-SUFFIX,meta.ai
+DOMAIN-SUFFIX,poe.com
+DOMAIN-SUFFIX,pplx.ai
+DOMAIN-SUFFIX,arena.ai
+DOMAIN-SUFFIX,poecdn.net
 DOMAIN-SUFFIX,perplexity.ai
 DOMAIN-SUFFIX,perplexity.com
-DOMAIN-SUFFIX,pplx.ai
-DOMAIN-SUFFIX,ppl-ai-file-upload.s3.amazonaws.com
-DOMAIN-SUFFIX,pplx-res.cloudinary.com
-
-# GitHub Copilot
-DOMAIN-SUFFIX,githubcopilot.com
 DOMAIN-SUFFIX,copilot.microsoft.com
-DOMAIN,copilot-proxy.githubusercontent.com
-DOMAIN-SUFFIX,copilot-workspace.githubnext.com
-DOMAIN-SUFFIX,copilotprodattachments.blob.core.windows.net
+DOMAIN-SUFFIX,pplx-res.cloudinary.com
+DOMAIN-SUFFIX,ppl-ai-file-upload.s3.amazonaws.com
 
-# Cursor
-DOMAIN-SUFFIX,cursor.com
+# AI编程与代码助手
+DOMAIN-SUFFIX,kiro.dev
 DOMAIN-SUFFIX,cursor.sh
+DOMAIN-SUFFIX,cursor.com
+DOMAIN-SUFFIX,codeium.com
+DOMAIN-SUFFIX,windsurf.com
+DOMAIN-SUFFIX,coderabbit.ai
 DOMAIN-SUFFIX,cursorapi.com
 DOMAIN-SUFFIX,cursor-cdn.com
-
-# Windsurf
-DOMAIN-SUFFIX,windsurf.com
 DOMAIN-SUFFIX,windsurf.build
-
-# Codeium
-DOMAIN-SUFFIX,codeium.com
 DOMAIN-SUFFIX,codeiumdata.com
+DOMAIN-SUFFIX,githubcopilot.com
+DOMAIN-SUFFIX,coderabbit.gallery.vsassets.io
+DOMAIN-SUFFIX,copilot-workspace.githubnext.com
+DOMAIN,copilot-proxy.githubusercontent.com
+DOMAIN-SUFFIX,copilotprodattachments.blob.core.windows.net
 
-# Poe
-DOMAIN-SUFFIX,poe.com
-DOMAIN-SUFFIX,poecdn.net
-
-# Cohere
-DOMAIN-SUFFIX,cohere.com
-DOMAIN-SUFFIX,cohere.ai
-
-# HuggingFace
-DOMAIN-SUFFIX,huggingface.co
-DOMAIN-SUFFIX,hf.space
+# 模型社区、推理与API平台
 DOMAIN-SUFFIX,hf.co
-
-# Devin
-DOMAIN-SUFFIX,devin.ai
-
-# Midjourney
-DOMAIN-SUFFIX,midjourney.com
-
-# ElevenLabs
-DOMAIN-SUFFIX,elevenlabs.com
-DOMAIN-SUFFIX,elevenlabs.io
-
-# Groq
 DOMAIN-SUFFIX,groq.com
-
-# Meta AI
-DOMAIN-SUFFIX,meta.ai
-
-# Manus
-DOMAIN-SUFFIX,manus.im
-DOMAIN-SUFFIX,manuscdn.com
-
-# Mistral
+DOMAIN-SUFFIX,hf.space
+DOMAIN-SUFFIX,chutes.ai
+DOMAIN-SUFFIX,cohere.ai
+DOMAIN-SUFFIX,cohere.com
 DOMAIN-SUFFIX,mistral.ai
-
-# OpenRouter
+DOMAIN-SUFFIX,cerebras.ai
 DOMAIN-SUFFIX,openrouter.ai
+DOMAIN-SUFFIX,huggingface.co
 
-# LM Studio
-DOMAIN-SUFFIX,lmstudio.ai
+# ==================== 域名 / 一般 ====================
 
-# Ollama
+# 本地模型与知识库工具
 DOMAIN-SUFFIX,ollama.com
-
-# Dify
-DOMAIN-SUFFIX,dify.ai
-
-# LangChain
-DOMAIN-SUFFIX,langchain.com
-
-# AnythingLLM
+DOMAIN-SUFFIX,lmstudio.ai
 DOMAIN-SUFFIX,anythingllm.com
 
-# CrewAI
-DOMAIN-SUFFIX,crewai.com
-
-# H2O
-DOMAIN-SUFFIX,h2o.ai
-
-# OpenArt
-DOMAIN-SUFFIX,openart.ai
-
-# ClipDrop
-DOMAIN-SUFFIX,clipdrop.co
-
-# Cerebras
-DOMAIN-SUFFIX,cerebras.ai
-
-# Kiro
-DOMAIN-SUFFIX,kiro.dev
-
-# YouMind
-DOMAIN-SUFFIX,youmind.ai
-DOMAIN-SUFFIX,youmind.com
-DOMAIN-SUFFIX,youmind.site
-
-# OpenClaw
-DOMAIN-SUFFIX,openclaw.ai
-
-# Arena
-DOMAIN-SUFFIX,arena.ai
-
-# Chutes
-DOMAIN-SUFFIX,chutes.ai
-
-# ClawHub
-DOMAIN-SUFFIX,clawhub.ai
-
-# Agent Protocol
-DOMAIN-SUFFIX,agentclientprotocol.com
-
-# OpenSpec
-DOMAIN-SUFFIX,openspec.dev
-
-# Lovart
-DOMAIN-SUFFIX,lovart.ai
-
-# Plannotator
-DOMAIN-SUFFIX,plannotator.ai
-
-# CodeRabbit
-DOMAIN-SUFFIX,coderabbit.ai
-DOMAIN-SUFFIX,coderabbit.gallery.vsassets.io
-
-# TapNow
-DOMAIN-SUFFIX,tapnow.ai
-
-# Mozilla AI
-DOMAIN-SUFFIX,mozilla.ai
-
-# Minimax
-DOMAIN-SUFFIX,minimax.io
-
-# Comfy
-DOMAIN-SUFFIX,comfy.org
-DOMAIN-SUFFIX,comfyci.org
-DOMAIN-SUFFIX,comfyregistry.org
-
-# Envato AI
-DOMAIN-SUFFIX,envato.com
-DOMAIN-SUFFIX,envato-static.com
-DOMAIN-SUFFIX,envatousercontent.com
-DOMAIN-SUFFIX,themeforest.net
-
-# Manus / Coze / MarsCode / Trae / Cici
-DOMAIN-SUFFIX,coze.com
-DOMAIN-SUFFIX,marscode.com
+# 智能体、工作流与AI应用（含原分组待核验项）
+DOMAIN-SUFFIX,dify.ai
 DOMAIN-SUFFIX,trae.ai
 DOMAIN-SUFFIX,cici.com
-DOMAIN-SUFFIX,ciciai.com
-DOMAIN-SUFFIX,ciciaicdn.com
+DOMAIN-SUFFIX,coze.com
+DOMAIN-SUFFIX,devin.ai
 DOMAIN-SUFFIX,dola.com
+DOMAIN-SUFFIX,manus.im
+DOMAIN-SUFFIX,ciciai.com
+DOMAIN-SUFFIX,clawhub.ai
+DOMAIN-SUFFIX,crewai.com
+DOMAIN-SUFFIX,youmind.ai
+DOMAIN-SUFFIX,openclaw.ai
+DOMAIN-SUFFIX,youmind.com
+DOMAIN-SUFFIX,manuscdn.com
+DOMAIN-SUFFIX,marscode.com
+DOMAIN-SUFFIX,openspec.dev
+DOMAIN-SUFFIX,youmind.site
+DOMAIN-SUFFIX,ciciaicdn.com
+DOMAIN-SUFFIX,langchain.com
+DOMAIN-SUFFIX,plannotator.ai
+DOMAIN-SUFFIX,agentclientprotocol.com
 
-# Cloudflare AI Gateway
+# 图像、音频与多媒体创作
+DOMAIN-SUFFIX,comfy.org
+DOMAIN-SUFFIX,lovart.ai
+DOMAIN-SUFFIX,tapnow.ai
+DOMAIN-SUFFIX,openart.ai
+DOMAIN-SUFFIX,clipdrop.co
+DOMAIN-SUFFIX,comfyci.org
+DOMAIN-SUFFIX,elevenlabs.io
+DOMAIN-SUFFIX,elevenlabs.com
+DOMAIN-SUFFIX,midjourney.com
+DOMAIN-SUFFIX,comfyregistry.org
+
+# 素材、主题市场与创作辅助（原Envato AI）
+DOMAIN-SUFFIX,envato.com
+DOMAIN-SUFFIX,themeforest.net
+DOMAIN-SUFFIX,envato-static.com
+DOMAIN-SUFFIX,envatousercontent.com
+
+# AI网关
 DOMAIN-SUFFIX,gateway.ai.cloudflare.com
+
+# ==================== 域名 / 罕见 / 待核验 ====================
+
+# 其他AI项目（具体用途待核验）
+DOMAIN-SUFFIX,h2o.ai
+DOMAIN-SUFFIX,minimax.io
+DOMAIN-SUFFIX,mozilla.ai

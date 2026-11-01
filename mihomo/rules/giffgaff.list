@@ -1,3 +1,15 @@
+# giffgaff.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
+
+# ==================== 域名 / 常用 ====================
+
+# giffgaff服务
 DOMAIN-SUFFIX,giffgaff.com
-DOMAIN-SUFFIX,giff.ly
+
+# ==================== 域名 / 一般 ====================
+
+# 短链接入口（原清单）
 DOMAIN-SUFFIX,gaff.ly
+DOMAIN-SUFFIX,giff.ly

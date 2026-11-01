@@ -116,6 +116,8 @@ rules:
 - RULE-SET,pt_domain,👹 PT
 - RULE-SET,chatgpt_domain,🫆 ChatGPT
 - RULE-SET,github_domain,👨🏿‍💻 GitHub
+# Copilot附件例外：先于宽泛的 windows.net 直连规则
+- DOMAIN-SUFFIX,copilotprodattachments.blob.core.windows.net,🤖 AI其它
 - RULE-SET,direct_domain,🕸️ Direct
 - RULE-SET,youtube_domain,📹 YouTube
 - RULE-SET,gemini_domain,🧢 Gemini

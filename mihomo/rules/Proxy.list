@@ -1,212 +1,187 @@
-# tmbd
-DOMAIN-SUFFIX,themoviedb.org
-DOMAIN-SUFFIX,tmdb.org
-DOMAIN-SUFFIX,thetvdb.com
+# Proxy.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
 
-# APP价格检视网
+# ==================== 域名 / 常用 ====================
+
+# 开发工具与软件分发
+DOMAIN-SUFFIX,scrape.do
+DOMAIN-SUFFIX,devvit.net
+DOMAIN-SUFFIX,sftcdn.net
+DOMAIN-SUFFIX,utdstc.com
+DOMAIN-SUFFIX,softonic.com
+DOMAIN-SUFFIX,uptodown.com
+DOMAIN-SUFFIX,apkmirror.com
+DOMAIN-SUFFIX,greasyfork.org
+DOMAIN-SUFFIX,sourceforge.net
+DOMAIN-SUFFIX,element-plus.org
+DOMAIN-SUFFIX,star-history.com
 DOMAIN-SUFFIX,appstoreprice.org
 
-# CyberAirpot机场
-DOMAIN-SUFFIX,cyberairport.net
+# 影音、字幕与媒体资料
+DOMAIN-SUFFIX,undo.jp
+DOMAIN-SUFFIX,tao18.tv
+DOMAIN-SUFFIX,tmdb.org
+DOMAIN-SUFFIX,wsyzy.org
+DOMAIN-SUFFIX,anilist.co
+DOMAIN-SUFFIX,edge4k.com
+DOMAIN-SUFFIX,freedb.org
+DOMAIN-SUFFIX,lrclib.net
+DOMAIN-SUFFIX,unhook.app
+DOMAIN-SUFFIX,daumcdn.net
+DOMAIN-SUFFIX,thetvdb.com
+DOMAIN-SUFFIX,freemdict.com
+DOMAIN-SUFFIX,wsyzym3u8.com
+DOMAIN-SUFFIX,musixmatch.com
+DOMAIN-SUFFIX,themoviedb.org
+DOMAIN-SUFFIX,media-amazon.com
+DOMAIN-SUFFIX,static-bluray.com
+DOMAIN-SUFFIX,lyrical-nonsense.com
+DOMAIN-SUFFIX,notificationsounds.com
 
-# 早安云机场
-DOMAIN-SUFFIX,artislg.com
-
-# 一元机场
-DOMAIN-SUFFIX,xn--4gq62f52gdss.asia
-DOMAIN-SUFFIX,smallstrawberry.com
-
-# singbox
-DOMAIN-SUFFIX,sagernet.org
+# NAS、路由与智能家居
+DOMAIN-SUFFIX,balena.io
+DOMAIN-SUFFIX,frenck.dev
 DOMAIN-SUFFIX,jiedddym.com
+DOMAIN-SUFFIX,sagernet.org
 DOMAIN-SUFFIX,sing-box.app
+DOMAIN-SUFFIX,immortalwrt.org
+DOMAIN-SUFFIX,home-assistant.io
 
-# Oyunfor
+# 办公、笔记与协作
+DOMAIN-SUFFIX,kakao.com
+DOMAIN-SUFFIX,mypikpak.com
+DOMAIN-SUFFIX,freshchat.com
+DOMAIN-SUFFIX,swiftgram.app
+DOMAIN-SUFFIX,discordapp.com
+DOMAIN-SUFFIX,gmailapp.store
+DOMAIN-SUFFIX,sharepoint.com
+DOMAIN-SUFFIX,notionusercontent.com
+
+# 云服务、托管与内容分发
+DOMAIN-SUFFIX,hlx.page
+DOMAIN-SUFFIX,1e100.com
+DOMAIN-SUFFIX,1e100.net
+DOMAIN-SUFFIX,github.io
+DOMAIN-SUFFIX,claw.cloud
+DOMAIN-SUFFIX,mapbox.com
+DOMAIN-SUFFIX,vercel.app
+DOMAIN-SUFFIX,ctfassets.net
+DOMAIN-SUFFIX,bandwagonhost.com
+DOMAIN-SUFFIX,vercel-storage.com
+
+# ==================== 域名 / 一般 ====================
+
+# 网络检测、DNS与时间服务
+DOMAIN-SUFFIX,ip.sb
+DOMAIN-SUFFIX,dot.sb
+DOMAIN-SUFFIX,ipify.org
+DOMAIN-SUFFIX,dns.google
+DOMAIN-SUFFIX,doh.dns.sb
+DOMAIN-SUFFIX,ipleak.net
+DOMAIN-SUFFIX,ippure.com
+DOMAIN-SUFFIX,ipaddress.my
+DOMAIN-SUFFIX,dns.quad9.net
+DOMAIN-SUFFIX,hk-hkg.doh.sb
+DOMAIN-SUFFIX,doh.opendns.com
+DOMAIN-SUFFIX,dns.umbrella.com
+DOMAIN-SUFFIX,cloudflare-dns.com
+
+# 证书、安全与隐私辅助组件
+DOMAIN-SUFFIX,bitwarden.com
+
+# 图片、图标与字体
+DOMAIN-SUFFIX,sda1.dev
+DOMAIN-SUFFIX,81-web.com
+DOMAIN-SUFFIX,icons8.com
+DOMAIN-SUFFIX,dicebear.com
+DOMAIN-SUFFIX,gravatar.com
+DOMAIN-SUFFIX,wallhaven.cc
+DOMAIN-SUFFIX,astockcdn.net
+DOMAIN-SUFFIX,pinterest.com
+DOMAIN-SUFFIX,dummyimage.com
+
+# 博客、论坛与个人站点（含待核验项）
+DOMAIN-SUFFIX,linux.do
+DOMAIN-SUFFIX,v2ex.com
+DOMAIN-SUFFIX,hostloc.com
+DOMAIN-SUFFIX,nodeseek.com
+DOMAIN-SUFFIX,wikimedia.org
+DOMAIN-SUFFIX,wikipedia.org
+DOMAIN-SUFFIX,openclawlab.com
+
+# PT、Tracker与Usenet（按原清单归纳）
+DOMAIN-SUFFIX,dmhy.org
+DOMAIN-SUFFIX,leech.ie
+DOMAIN-SUFFIX,dmhy.best
+DOMAIN-SUFFIX,rarbg.com
+DOMAIN-SUFFIX,pbh-btn.com
+DOMAIN-SUFFIX,thetradersden.org
+DOMAIN-SUFFIX,openbittorrent.com
+
+# 代理服务与订阅入口（原标注）
+DOMAIN-SUFFIX,shunc.xyz
+DOMAIN-SUFFIX,artislg.com
+DOMAIN-SUFFIX,scl168.club
+DOMAIN-SUFFIX,cyberairport.net
+DOMAIN-SUFFIX,xn--9kqy92aw5h.net
+DOMAIN-SUFFIX,smallstrawberry.com
+DOMAIN-SUFFIX,xn--4gq62f52gdss.ink
+DOMAIN-SUFFIX,xn--4gq62f52gdss.asia
+
+# 统计、营销、归因与用户反馈（用途建议）
+DOMAIN-SUFFIX,grafana.net
+DOMAIN-SUFFIX,hsforms.com
+DOMAIN-SUFFIX,hsforms.net
+DOMAIN-SUFFIX,posthog.com
+DOMAIN-SUFFIX,vidyard.com
+DOMAIN-SUFFIX,wootric.com
+DOMAIN-SUFFIX,heap-api.com
+DOMAIN-SUFFIX,go-mpulse.net
+
+# 游戏与娱乐服务
 DOMAIN-SUFFIX,oyunfor.com
 DOMAIN-SUFFIX,ffsssls.buzz
 
-#anilist
-DOMAIN-SUFFIX,anilist.co
-
-# 音乐格式处理工具
-DOMAIN-SUFFIX,undo.jp
-DOMAIN-SUFFIX,sourceforge.net
-DOMAIN-SUFFIX,freedb.org
-
-# hermes-agent
-DOMAIN-SUFFIX,nousresearch.com
-DOMAIN-SUFFIX,tavily.com
-
-# BitWarden
-DOMAIN-SUFFIX,bitwarden.com
-
-#claude-code
-
-# 网站设计
-DOMAIN-SUFFIX,pinterest.com
-DOMAIN-SUFFIX,81-web.com
-
-# 在线观影
-DOMAIN-SUFFIX,tao18.tv
-DOMAIN-SUFFIX,wsyzy.org
-DOMAIN-SUFFIX,wsyzym3u8.com
-
-# 词典社区
-DOMAIN-SUFFIX,freemdict.com
-
-# 其他
-DOMAIN-SUFFIX,sharepoint.com
-DOMAIN-SUFFIX,qichiyu.com
-DOMAIN-SUFFIX,claw.cloud
-DOMAIN-SUFFIX,1e100.net
-DOMAIN-SUFFIX,1e100.com
-DOMAIN-SUFFIX,nodeseek.com
-DOMAIN-SUFFIX,wallhaven.cc
-DOMAIN-SUFFIX,mypikpak.com
-DOMAIN-SUFFIX,linux.do
-DOMAIN-SUFFIX,v2ex.com
-DOMAIN-SUFFIX,ipleak.net
-DOMAIN-SUFFIX,urlert.com
-DOMAIN-SUFFIX,scrape.do
-DOMAIN-SUFFIX,skk.moe
-DOMAIN-SUFFIX,ip.sb
-DOMAIN-SUFFIX,ipify.org
-DOMAIN-SUFFIX,hostloc.com
+# 广告屏蔽工具
 DOMAIN-SUFFIX,adtidy.org
-DOMAIN-SUFFIX,gravatar.com
-DOMAIN-SUFFIX,wootric.com
-DOMAIN-SUFFIX,heap-api.com
-DOMAIN-SUFFIX,grafana.net
-DOMAIN-SUFFIX,home-assistant.io
-DOMAIN-SUFFIX,utdstc.com
-DOMAIN-SUFFIX,uptodown.com
-DOMAIN-SUFFIX,googo.win
-DOMAIN-SUFFIX,notionusercontent.com
-DOMAIN-SUFFIX,acdb.tv
-DOMAIN-SUFFIX,chinatsu1124.com
-DOMAIN-SUFFIX,posthog.com
-DOMAIN-SUFFIX,kakao.com
-DOMAIN-SUFFIX,lyrical-nonsense.com
-DOMAIN-SUFFIX,static-bluray.com
-DOMAIN-SUFFIX,media-amazon.com
-DOMAIN-SUFFIX,sda1.dev
-DOMAIN-SUFFIX,ghostchu-services.top
-DOMAIN-SUFFIX,skartinx.com
-DOMAIN-SUFFIX,extyy.com
-DOMAIN-SUFFIX,mapbox.com
-DOMAIN-SUFFIX,ctfassets.net
-DOMAIN-SUFFIX,musixmatch.com
-DOMAIN-SUFFIX,imtintl.com
-DOMAIN-SUFFIX,go-mpulse.net
-DOMAIN-SUFFIX,ldkms.la
-DOMAIN-SUFFIX,devvit.net
-DOMAIN-SUFFIX,qiuchenly.us.kg
-DOMAIN-SUFFIX,dicebear.com
-DOMAIN-SUFFIX,hlx.page
-DOMAIN-SUFFIX,vidyard.com
+
+# AI工具与模型服务
+DOMAIN-SUFFIX,tavily.com
+DOMAIN-SUFFIX,nousresearch.com
+
+# 搜索、天气与在线信息服务
 DOMAIN-SUFFIX,met.no
-DOMAIN-SUFFIX,frenck.dev
-DOMAIN-SUFFIX,dummyimage.com
-DOMAIN-SUFFIX,star-history.com
-DOMAIN-SUFFIX,apkmirror.com
-DOMAIN-SUFFIX,ippure.com
-DOMAIN-SUFFIX,vercel-storage.com
-DOMAIN-SUFFIX,element-plus.org
+
+# ==================== 域名 / 罕见 / 待核验 ====================
+
+# 用途待确认的自定义域名
+DOMAIN-SUFFIX,acdb.tv
+DOMAIN-SUFFIX,skk.moe
 DOMAIN-SUFFIX,foxel.cc
+DOMAIN-SUFFIX,ldkms.la
+DOMAIN-SUFFIX,extyy.com
+DOMAIN-SUFFIX,googo.win
+DOMAIN-SUFFIX,urlert.com
+DOMAIN-SUFFIX,imtintl.com
+DOMAIN-SUFFIX,qichiyu.com
 DOMAIN-SUFFIX,tikfork.com
-DOMAIN-SUFFIX,icons8.com
-DOMAIN-SUFFIX,wikimedia.org
-DOMAIN-SUFFIX,astockcdn.net
-DOMAIN-SUFFIX,unhook.app
-DOMAIN-SUFFIX,thetradersden.org
-DOMAIN-SUFFIX,openbittorrent.com
-DOMAIN-SUFFIX,leech.ie
-DOMAIN-SUFFIX,rarbg.com
-DOMAIN-SUFFIX,macos-developer.com
-DOMAIN-SUFFIX,softonic.com
 DOMAIN-SUFFIX,aidevmac.com
-DOMAIN-SUFFIX,sftcdn.net
-DOMAIN-SUFFIX,lrclib.net
+DOMAIN-SUFFIX,skartinx.com
 DOMAIN-SUFFIX,bulianglin.com
+DOMAIN-SUFFIX,qiuchenly.us.kg
+DOMAIN-SUFFIX,chinatsu1124.com
+DOMAIN-SUFFIX,macos-developer.com
+DOMAIN-SUFFIX,ghostchu-services.top
 
-# Telegram第三方客户端
-DOMAIN-SUFFIX,swiftgram.app
+# ==================== IPv4 / 常用 ====================
 
-# 铃声网站
-DOMAIN-SUFFIX,notificationsounds.com
-
-# Github
-DOMAIN-SUFFIX,github.io
-
-# Playwright 浏览器
-
-# Gmail
-DOMAIN-SUFFIX,gmailapp.store
-
-# 博客or论坛
-DOMAIN-SUFFIX,vercel.app
-DOMAIN-SUFFIX,openclawlab.com
-
-# 维基百科
-DOMAIN-SUFFIX,wikipedia.org
-
-# Ether写盘工具
-DOMAIN-SUFFIX,hsforms.com
-DOMAIN-SUFFIX,hsforms.net
-DOMAIN-SUFFIX,balena.io
-
-# immortalwrt
-DOMAIN-SUFFIX,immortalwrt.org
-
-# U2动漫
-DOMAIN-SUFFIX,dmhy.best
-DOMAIN-SUFFIX,dmhy.org
-
-# Disdord
-DOMAIN-SUFFIX,discordapp.com
-
-#PotPlayer
-DOMAIN-SUFFIX,edge4k.com
-DOMAIN-SUFFIX,daumcdn.net
-
-#BTN网络
-DOMAIN-SUFFIX,pbh-btn.com
-
-#IP查询
-DOMAIN-SUFFIX,ipaddress.my
-
-# VPS
-DOMAIN-SUFFIX,bandwagonhost.com
-
-# 顺畅网络
-DOMAIN-SUFFIX,scl168.club
-DOMAIN-SUFFIX,shunc.xyz
-
-# 一元机场
-DOMAIN-SUFFIX,xn--4gq62f52gdss.ink
-
-# 早安云
-DOMAIN-SUFFIX,xn--9kqy92aw5h.net
-
-# 油猴插件库
-DOMAIN-SUFFIX,greasyfork.org
-
-# ChatSmith
-DOMAIN-SUFFIX,freshchat.com
-
-# 国外DNS
-DOMAIN-SUFFIX,dns.google
-DOMAIN-SUFFIX,dot.sb
-DOMAIN-SUFFIX,dns.umbrella.com
-DOMAIN-SUFFIX,dns.quad9.net
-DOMAIN-SUFFIX,cloudflare-dns.com
-DOMAIN-SUFFIX,doh.dns.sb
-DOMAIN-SUFFIX,doh.opendns.com
-DOMAIN-SUFFIX,hk-hkg.doh.sb
-IP-CIDR,8.8.8.8/32,no-resolve
-IP-CIDR,8.8.4.4/32,no-resolve
-IP-CIDR,1.1.1.1/32,no-resolve
+# 公共DNS服务目标IPv4
 IP-CIDR,1.0.0.1/32,no-resolve
-IP-CIDR,185.222.222.222/32,no-resolve
-IP-CIDR,208.67.222.222/32,no-resolve
+IP-CIDR,1.1.1.1/32,no-resolve
+IP-CIDR,8.8.4.4/32,no-resolve
+IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,208.67.220.220/32,no-resolve
+IP-CIDR,208.67.222.222/32,no-resolve
+IP-CIDR,185.222.222.222/32,no-resolve

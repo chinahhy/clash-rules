@@ -1,5 +1,16 @@
-# grok
-DOMAIN-SUFFIX,grok.com
+# Grok.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
+
+# ==================== 域名 / 常用 ====================
+
+# Grok / xAI及内容服务
 DOMAIN-SUFFIX,x.ai
+DOMAIN-SUFFIX,grok.com
 DOMAIN-SUFFIX,grokusercontent.com
+
+# ==================== 域名 / 一般 ====================
+
+# 百科相关站点（原清单）
 DOMAIN-SUFFIX,grokipedia.com

@@ -1,663 +1,580 @@
-# 自用域名
-DOMAIN-SUFFIX,199462.xyz
+# Direct.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
 
-# 土耳其本土支付
-DOMAIN-SUFFIX,paytr.com
+# ==================== 域名 / 常用 ====================
 
-# 浏览器
-DOMAIN-SUFFIX,fluxbrowser.cn
-DOMAIN-SUFFIX,rewardsauto.top
-
-# 超频3水冷
-DOMAIN-SUFFIX,pccooler.cn
-
-#WorkBuddy
-DOMAIN-SUFFIX,midaspayment.com
-DOMAIN-SUFFIX,workbuddy.ai
-
-# 未知但可直连
-DOMAIN-SUFFIX,userway.org
-DOMAIN-SUFFIX,nelreports.net
-DOMAIN-SUFFIX,112114.xyz
-DOMAIN-SUFFIX,danteng.org
-DOMAIN-SUFFIX,wingify.com
-DOMAIN-SUFFIX,z4q834d.net
-DOMAIN-SUFFIX,baozhiqiang.xyz
-DOMAIN-SUFFIX,90dao.com
-DOMAIN-SUFFIX,yandex.net
-DOMAIN-SUFFIX,z4a.net
-DOMAIN-SUFFIX,gitlink.net
-DOMAIN-SUFFIX,fengshows-cdn.com
-DOMAIN-SUFFIX,okyago.com
-DOMAIN-SUFFIX,jprj.com
-DOMAIN-SUFFIX,0hax7.app
-DOMAIN-SUFFIX,libravatar.org
-DOMAIN-SUFFIX,stripe.com
-DOMAIN-SUFFIX,stripe.net
-DOMAIN-SUFFIX,onetrust.com
-DOMAIN-SUFFIX,cookielaw.org
-DOMAIN-SUFFIX,giscus.app
-DOMAIN-SUFFIX,eyeo.com
-DOMAIN-SUFFIX,packagecontrol.io
-DOMAIN-SUFFIX,geekzu.org
-DOMAIN-SUFFIX,hdcity.city
-DOMAIN-SUFFIX,hdf.world
-DOMAIN-SUFFIX,house-of-usenet.com
-DOMAIN-SUFFIX,bluebird-hd.org
-DOMAIN-SUFFIX,blutopia.cc
-DOMAIN-SUFFIX,verisign.com
-DOMAIN-SUFFIX,umu.se
-DOMAIN-SUFFIX,avcdn.net
-DOMAIN-SUFFIX,perfops.net
-DOMAIN-SUFFIX,staticj.top
-DOMAIN-SUFFIX,upsellit.com
-DOMAIN-SUFFIX,nortonlifelock.com
-DOMAIN-SUFFIX,funto.fun
-DOMAIN-SUFFIX,yadg.cc
-DOMAIN-SUFFIX,madrays.de
-DOMAIN-SUFFIX,algolia.net
-DOMAIN-SUFFIX,smadex.com
-DOMAIN-SUFFIX,rilipro.com
-DOMAIN-SUFFIX,demandbase.com
-DOMAIN-SUFFIX,company-target.com
-DOMAIN-SUFFIX,openweathermap.org
-DOMAIN-SUFFIX,nektony.com
-DOMAIN-SUFFIX,mixpanel.com
-DOMAIN-SUFFIX,ipinfo.io
-DOMAIN-SUFFIX,999831.xyz
-DOMAIN-SUFFIX,laozhang.ai
-DOMAIN-SUFFIX,icanhazip.com
-DOMAIN-SUFFIX,revenuecat.com
-DOMAIN-SUFFIX,darkreader.org
-DOMAIN-SUFFIX,the-best-airport.com
-DOMAIN-SUFFIX,braze.com
-DOMAIN-SUFFIX,models.dev
-DOMAIN-SUFFIX,dshdesktop.com
-DOMAIN-SUFFIX,cc.cd
-DOMAIN-SUFFIX,snssdk.com
-DOMAIN-SUFFIX,tailwindcss.com
-DOMAIN-SUFFIX,wawawa.win
-DOMAIN-SUFFIX,internetwarriors.net
-DOMAIN-SUFFIX,codex-reset.com
-DOMAIN-SUFFIX,iroh.link
-DOMAIN-SUFFIX,clashmi.app
-DOMAIN-SUFFIX,ntp.org
-DOMAIN-SUFFIX,scribdassets.com
-DOMAIN-SUFFIX,featureassets.org
-DOMAIN-SUFFIX,prodregistryv2.org
-DOMAIN-SUFFIX,pdawiki.com
-DOMAIN-SUFFIX,ajay.app
-DOMAIN-SUFFIX,amll.dev
-DOMAIN-SUFFIX,kdns.fr
-
-# 搜索引擎
-DOMAIN-SUFFIX,mojeek.com
-
-# Youtube破解插件
-DOMAIN-SUFFIX,ajay.ap
-DOMAIN-SUFFIX,savefrom.net
-
-# 火山引擎
-DOMAIN-SUFFIX,byteplusbiz.com
-DOMAIN-SUFFIX,yhgfb-static.com
-DOMAIN-SUFFIX,byteintlapi.com
-
-# Ollama
-DOMAIN-SUFFIX,ollama.ai
-
-# Obsidian
-DOMAIN-SUFFIX,obsidian.md
-
-# PVE
-DOMAIN-SUFFIX,proxmox.com
-
-# 与佛论禅
-DOMAIN-SUFFIX,pp.ua
-
-# moviepilot
-DOMAIN-SUFFIX,movie-pilot.org
-DOMAIN-SUFFIX,trace.moe
-
-# python
-DOMAIN-SUFFIX,pythonhosted.org
-DOMAIN-SUFFIX,pypi.org
-
-# 色花堂
-DOMAIN-SUFFIX,srg3f.net
-DOMAIN-SUFFIX,4rzxy.net
-DOMAIN-SUFFIX,0ly6e.net
-DOMAIN-SUFFIX,98t.la
-
-# keka压缩工具
+# 开发工具与软件分发
 DOMAIN-SUFFIX,keka.io
-
-# 沉浸式翻译插件
+DOMAIN-SUFFIX,0210.net
+DOMAIN-SUFFIX,akams.cn
+DOMAIN-SUFFIX,amll.dev
+DOMAIN-SUFFIX,csdn.com
+DOMAIN-SUFFIX,csdn.net
+DOMAIN-SUFFIX,csto.com
+DOMAIN-SUFFIX,ipaku.cc
+DOMAIN-SUFFIX,java.com
+DOMAIN-SUFFIX,java.net
+DOMAIN-SUFFIX,pypi.org
+DOMAIN-SUFFIX,bsbsb.top
+DOMAIN-SUFFIX,ipa.store
+DOMAIN-SUFFIX,iteye.com
+DOMAIN-SUFFIX,csdnimg.cn
+DOMAIN-SUFFIX,datasea.cn
+DOMAIN-SUFFIX,diyios.com
+DOMAIN-SUFFIX,giscus.app
+DOMAIN-SUFFIX,gitbook.cn
+DOMAIN-SUFFIX,gitchat.cn
+DOMAIN-SUFFIX,ipazyw.com
+DOMAIN-SUFFIX,jquery.com
+DOMAIN-SUFFIX,models.dev
+DOMAIN-SUFFIX,motrix.app
+DOMAIN-SUFFIX,winudf.com
+DOMAIN-SUFFIX,423down.com
+DOMAIN-SUFFIX,clashmi.app
+DOMAIN-SUFFIX,csdn.net.cn
+DOMAIN-SUFFIX,ghproxy.net
+DOMAIN-SUFFIX,gitcode.com
+DOMAIN-SUFFIX,gitcode.net
+DOMAIN-SUFFIX,gitlink.net
+DOMAIN-SUFFIX,gitwarp.com
+DOMAIN-SUFFIX,hostbuf.com
+DOMAIN-SUFFIX,nektony.com
+DOMAIN-SUFFIX,bitcomet.com
+DOMAIN-SUFFIX,gh-proxy.com
+DOMAIN-SUFFIX,kaifayun.com
+DOMAIN-SUFFIX,codechina.net
+DOMAIN-SUFFIX,scriptcat.org
+DOMAIN-SUFFIX,sublimehq.com
+DOMAIN-SUFFIX,thornbird.org
+DOMAIN-SUFFIX,darkreader.org
+DOMAIN-SUFFIX,dshdesktop.com
+DOMAIN-SUFFIX,codex-reset.com
+DOMAIN-SUFFIX,sublimetext.com
+DOMAIN-SUFFIX,tailwindcss.com
+DOMAIN-SUFFIX,pythonhosted.org
+DOMAIN-SUFFIX,packagecontrol.io
+DOMAIN-SUFFIX,programmer.com.cn
+DOMAIN-SUFFIX,programmer.net.cn
 DOMAIN-SUFFIX,immersivetranslate.com
 
-# HomeAssistant
-DOMAIN-SUFFIX,hacs.xyz
-
-# emby
+# 影音、字幕与媒体资料
+DOMAIN-SUFFIX,v1.mk
+DOMAIN-SUFFIX,bit.ly
+DOMAIN-SUFFIX,eu.org
+DOMAIN-SUFFIX,hdao.tv
+DOMAIN-SUFFIX,iptv.cc
+DOMAIN-SUFFIX,y80s.tv
+DOMAIN-SUFFIX,66hao.cc
+DOMAIN-SUFFIX,ajay.app
+DOMAIN-SUFFIX,aptv.app
+DOMAIN-SUFFIX,ddmp4.cc
+DOMAIN-SUFFIX,domp4.cc
+DOMAIN-SUFFIX,hao6v.tv
+DOMAIN-SUFFIX,iill.top
+DOMAIN-SUFFIX,subhd.cc
+DOMAIN-SUFFIX,subhd.me
+DOMAIN-SUFFIX,subhd.tv
+DOMAIN-SUFFIX,dygang.tv
+DOMAIN-SUFFIX,fanart.tv
+DOMAIN-SUFFIX,ffh7y.com
+DOMAIN-SUFFIX,srtku.com
+DOMAIN-SUFFIX,trace.moe
+DOMAIN-SUFFIX,z2pyw.com
+DOMAIN-SUFFIX,bugutv.org
+DOMAIN-SUFFIX,ddzimu.com
+DOMAIN-SUFFIX,diygod.dev
+DOMAIN-SUFFIX,gaoqing.la
+DOMAIN-SUFFIX,heimuer.tv
+DOMAIN-SUFFIX,ijujitv.cc
+DOMAIN-SUFFIX,meowtv.top
+DOMAIN-SUFFIX,meowtv.vip
+DOMAIN-SUFFIX,ottiptv.cc
+DOMAIN-SUFFIX,padmp4.com
+DOMAIN-SUFFIX,wangfei.tv
+DOMAIN-SUFFIX,yinfans.me
+DOMAIN-SUFFIX,66tutup.com
+DOMAIN-SUFFIX,imgikzy.com
+DOMAIN-SUFFIX,kufeiyu.com
+DOMAIN-SUFFIX,pdawiki.com
+DOMAIN-SUFFIX,tegouys.com
+DOMAIN-SUFFIX,wangfei1.cc
+DOMAIN-SUFFIX,wsyzyts.vip
+DOMAIN-SUFFIX,yinfans.net
+DOMAIN-SUFFIX,breakvip.com
 DOMAIN-SUFFIX,mb3admin.com
+DOMAIN-SUFFIX,naifeitv.xyz
+DOMAIN-SUFFIX,savefrom.net
+DOMAIN-SUFFIX,souyisou.top
+DOMAIN-SUFFIX,haibao123.xyz
+DOMAIN-SUFFIX,playwoool.com
+DOMAIN-SUFFIX,fanmingming.com
+DOMAIN-SUFFIX,movie-pilot.org
+DOMAIN-SUFFIX,scribdassets.com
+DOMAIN-SUFFIX,fengshows-cdn.com
+DOMAIN-SUFFIX,xinlangtupian.com
 
-# Notion
+# NAS、路由与智能家居
+DOMAIN-SUFFIX,hacs.xyz
+DOMAIN-SUFFIX,lucky.gd
+DOMAIN-SUFFIX,fnnas.com
+DOMAIN-SUFFIX,fnnas.net
+DOMAIN-SUFFIX,zspace.cn
+DOMAIN-SUFFIX,fnnas.wiki
+DOMAIN-SUFFIX,istoreos.cn
+DOMAIN-SUFFIX,proxmox.com
+DOMAIN-SUFFIX,zconnect.cn
+DOMAIN-SUFFIX,istoreos.com
+DOMAIN-SUFFIX,sun-panel.top
+DOMAIN-SUFFIX,kyarucloud.moe
+DOMAIN-SUFFIX,starwindsoftware.com
+
+# 办公、笔记与协作
 DOMAIN-SUFFIX,notion.so
+DOMAIN-SUFFIX,crisp.chat
 DOMAIN-SUFFIX,notion.com
 DOMAIN-SUFFIX,notion.site
-DOMAIN-SUFFIX,sentry.io
+DOMAIN-SUFFIX,obsidian.md
+DOMAIN-SUFFIX,salesforceliveagent.com
 
-# Thubderbird邮箱
-DOMAIN-SUFFIX,thunderbird.net
-DOMAIN-SUFFIX,mozilla.org
-DOMAIN-SUFFIX,fundraiseup.com
-DOMAIN-SUFFIX,fndrsp.net
-DOMAIN-SUFFIX,innocraft.cloud
+# 云服务、托管与内容分发
+DOMAIN-SUFFIX,gvt1.com
+DOMAIN-SUFFIX,aicdn.com
+DOMAIN-SUFFIX,dnsv1.com
+DOMAIN-SUFFIX,iroh.link
+DOMAIN-SUFFIX,unpkg.com
+DOMAIN-SUFFIX,bdydns.com
+DOMAIN-SUFFIX,cdntip.com
+DOMAIN-SUFFIX,gilcdn.com
+DOMAIN-SUFFIX,kunlun.com
+DOMAIN-SUFFIX,algolia.net
+DOMAIN-SUFFIX,cdngslb.com
+DOMAIN-SUFFIX,jomodns.com
+DOMAIN-SUFFIX,supabase.co
+DOMAIN-SUFFIX,windows.net
+DOMAIN-SUFFIX,jsdelivr.net
+DOMAIN-SUFFIX,qiniudns.com
+DOMAIN-SUFFIX,akamaized.net
+DOMAIN-SUFFIX,azureedge.net
+DOMAIN-SUFFIX,byteintlapi.com
+DOMAIN-SUFFIX,byteplusbiz.com
+DOMAIN-SUFFIX,yhgfb-static.com
+DOMAIN-SUFFIX,transcend-cdn.com
 
-# Motrix下载器
-DOMAIN-SUFFIX,motrix.app
+# 身份认证与人机验证
+DOMAIN-SUFFIX,auth0.com
+DOMAIN-SUFFIX,hcaptcha.com
 
-# 端口开放查询
+# ==================== 域名 / 一般 ====================
+
+# 网络检测、DNS与时间服务
+DOMAIN-SUFFIX,kdns.fr
+DOMAIN-SUFFIX,ntp.org
+DOMAIN-SUFFIX,ipinfo.io
+DOMAIN-SUFFIX,perfops.net
+DOMAIN-SUFFIX,icanhazip.com
 DOMAIN-SUFFIX,canyouseeme.org
 
-# 脚本猫
-DOMAIN-SUFFIX,scriptcat.org
+# 浏览器及辅助服务（原分组）
+DOMAIN-SUFFIX,firefox.com
+DOMAIN-SUFFIX,mozilla.com
+DOMAIN-SUFFIX,mozilla.org
+DOMAIN-SUFFIX,fluxbrowser.cn
+DOMAIN-SUFFIX,rewardsauto.top
+DOMAIN-SUFFIX,thunderbird.net
+DOMAIN-SUFFIX,firefoxusercontent.com
 
-# 极空间
-DOMAIN-SUFFIX,zspace.cn
-DOMAIN-SUFFIX,zconnect.cn
+# 支付、订阅与捐赠组件
+DOMAIN-SUFFIX,paytr.com
+DOMAIN-SUFFIX,fndrsp.net
+DOMAIN-SUFFIX,stripe.com
+DOMAIN-SUFFIX,stripe.net
+DOMAIN-SUFFIX,revenuecat.com
+DOMAIN-SUFFIX,fundraiseup.com
+DOMAIN-SUFFIX,midaspayment.com
 
-# 其它个人域名
-DOMAIN-SUFFIX,baotangguo.cn
-DOMAIN-SUFFIX,ipaxxs.cn
-DOMAIN-SUFFIX,ttt.sh
-DOMAIN-SUFFIX,macked.app
+# 证书、安全与隐私辅助组件
+DOMAIN-SUFFIX,lencr.org
+DOMAIN-SUFFIX,sectigo.com
+DOMAIN-SUFFIX,digicert.com
+DOMAIN-SUFFIX,onetrust.com
+DOMAIN-SUFFIX,verisign.com
+DOMAIN-SUFFIX,cookielaw.org
+DOMAIN-SUFFIX,crl.verisign.net
+DOMAIN-SUFFIX,nortonlifelock.com
 
-# apple
+# 硬件、驱动与音效
+DOMAIN-SUFFIX,asus.com
 DOMAIN-SUFFIX,apple.com
+DOMAIN-SUFFIX,tclai.top
+DOMAIN-SUFFIX,xperi.com
+DOMAIN-SUFFIX,pccooler.cn
+DOMAIN-SUFFIX,a-volute.com
+DOMAIN-SUFFIX,steelseries.com
+DOMAIN-SUFFIX,steelseriescdn.com
 
-# immortalwrt固件下载
-DOMAIN-SUFFIX,kyarucloud.moe
+# 图片、图标与字体
+DOMAIN-SUFFIX,iili.io
+DOMAIN-SUFFIX,picx.cx
+DOMAIN-SUFFIX,tutu.to
+DOMAIN-SUFFIX,wsrv.nl
+DOMAIN-SUFFIX,2048.spa
+DOMAIN-SUFFIX,imgs.ovh
+DOMAIN-SUFFIX,gifyu.com
+DOMAIN-SUFFIX,picgo.net
+DOMAIN-SUFFIX,weserv.nl
+DOMAIN-SUFFIX,ylimg.com
+DOMAIN-SUFFIX,imgbox.com
+DOMAIN-SUFFIX,pixhost.to
+DOMAIN-SUFFIX,postimg.cc
+DOMAIN-SUFFIX,shields.io
+DOMAIN-SUFFIX,unisvg.com
+DOMAIN-SUFFIX,emojiall.com
+DOMAIN-SUFFIX,tabboard.com
+DOMAIN-SUFFIX,fontshare.com
+DOMAIN-SUFFIX,simplesvg.com
+DOMAIN-SUFFIX,iconify.design
+DOMAIN-SUFFIX,libravatar.org
+DOMAIN-SUFFIX,fontawesome.com
 
-# 机顶盒
-DOMAIN-SUFFIX,winudf.com
+# 博客、论坛与个人站点（含待核验项）
+DOMAIN-SUFFIX,gebi1.com
+DOMAIN-SUFFIX,gxnas.com
+DOMAIN-SUFFIX,isedu.top
+DOMAIN-SUFFIX,kilvn.com
+DOMAIN-SUFFIX,yyyue.xyz
+DOMAIN-SUFFIX,zjbjw.com
+DOMAIN-SUFFIX,bgegao.com
+DOMAIN-SUFFIX,cpolar.top
+DOMAIN-SUFFIX,daniao.org
+DOMAIN-SUFFIX,geekxw.top
+DOMAIN-SUFFIX,hanscn.com
+DOMAIN-SUFFIX,i-meto.com
+DOMAIN-SUFFIX,izspace.cn
+DOMAIN-SUFFIX,nickyam.com
+DOMAIN-SUFFIX,paugram.com
+DOMAIN-SUFFIX,rdadong.com
+DOMAIN-SUFFIX,vumstar.com
+DOMAIN-SUFFIX,zhichao.org
+DOMAIN-SUFFIX,hassbian.com
+DOMAIN-SUFFIX,nanodesu.net
+DOMAIN-SUFFIX,right.com.cn
+DOMAIN-SUFFIX,livecodes.vip
+DOMAIN-SUFFIX,wangshuai.app
+DOMAIN-SUFFIX,zhoujie218.top
+DOMAIN-SUFFIX,paopaoshequ.com
+DOMAIN-SUFFIX,songchenwen.com
 
-# PT站点-猪猪
+# PT、Tracker与Usenet（按原清单归纳）
+DOMAIN-SUFFIX,hdf.world
+DOMAIN-SUFFIX,kamept.com
+DOMAIN-SUFFIX,blutopia.cc
+DOMAIN-SUFFIX,exoticaz.to
+DOMAIN-SUFFIX,hdcity.city
+DOMAIN-SUFFIX,bluebird-hd.org
+DOMAIN-SUFFIX,house-of-usenet.com
+DOMAIN-SUFFIX,internetwarriors.net
 
-# 机场
+# 代理服务与订阅入口（原标注）
+DOMAIN-SUFFIX,dy.ax
+DOMAIN-SUFFIX,bajie.la
+DOMAIN-SUFFIX,pp.dg4.org
+DOMAIN-SUFFIX,cat-cdn.com
+DOMAIN-SUFFIX,wgetcloud.org
+DOMAIN-SUFFIX,1-sakuracat.com
+DOMAIN-SUFFIX,2-sakuracat.com
 DOMAIN-SUFFIX,sakura-cat1.com
 DOMAIN-SUFFIX,sakura-cat2.com
 DOMAIN-SUFFIX,sakura-cat3.com
+DOMAIN-SUFFIX,c1-sakuracat.com
+DOMAIN-SUFFIX,c2-sakuracat.com
 DOMAIN-SUFFIX,sakura-cat-cdn1.com
 DOMAIN-SUFFIX,sakura-cat-cdn2.com
 DOMAIN-SUFFIX,sakura-cat-cdn3.com
-DOMAIN-SUFFIX,1-sakuracat.com
-DOMAIN-SUFFIX,2-sakuracat.com
-DOMAIN-SUFFIX,c1-sakuracat.com
-DOMAIN-SUFFIX,c2-sakuracat.com
-DOMAIN-SUFFIX,wgetcloud.org
-DOMAIN-SUFFIX,bajie.la
-DOMAIN-SUFFIX,pp.dg4.org
-DOMAIN-SUFFIX,dy.ax
-DOMAIN-SUFFIX,cat-cdn.com
+DOMAIN-SUFFIX,the-best-airport.com
 
-# 镜像转换工具
-DOMAIN-SUFFIX,starwindsoftware.com
-
-# 破解软件下载站
-DOMAIN-SUFFIX,0210.net
-DOMAIN-SUFFIX,bsbsb.top
-
-# 人机验证
-DOMAIN-SUFFIX,hcaptcha.com
-
-# 广告屏蔽
-DOMAIN-SUFFIX,getadblock.com
-
-# 在线观影平台
-DOMAIN-SUFFIX,meowtv.vip
-DOMAIN-SUFFIX,meowtv.top
-DOMAIN-SUFFIX,v1.mk
-DOMAIN-SUFFIX,hostbuf.com
-DOMAIN-SUFFIX,423down.com
-DOMAIN-SUFFIX,a-volute.com
-DOMAIN-SUFFIX,digicert.com
-DOMAIN-SUFFIX,iconify.design
-DOMAIN-SUFFIX,akamaized.net
-DOMAIN-SUFFIX,azureedge.net
-DOMAIN-SUFFIX,gaoqing.la
-DOMAIN-SUFFIX,domp4.cc
-DOMAIN-SUFFIX,padmp4.com
-DOMAIN-SUFFIX,dygang.tv
-DOMAIN-SUFFIX,yinfans.me
-DOMAIN-SUFFIX,breakvip.com
-DOMAIN-SUFFIX,bugutv.org
-DOMAIN-SUFFIX,ddmp4.cc
-DOMAIN-SUFFIX,jsdelivr.net
-DOMAIN-SUFFIX,z2pyw.com
-DOMAIN-SUFFIX,y80s.tv
-DOMAIN-SUFFIX,srtku.com
-DOMAIN-SUFFIX,kufeiyu.com
-DOMAIN-SUFFIX,xinlangtupian.com
-DOMAIN-SUFFIX,imgikzy.com
-DOMAIN-SUFFIX,hao6v.tv
-DOMAIN-SUFFIX,66tutup.com
-DOMAIN-SUFFIX,66hao.cc
-DOMAIN-SUFFIX,haibao123.xyz
-DOMAIN-SUFFIX,diygod.dev
-DOMAIN-SUFFIX,shields.io
-DOMAIN-SUFFIX,ddzimu.com
-DOMAIN-SUFFIX,ffh7y.com
-DOMAIN-SUFFIX,sectigo.com
-DOMAIN-SUFFIX,wangfei.tv
-DOMAIN-SUFFIX,wangfei1.cc
-DOMAIN-SUFFIX,naifeitv.xyz
-DOMAIN-SUFFIX,tegouys.com
-DOMAIN-SUFFIX,lencr.org
-DOMAIN-SUFFIX,postimg.cc
-DOMAIN-SUFFIX,souyisou.top
-DOMAIN-SUFFIX,ijujitv.cc
-DOMAIN-SUFFIX,yinfans.net
-DOMAIN-SUFFIX,playwoool.com
-DOMAIN-SUFFIX,heimuer.tv
-DOMAIN-SUFFIX,wsyzyts.vip
-DOMAIN-SUFFIX,hdao.tv
-
-# IOS或安卓事件追踪
-DOMAIN-SUFFIX,appsflyersdk.com
-
-# 机场内部聊天平台
-DOMAIN-SUFFIX,crisp.chat
-
-# CDN节点
-DOMAIN-SUFFIX,gvt1.com
-DOMAIN-SUFFIX,windows.net
-DOMAIN-SUFFIX,gilcdn.com
-DOMAIN-SUFFIX,auth0.com
-
-# CSDN
-DOMAIN-SUFFIX,gitcode.com
-DOMAIN-SUFFIX,gitchat.cn
-DOMAIN-SUFFIX,csdn.net
-DOMAIN-SUFFIX,kaifayun.com
-DOMAIN-SUFFIX,csdnimg.cn
-DOMAIN-SUFFIX,csto.com
-DOMAIN-SUFFIX,csdn.com
-DOMAIN-SUFFIX,gitbook.cn
-DOMAIN-SUFFIX,datasea.cn
-DOMAIN-SUFFIX,codechina.net
-DOMAIN-SUFFIX,gitcode.net
-DOMAIN-SUFFIX,iteye.com
-DOMAIN-SUFFIX,csdn.net.cn
-DOMAIN-SUFFIX,programmer.com.cn
-DOMAIN-SUFFIX,programmer.net.cn
-
-# Github加速
-DOMAIN-SUFFIX,ghproxy.net
-DOMAIN-SUFFIX,gh-proxy.com
-DOMAIN-SUFFIX,akams.cn
-DOMAIN-SUFFIX,gitwarp.com
-
-# 比特彗星
-DOMAIN-SUFFIX,bitcomet.com
-
-# 色花堂
-DOMAIN-SUFFIX,microsoftsa.com
-DOMAIN-SUFFIX,jwcop.net
-DOMAIN-SUFFIX,2qq42.us
-DOMAIN-SUFFIX,fu2zu.net
-DOMAIN-SUFFIX,3qlx.net
-DOMAIN-SUFFIX,0oz0.net
-
-# 同人图
-DOMAIN-SUFFIX,fanart.tv
-
-# 工具网站
-DOMAIN-SUFFIX,czpygy.com
-
-# iPTV相关
-DOMAIN-SUFFIX,fanmingming.com
-DOMAIN-SUFFIX,qualtrics.com
-DOMAIN-SUFFIX,eu.org
-DOMAIN-SUFFIX,iill.top
-DOMAIN-SUFFIX,iptv.cc
-DOMAIN-SUFFIX,aptv.app
-DOMAIN-SUFFIX,ottiptv.cc
-DOMAIN-SUFFIX,bit.ly
-
-# 字幕网
-DOMAIN-SUFFIX,subhd.tv
-DOMAIN-SUFFIX,subhd.cc
-DOMAIN-SUFFIX,subhd.me
-
-# 博客or论坛
-DOMAIN-SUFFIX,daniao.org
-DOMAIN-SUFFIX,edit.php
-DOMAIN-SUFFIX,cpolar.top
-DOMAIN-SUFFIX,gxnas.com
-DOMAIN-SUFFIX,bgegao.com
-DOMAIN-SUFFIX,zhoujie218.top
-DOMAIN-SUFFIX,rdadong.com
-DOMAIN-SUFFIX,right.com.cn
-DOMAIN-SUFFIX,izspace.cn
-DOMAIN-SUFFIX,paopaoshequ.com
-DOMAIN-SUFFIX,hassbian.com
-DOMAIN-SUFFIX,gebi1.com
-DOMAIN-SUFFIX,zjbjw.com
-DOMAIN-SUFFIX,kilvn.com
-DOMAIN-SUFFIX,yyyue.xyz
-DOMAIN-SUFFIX,songchenwen.com
-DOMAIN-SUFFIX,vumstar.com
-DOMAIN-SUFFIX,nanodesu.net
-DOMAIN-SUFFIX,nickyam.com
-DOMAIN-SUFFIX,isedu.top
-DOMAIN-SUFFIX,paugram.com
-DOMAIN-SUFFIX,livecodes.vip
-DOMAIN-SUFFIX,geekxw.top
-DOMAIN-SUFFIX,hanscn.com
-DOMAIN-SUFFIX,cbd.int
-DOMAIN-SUFFIX,i-meto.com
-DOMAIN-SUFFIX,umami.is
-DOMAIN-SUFFIX,wangshuai.app
-DOMAIN-SUFFIX,zhichao.org
-
-# 图床or图标
-DOMAIN-SUFFIX,picgo.net
-DOMAIN-SUFFIX,ylimg.com
-DOMAIN-SUFFIX,imgbox.com
-DOMAIN-SUFFIX,exoticaz.to
-DOMAIN-SUFFIX,imgs.ovh
-DOMAIN-SUFFIX,kamept.com
-DOMAIN-SUFFIX,2048.spa
-DOMAIN-SUFFIX,unisvg.com
-DOMAIN-SUFFIX,fontshare.com
-DOMAIN-SUFFIX,supabase.co
-DOMAIN-SUFFIX,tabboard.com
-DOMAIN-SUFFIX,emojiall.com
-DOMAIN-SUFFIX,gifyu.com
-DOMAIN-SUFFIX,picx.cx
-DOMAIN-SUFFIX,wsrv.nl
-DOMAIN-SUFFIX,weserv.nl
-DOMAIN-SUFFIX,pixhost.to
-DOMAIN-SUFFIX,fontawesome.com
-DOMAIN-SUFFIX,simplesvg.com
-
-# ipa下载论坛或网站
-DOMAIN-SUFFIX,ipazyw.com
-DOMAIN-SUFFIX,ipa.store
-DOMAIN-SUFFIX,ipaku.cc
-DOMAIN-SUFFIX,diyios.com
-DOMAIN-SUFFIX,thornbird.org
-
-# 饥荒科雷
-DOMAIN-SUFFIX,kleientertainment.com
-DOMAIN-SUFFIX,klei.com
-
-# TCL
-DOMAIN-SUFFIX,tclai.top
-
-# java相关
-DOMAIN-SUFFIX,jquery.com
-DOMAIN-SUFFIX,java.com
-DOMAIN-SUFFIX,java.net
-
-#lucky反代
-DOMAIN-SUFFIX,lucky.gd
-
-# 客服在线聊天域名
-DOMAIN-SUFFIX,salesforceliveagent.com
-
-# 广告拦截
-DOMAIN-SUFFIX,adblockplus.org
-
-# 兔兔图床
-DOMAIN-SUFFIX,tutu.to
-
-# DTS音效
-DOMAIN-SUFFIX,xperi.com
-
-# Adobe相关
-DOMAIN-SUFFIX,adobedtm.com
+# Adobe相关软件与素材（按原分组）
+DOMAIN-SUFFIX,pdf.new
 DOMAIN-SUFFIX,adobe.io
+DOMAIN-SUFFIX,adobe.ly
+DOMAIN-SUFFIX,sign.new
 DOMAIN-SUFFIX,adobe.com
+DOMAIN-SUFFIX,ccpsx.com
+DOMAIN-SUFFIX,ftcdn.net
+DOMAIN-SUFFIX,adobedc.cn
+DOMAIN-SUFFIX,fotolia.cc
+DOMAIN-SUFFIX,fotolia.tv
+DOMAIN-SUFFIX,marketo.tv
+DOMAIN-SUFFIX,mktdns.com
+DOMAIN-SUFFIX,scene7.com
+DOMAIN-SUFFIX,acrobat.com
+DOMAIN-SUFFIX,adobecc.com
+DOMAIN-SUFFIX,adobedc.net
+DOMAIN-SUFFIX,adobeku.com
+DOMAIN-SUFFIX,adobesc.com
+DOMAIN-SUFFIX,adobess.com
+DOMAIN-SUFFIX,behance.net
+DOMAIN-SUFFIX,ccnsite.com
+DOMAIN-SUFFIX,echocdn.com
+DOMAIN-SUFFIX,fotolia.com
+DOMAIN-SUFFIX,magento.com
+DOMAIN-SUFFIX,magento.net
+DOMAIN-SUFFIX,marketo.com
+DOMAIN-SUFFIX,marketo.net
+DOMAIN-SUFFIX,toutapp.com
+DOMAIN-SUFFIX,typekit.com
+DOMAIN-SUFFIX,typekit.net
+DOMAIN-SUFFIX,adbecrsl.com
+DOMAIN-SUFFIX,adobecce.com
+DOMAIN-SUFFIX,adobegov.com
+DOMAIN-SUFFIX,adobetag.com
+DOMAIN-SUFFIX,echosign.com
+DOMAIN-SUFFIX,mageconf.com
+DOMAIN-SUFFIX,mktorest.com
+DOMAIN-SUFFIX,mktroute.com
+DOMAIN-SUFFIX,adobedemo.com
+DOMAIN-SUFFIX,adobeereg.com
+DOMAIN-SUFFIX,adobeoobe.com
+DOMAIN-SUFFIX,adobesign.com
+DOMAIN-SUFFIX,authorxml.com
+DOMAIN-SUFFIX,edgefonts.net
+DOMAIN-SUFFIX,gostorego.com
+DOMAIN-SUFFIX,marketo.co.uk
+DOMAIN-SUFFIX,photoshop.com
+DOMAIN-SUFFIX,tubemogul.com
+DOMAIN-SUFFIX,adobejanus.com
+DOMAIN-SUFFIX,adobelogin.com
+DOMAIN-SUFFIX,adobespark.com
+DOMAIN-SUFFIX,adobestock.com
+DOMAIN-SUFFIX,developria.com
+DOMAIN-SUFFIX,macromedia.com
+DOMAIN-SUFFIX,mkto-c0100.com
+DOMAIN-SUFFIX,placesdocs.com
+DOMAIN-SUFFIX,adobeawards.com
+DOMAIN-SUFFIX,adobecontent.io
+DOMAIN-SUFFIX,adobetarget.com
+DOMAIN-SUFFIX,assetsadobe.com
+DOMAIN-SUFFIX,bluefootcms.com
+DOMAIN-SUFFIX,compresspdf.new
+DOMAIN-SUFFIX,creativesdk.com
+DOMAIN-SUFFIX,mageconf.com.ua
+DOMAIN-SUFFIX,marketolive.com
+DOMAIN-SUFFIX,adobelanding.com
+DOMAIN-SUFFIX,adobesigncdn.com
+DOMAIN-SUFFIX,ood.opsource.net
+DOMAIN-SUFFIX,s2stagehance.com
+DOMAIN-SUFFIX,tenbyfotolia.com
+DOMAIN-SUFFIX,adobeaemcloud.com
+DOMAIN-SUFFIX,adobeaemcloud.net
+DOMAIN-SUFFIX,adobeccstatic.com
+DOMAIN-SUFFIX,adobeexchange.com
+DOMAIN-SUFFIX,adobeprojectm.com
+DOMAIN-SUFFIX,adobetechcomm.com
+DOMAIN-SUFFIX,creativecloud.com
+DOMAIN-SUFFIX,douwriteright.com
+DOMAIN-SUFFIX,magentomobile.com
+DOMAIN-SUFFIX,mobilemarketo.com
+DOMAIN-SUFFIX,dollarfotoclub.com
+DOMAIN-SUFFIX,adobexdplatform.com
+DOMAIN-SUFFIX,dollarphotoclub.com
+DOMAIN-SUFFIX,enablementadobe.com
+DOMAIN-SUFFIX,magentocommerce.com
+DOMAIN-SUFFIX,marketing-cloud.com
+DOMAIN-SUFFIX,marketodesigner.com
+DOMAIN-SUFFIX,adobetcstrialdvd.com
+DOMAIN-SUFFIX,businesscatalyst.com
+DOMAIN-SUFFIX,dollarphotosclub.com
+DOMAIN-SUFFIX,fotolia-noticias.com
+DOMAIN-SUFFIX,imagineecommerce.com
+DOMAIN-SUFFIX,worldsecureemail.com
+DOMAIN-SUFFIX,adobeplatinumclub.com
+DOMAIN-SUFFIX,adobetechcommdemo.com
+DOMAIN-SUFFIX,marketing-nirvana.com
+DOMAIN-SUFFIX,sundanceignite2016.com
+DOMAIN-SUFFIX,worldsecuresystems.com
+DOMAIN-SUFFIX,adobehiddentreasures.com
+DOMAIN-SUFFIX,adobe-aemassets-value.com
+DOMAIN-SUFFIX,adobe-audience-finder.com
+DOMAIN-SUFFIX,adobecreativityawards.com
+DOMAIN-SUFFIX,adobeexperienceawards.com
+DOMAIN-SUFFIX,adobetechcommcallback.com
+DOMAIN-SUFFIX,magentoliveconference.com
+DOMAIN-SUFFIX,adobe-video-partner-finder.com
+DOMAIN-SUFFIX,revenue-performance-management.com
 
-# 赛睿
-DOMAIN-SUFFIX,klaviyo.com
-DOMAIN-SUFFIX,steelseriescdn.com
-DOMAIN-SUFFIX,sitecampaign.com
-DOMAIN-SUFFIX,steelseries.com
-
-# sunpanel面板
-DOMAIN-SUFFIX,sun-panel.top
-
-# 华硕相关
-DOMAIN-SUFFIX,asus.com
-
-# 内容网络分发CDN
-DOMAIN-SUFFIX,unpkg.com
-DOMAIN-SUFFIX,iili.io
-DOMAIN-SUFFIX,transcend-cdn.com
-DOMAIN-SUFFIX,kunlun.com
-DOMAIN-SUFFIX,cdngslb.com
-DOMAIN-SUFFIX,dnsv1.com
-DOMAIN-SUFFIX,cdntip.com
-DOMAIN-SUFFIX,bdydns.com
-DOMAIN-SUFFIX,jomodns.com
-DOMAIN-SUFFIX,qiniudns.com
-DOMAIN-SUFFIX,aicdn.com
-
-# sublimetext
-DOMAIN-SUFFIX,sublimehq.com
-DOMAIN-SUFFIX,sublimetext.com
-
-# Nvidia
-DOMAIN-SUFFIX,nvidia.nl
-DOMAIN-SUFFIX,nvidiaforhp.com
-DOMAIN-SUFFIX,geforce.com
-DOMAIN-SUFFIX,tegrazone.kr
-DOMAIN-SUFFIX,tegrazone.jp
-DOMAIN-SUFFIX,gputechconf.com
-DOMAIN-SUFFIX,tegrazone.com
-DOMAIN-SUFFIX,tegrazone.co
-DOMAIN-SUFFIX,gputechconf.eu
-DOMAIN-SUFFIX,gputechconf.in
-DOMAIN-SUFFIX,gputechconf.jp
-DOMAIN-SUFFIX,nvidia.asia
+# NVIDIA区域、活动与历史域名（按原分组）
 DOMAIN-SUFFIX,nvidia.at
 DOMAIN-SUFFIX,nvidia.be
 DOMAIN-SUFFIX,nvidia.ch
-DOMAIN-SUFFIX,shotwithgeforce.com
-DOMAIN-SUFFIX,nvidiagrid.net
-DOMAIN-SUFFIX,nvidia.fr
-DOMAIN-SUFFIX,nvidia.tw
+DOMAIN-SUFFIX,nvidia.cn
 DOMAIN-SUFFIX,nvidia.cz
-DOMAIN-SUFFIX,nvidia.com
-DOMAIN-SUFFIX,nvidia.se
-DOMAIN-SUFFIX,nvidia.ru
-DOMAIN-SUFFIX,nvidia.ro
-DOMAIN-SUFFIX,nvidia.pl
-DOMAIN-SUFFIX,nvidia.no
-DOMAIN-SUFFIX,nvidia.mx
-DOMAIN-SUFFIX,nvidia.lu
-DOMAIN-SUFFIX,nvidia.jp
-DOMAIN-SUFFIX,nvidia.it
-DOMAIN-SUFFIX,nvidia.in
 DOMAIN-SUFFIX,nvidia.de
 DOMAIN-SUFFIX,nvidia.dk
 DOMAIN-SUFFIX,nvidia.es
 DOMAIN-SUFFIX,nvidia.eu
 DOMAIN-SUFFIX,nvidia.fi
-DOMAIN-SUFFIX,nvidia.co.at
-DOMAIN-SUFFIX,nvidia.co.uk
-DOMAIN-SUFFIX,gputechconf.com.au
-DOMAIN-SUFFIX,nvidia.com.ua
-DOMAIN-SUFFIX,nvidia.com.tw
-DOMAIN-SUFFIX,nvidia.com.tr
-DOMAIN-SUFFIX,geforce.co.kr
-DOMAIN-SUFFIX,nvidia.com.pl
-DOMAIN-SUFFIX,nvidia.com.pe
-DOMAIN-SUFFIX,nvidia.com.mx
-DOMAIN-SUFFIX,nvidia.com.br
-DOMAIN-SUFFIX,nvidia.com.au
-DOMAIN-SUFFIX,nvidia.co.kr
-DOMAIN-SUFFIX,nvidia.co.jp
-DOMAIN-SUFFIX,nvidia.co.in
-DOMAIN-SUFFIX,geforce.co.uk
-DOMAIN-SUFFIX,gputechconf.com.tw
-DOMAIN-SUFFIX,tegrazone.co.kr
-DOMAIN-SUFFIX,nvidia.com.ve
-DOMAIN-SUFFIX,gputechconf.co.kr
-DOMAIN-SUFFIX,geforce.com.tw
+DOMAIN-SUFFIX,nvidia.fr
+DOMAIN-SUFFIX,nvidia.in
+DOMAIN-SUFFIX,nvidia.it
+DOMAIN-SUFFIX,nvidia.jp
+DOMAIN-SUFFIX,nvidia.lu
+DOMAIN-SUFFIX,nvidia.mx
+DOMAIN-SUFFIX,nvidia.nl
+DOMAIN-SUFFIX,nvidia.no
+DOMAIN-SUFFIX,nvidia.pl
+DOMAIN-SUFFIX,nvidia.ro
+DOMAIN-SUFFIX,nvidia.ru
+DOMAIN-SUFFIX,nvidia.se
+DOMAIN-SUFFIX,nvidia.tw
 DOMAIN-SUFFIX,geforce.cn
+DOMAIN-SUFFIX,nvidia.com
+DOMAIN-SUFFIX,geforce.com
+DOMAIN-SUFFIX,nvidia.asia
+DOMAIN-SUFFIX,nvidia.co.at
+DOMAIN-SUFFIX,nvidia.co.in
+DOMAIN-SUFFIX,nvidia.co.jp
+DOMAIN-SUFFIX,nvidia.co.kr
+DOMAIN-SUFFIX,nvidia.co.uk
+DOMAIN-SUFFIX,tegrazone.co
+DOMAIN-SUFFIX,tegrazone.jp
+DOMAIN-SUFFIX,tegrazone.kr
+DOMAIN-SUFFIX,geforce.co.kr
+DOMAIN-SUFFIX,geforce.co.uk
+DOMAIN-SUFFIX,nvidia.com.au
+DOMAIN-SUFFIX,nvidia.com.br
+DOMAIN-SUFFIX,nvidia.com.mx
+DOMAIN-SUFFIX,nvidia.com.pe
+DOMAIN-SUFFIX,nvidia.com.pl
+DOMAIN-SUFFIX,nvidia.com.tr
+DOMAIN-SUFFIX,nvidia.com.tw
+DOMAIN-SUFFIX,nvidia.com.ua
+DOMAIN-SUFFIX,nvidia.com.ve
+DOMAIN-SUFFIX,tegrazone.com
+DOMAIN-SUFFIX,geforce.com.tw
 DOMAIN-SUFFIX,gputechconf.cn
-DOMAIN-SUFFIX,nvidia.cn
+DOMAIN-SUFFIX,gputechconf.eu
+DOMAIN-SUFFIX,gputechconf.in
+DOMAIN-SUFFIX,gputechconf.jp
+DOMAIN-SUFFIX,nvidiagrid.net
+DOMAIN-SUFFIX,gputechconf.com
+DOMAIN-SUFFIX,nvidiaforhp.com
+DOMAIN-SUFFIX,tegrazone.co.kr
+DOMAIN-SUFFIX,gputechconf.co.kr
+DOMAIN-SUFFIX,gputechconf.com.au
+DOMAIN-SUFFIX,gputechconf.com.tw
+DOMAIN-SUFFIX,shotwithgeforce.com
 
-# firefox
-DOMAIN-SUFFIX,firefox.com
-DOMAIN-SUFFIX,firefoxusercontent.com
-DOMAIN-SUFFIX,mozilla.com
-
-# istoreos
-DOMAIN-SUFFIX,istoreos.com
-DOMAIN-SUFFIX,istoreos.cn
-
-# 飞牛
-DOMAIN-SUFFIX,fnnas.com
-DOMAIN-SUFFIX,fnnas.net
-DOMAIN-SUFFIX,fnnas.wiki
-DOMAIN-SUFFIX,fnnas.html
-
-# Adobe
-DOMAIN-SUFFIX,adobeereg.com
-DOMAIN-SUFFIX,crl.versign.net
-DOMAIN-SUFFIX,ood.opsource.net
-DOMAIN-SUFFIX,practivate.adobe
-DOMAIN-SUFFIX,practivate.adobe.ipp
-DOMAIN-SUFFIX,practivate.adobe.newoa
-DOMAIN-SUFFIX,practivate.adobe.ntp
-DOMAIN-SUFFIX,10xfotolia.com
+# 统计、营销、归因与用户反馈（用途建议）
 DOMAIN-SUFFIX,2o7.net
-DOMAIN-SUFFIX,acrobat.com
-DOMAIN-SUFFIX,adbecrsl.com
-DOMAIN-SUFFIX,adobe-aemassets-value.com
-DOMAIN-SUFFIX,adobe-audience-finder.com
-DOMAIN-SUFFIX,adobe-video-partner-finder.com
-DOMAIN-SUFFIX,adobe.ly
-DOMAIN-SUFFIX,adobeaemcloud.com
-DOMAIN-SUFFIX,adobeaemcloud.net
-DOMAIN-SUFFIX,adobeawards.com
-DOMAIN-SUFFIX,adobecontent.io
-DOMAIN-SUFFIX,adobecreativityawards.com
-DOMAIN-SUFFIX,adobedc.net
-DOMAIN-SUFFIX,adobedemo.com
-DOMAIN-SUFFIX,adobeexchange.com
-DOMAIN-SUFFIX,adobeexperienceawards.com
-DOMAIN-SUFFIX,adobegov.com
-DOMAIN-SUFFIX,adobehiddentreasures.com
-DOMAIN-SUFFIX,adobejanus.com
-DOMAIN-SUFFIX,adobeku.com
-DOMAIN-SUFFIX,adobelanding.com
-DOMAIN-SUFFIX,adobelogin.com
-DOMAIN-SUFFIX,adobeoobe.com
-DOMAIN-SUFFIX,adobeplatinumclub.com
-DOMAIN-SUFFIX,adobeprojectm.com
-DOMAIN-SUFFIX,adobesc.com
-DOMAIN-SUFFIX,adobesign.com
-DOMAIN-SUFFIX,adobesigncdn.com
-DOMAIN-SUFFIX,adobespark.com
-DOMAIN-SUFFIX,adobess.com
-DOMAIN-SUFFIX,adobestock.com
-DOMAIN-SUFFIX,adobetag.com
-DOMAIN-SUFFIX,adobetarget.com
-DOMAIN-SUFFIX,adobetcstrialdvd.com
-DOMAIN-SUFFIX,adobetechcomm.com
-DOMAIN-SUFFIX,adobetechcommcallback.com
-DOMAIN-SUFFIX,adobetechcommdemo.com
-DOMAIN-SUFFIX,adobexdplatform.com
-DOMAIN-SUFFIX,assetsadobe.com
-DOMAIN-SUFFIX,authorxml.com
-DOMAIN-SUFFIX,businesscatalyst.com
-DOMAIN-SUFFIX,ccnsite.com
-DOMAIN-SUFFIX,ccpsx.com
+DOMAIN-SUFFIX,umami.is
+DOMAIN-SUFFIX,braze.com
+DOMAIN-SUFFIX,sentry.io
 DOMAIN-SUFFIX,demdex.net
-DOMAIN-SUFFIX,dollarfotoclub.com
-DOMAIN-SUFFIX,dollarphotoclub.com
-DOMAIN-SUFFIX,dollarphotosclub.com
-DOMAIN-SUFFIX,douwriteright.com
-DOMAIN-SUFFIX,echocdn.com
-DOMAIN-SUFFIX,echosign.com
-DOMAIN-SUFFIX,edgefonts.net
-DOMAIN-SUFFIX,enablementadobe.com
-DOMAIN-SUFFIX,ftcdn.net
-DOMAIN-SUFFIX,gostorego.com
-DOMAIN-SUFFIX,imagineecommerce.com
-DOMAIN-SUFFIX,macromedia.com
-DOMAIN-SUFFIX,magentoliveconference.com
-DOMAIN-SUFFIX,marketing-nirvana.com
-DOMAIN-SUFFIX,omniture.com
 DOMAIN-SUFFIX,omtrdc.net
-DOMAIN-SUFFIX,photoshop.com
-DOMAIN-SUFFIX,placesdocs.com
-DOMAIN-SUFFIX,sundanceignite2016.com
-DOMAIN-SUFFIX,worldsecureemail.com
-DOMAIN-SUFFIX,worldsecuresystems.com
-DOMAIN-SUFFIX,developria.com
-DOMAIN-SUFFIX,behance.net
-DOMAIN-SUFFIX,s2stagehance.com
-DOMAIN-SUFFIX,adobecc.com
-DOMAIN-SUFFIX,adobecce.com
-DOMAIN-SUFFIX,adobeccstatic.com
-DOMAIN-SUFFIX,creativecloud.com
-DOMAIN-SUFFIX,creativesdk.com
+DOMAIN-SUFFIX,smadex.com
+DOMAIN-SUFFIX,klaviyo.com
+DOMAIN-SUFFIX,wingify.com
+DOMAIN-SUFFIX,adobedtm.com
+DOMAIN-SUFFIX,mixpanel.com
+DOMAIN-SUFFIX,omniture.com
+DOMAIN-SUFFIX,upsellit.com
+DOMAIN-SUFFIX,adobestats.io
+DOMAIN-SUFFIX,qualtrics.com
+DOMAIN-SUFFIX,demandbase.com
+DOMAIN-SUFFIX,nelreports.net
+DOMAIN-SUFFIX,innocraft.cloud
+DOMAIN-SUFFIX,appsflyersdk.com
+DOMAIN-SUFFIX,sitecampaign.com
+DOMAIN-SUFFIX,company-target.com
+DOMAIN-SUFFIX,scorecardresearch.com
+
+# 自用与自定义域名
+DOMAIN-SUFFIX,ttt.sh
+DOMAIN-SUFFIX,ipaxxs.cn
+DOMAIN-SUFFIX,199462.xyz
+DOMAIN-SUFFIX,macked.app
+DOMAIN-SUFFIX,baotangguo.cn
+
+# 游戏与娱乐服务
+DOMAIN-SUFFIX,klei.com
+DOMAIN-SUFFIX,kleientertainment.com
+
+# 广告屏蔽工具
+DOMAIN-SUFFIX,eyeo.com
+DOMAIN-SUFFIX,getadblock.com
+DOMAIN-SUFFIX,adblockplus.org
+
+# 成人内容与相关资源（原分组）
+DOMAIN-SUFFIX,98t.la
+DOMAIN-SUFFIX,0oz0.net
+DOMAIN-SUFFIX,2qq42.us
+DOMAIN-SUFFIX,3qlx.net
+DOMAIN-SUFFIX,0ly6e.net
+DOMAIN-SUFFIX,4rzxy.net
+DOMAIN-SUFFIX,fu2zu.net
+DOMAIN-SUFFIX,jwcop.net
+DOMAIN-SUFFIX,srg3f.net
+DOMAIN-SUFFIX,microsoftsa.com
+
+# AI工具与模型服务
+DOMAIN-SUFFIX,ollama.ai
+DOMAIN-SUFFIX,laozhang.ai
+DOMAIN-SUFFIX,workbuddy.ai
+
+# 搜索、天气与在线信息服务
+DOMAIN-SUFFIX,mojeek.com
+DOMAIN-SUFFIX,yandex.net
+DOMAIN-SUFFIX,openweathermap.org
+
+# 网站辅助功能与应用配套资源（用途建议）
+DOMAIN-SUFFIX,snssdk.com
+DOMAIN-SUFFIX,userway.org
+
+# 机构与信息站点（归属待核验）
+DOMAIN-SUFFIX,umu.se
+DOMAIN-SUFFIX,cbd.int
+
+# ==================== 域名 / 罕见 / 待核验 ====================
+
+# 素材相似拼写与历史域名（归属待核验）
 DOMAIN-SUFFIX,cotolia.com
+DOMAIN-SUFFIX,fonolia.com
+DOMAIN-SUFFIX,fotoiia.com
+DOMAIN-SUFFIX,fotolja.com
+DOMAIN-SUFFIX,fptolia.com
+DOMAIN-SUFFIX,motolia.com
+DOMAIN-SUFFIX,votolia.com
 DOMAIN-SUFFIX,ffotolia.com
 DOMAIN-SUFFIX,fiotolia.com
 DOMAIN-SUFFIX,foftolia.com
-DOMAIN-SUFFIX,fonolia.com
 DOMAIN-SUFFIX,fotiolia.com
-DOMAIN-SUFFIX,fotoiia.com
-DOMAIN-SUFFIX,fotolia-noticias.com
-DOMAIN-SUFFIX,fotolia.cc
-DOMAIN-SUFFIX,fotolia.com
-DOMAIN-SUFFIX,fotolia.tv
-DOMAIN-SUFFIX,fotolja.com
-DOMAIN-SUFFIX,fptolia.com
 DOMAIN-SUFFIX,gfotolia.com
-DOMAIN-SUFFIX,motolia.com
 DOMAIN-SUFFIX,photolia.net
-DOMAIN-SUFFIX,tenbyfotolia.com
-DOMAIN-SUFFIX,votolia.com
-DOMAIN-SUFFIX,bluefootcms.com
-DOMAIN-SUFFIX,mageconf.com
-DOMAIN-SUFFIX,magento.com
-DOMAIN-SUFFIX,magento.net
-DOMAIN-SUFFIX,magentocommerce.com
-DOMAIN-SUFFIX,magentomobile.com
-DOMAIN-SUFFIX,marketing-cloud.com
-DOMAIN-SUFFIX,marketo.com
-DOMAIN-SUFFIX,marketo.net
-DOMAIN-SUFFIX,marketo.tv
-DOMAIN-SUFFIX,marketodesigner.com
-DOMAIN-SUFFIX,marketolive.com
-DOMAIN-SUFFIX,mktdns.com
-DOMAIN-SUFFIX,mkto-c0100.com
-DOMAIN-SUFFIX,mktorest.com
-DOMAIN-SUFFIX,mktroute.com
-DOMAIN-SUFFIX,mobilemarketo.com
-DOMAIN-SUFFIX,revenue-performance-management.com
-DOMAIN-SUFFIX,toutapp.com
-DOMAIN-SUFFIX,compresspdf.new
-DOMAIN-SUFFIX,pdf.new
-DOMAIN-SUFFIX,sign.new
-DOMAIN-SUFFIX,scene7.com
-DOMAIN-SUFFIX,adobestats.io
-DOMAIN-SUFFIX,typekit.com
-DOMAIN-SUFFIX,typekit.net
-DOMAIN-SUFFIX,mageconf.com.ua
-DOMAIN-SUFFIX,marketo.co.uk
-DOMAIN-SUFFIX,adobedc.cn
-DOMAIN-SUFFIX,tubemogul.com
+DOMAIN-SUFFIX,10xfotolia.com
 
-# savextube
+# 用途待确认的自定义域名
+DOMAIN-SUFFIX,cc.cd
+DOMAIN-SUFFIX,pp.ua
+DOMAIN-SUFFIX,yadg.cc
+DOMAIN-SUFFIX,z4a.net
+DOMAIN-SUFFIX,jprj.com
+DOMAIN-SUFFIX,0hax7.app
+DOMAIN-SUFFIX,90dao.com
+DOMAIN-SUFFIX,avcdn.net
+DOMAIN-SUFFIX,funto.fun
+DOMAIN-SUFFIX,112114.xyz
+DOMAIN-SUFFIX,999831.xyz
+DOMAIN-SUFFIX,czpygy.com
+DOMAIN-SUFFIX,geekzu.org
+DOMAIN-SUFFIX,madrays.de
+DOMAIN-SUFFIX,okyago.com
+DOMAIN-SUFFIX,wawawa.win
+DOMAIN-SUFFIX,danteng.org
+DOMAIN-SUFFIX,rilipro.com
+DOMAIN-SUFFIX,staticj.top
+DOMAIN-SUFFIX,z4q834d.net
 DOMAIN-SUFFIX,avextube.com
-#网络数据分析-广告
-DOMAIN-SUFFIX,scorecardresearch.com
+DOMAIN-SUFFIX,baozhiqiang.xyz
+DOMAIN-SUFFIX,featureassets.org
+DOMAIN-SUFFIX,prodregistryv2.org

@@ -1,155 +1,157 @@
-# 未知站点
-DOMAIN-SUFFIX,tangpt.top
-DOMAIN-SUFFIX,raingfh.top
-DOMAIN-SUFFIX,ptzone.xyz
-DOMAIN-SUFFIX,ptcafe.club
-DOMAIN-SUFFIX,xingyungept.org
-DOMAIN-SUFFIX,novahd.top
-DOMAIN-SUFFIX,t-baozi.cc
-DOMAIN-SUFFIX,dubhe.site
-DOMAIN-SUFFIX,crabpt.vip
-DOMAIN-SUFFIX,13city.org
-DOMAIN-SUFFIX,carpt.net
-DOMAIN-SUFFIX,discfan.net
+# PT.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
 
-# 皇后PT
+# ==================== 域名 / 一般 ====================
+
+# PT站点：皇后
 DOMAIN-SUFFIX,open.cd
 
-# PT站点-猪猪
+# PT站点：猪猪
 DOMAIN-SUFFIX,piggo.me
 
-# 杜比
+# PT站点：杜比
 DOMAIN-SUFFIX,hddolby.com
 DOMAIN-SUFFIX,ptdream.net
 DOMAIN-SUFFIX,orcinusorca.org
 
-# PT站点-馒头
+# PT站点：馒头
 DOMAIN-SUFFIX,m-team.cc
-DOMAIN-SUFFIX,m-team.io
 DOMAIN-SUFFIX,m-team.co
+DOMAIN-SUFFIX,m-team.io
 
-# PT站点-春天
-DOMAIN-SUFFIX,springsunday.net
+# PT站点：春天
 DOMAIN-SUFFIX,hdcmct.org
+DOMAIN-SUFFIX,springsunday.net
 
-# PT站点-猫站
+# PT站点：猫站
 DOMAIN-SUFFIX,pterclub.net
 
-# PT站点-憨憨
+# PT站点：憨憨
 DOMAIN-SUFFIX,hhan.club
 DOMAIN-SUFFIX,hhanclub.net
 DOMAIN-SUFFIX,hhanclub.top
-DOMAIN-SUFFIX,trackerfile.com
 
-# PT站点-彩虹岛
+# PT站点：彩虹岛
+DOMAIN-SUFFIX,chdbits.co
 DOMAIN-SUFFIX,chdbits.xyz
 DOMAIN-SUFFIX,ptchdbits.co
 DOMAIN-SUFFIX,rainbowisland.co
-DOMAIN-SUFFIX,chdbits.co
 
-# PT站点-家园
+# PT站点：家园
 DOMAIN-SUFFIX,hdhome.org
 
-# PT站点-TTG
+# PT站点：TTG
 DOMAIN-SUFFIX,totheglory.im
 
-# PT站点-观众
-DOMAIN-SUFFIX,cinefiles.info
+# PT站点：观众
 DOMAIN-SUFFIX,audiences.me
+DOMAIN-SUFFIX,cinefiles.info
 
-# PT站点-朋友
+# PT站点：朋友
 DOMAIN-SUFFIX,keepfrds.com
 
-# PT站点-织梦
+# PT站点：织梦
 DOMAIN-SUFFIX,zmpt.cc
 DOMAIN-SUFFIX,whlwhl.top
 DOMAIN-SUFFIX,freesmall.icu
 
-# PT站点-我堡
+# PT站点：我堡
 DOMAIN-SUFFIX,ourbits.club
 DOMAIN-SUFFIX,ourhelp.club
 
-# PT站点-UBits
+# PT站点：UBits
 DOMAIN-SUFFIX,ubits.club
 
-# PT站点-红豆
+# PT站点：红豆
 DOMAIN-SUFFIX,hdfans.org
 
-# PT站点-麒麟
+# PT站点：麒麟
 DOMAIN-SUFFIX,hdkyl.in
 DOMAIN-SUFFIX,hdkylin.com
 DOMAIN-SUFFIX,hdkylin.top
 
-# PT站点-青蛙
-DOMAIN-SUFFIX,qingwapt.org
-DOMAIN-SUFFIX,qingwapt.com
-DOMAIN-SUFFIX,qingwapt.pro
-DOMAIN-SUFFIX,qingwa.pro
+# PT站点：青蛙
 DOMAIN-SUFFIX,wawawa.me
+DOMAIN-SUFFIX,qingwa.pro
+DOMAIN-SUFFIX,qingwapt.com
+DOMAIN-SUFFIX,qingwapt.org
+DOMAIN-SUFFIX,qingwapt.pro
 
-# PT站点-PTS
-DOMAIN-SUFFIX,ptskit.org
-DOMAIN-SUFFIX,ptskit.com
+# PT站点：PTS
 DOMAIN-SUFFIX,netok.xyz
-DOMAIN-SUFFIX,filegear-sg.me
+DOMAIN-SUFFIX,ptskit.com
+DOMAIN-SUFFIX,ptskit.org
 DOMAIN-SUFFIX,ptskit.kqbhek.com
 
-# PT站点-朱雀
+# PT站点：朱雀
 DOMAIN-SUFFIX,zhuque.in
 
-# PT站点-肉丝
-DOMAIN-SUFFIX,rousipt.com
-DOMAIN-SUFFIX,rousi.zip
+# PT站点：肉丝
 DOMAIN-SUFFIX,rousi.pro
+DOMAIN-SUFFIX,rousi.zip
+DOMAIN-SUFFIX,rousipt.com
 
-# PT站点-PT时间
-DOMAIN-SUFFIX,pttime.online
+# PT站点：PT时间
 DOMAIN-SUFFIX,pttime.org
-DOMAIN-SUFFIX,ptpimg.me
+DOMAIN-SUFFIX,pttime.online
 
-# PT站点-末日
-DOMAIN-SUFFIX,agsvpt.cn
-DOMAIN-SUFFIX,trackers.work
-DOMAIN-SUFFIX,agsvpt.work
-DOMAIN-SUFFIX,agsvpt.com
+# PT站点：末日
 DOMAIN-SUFFIX,agsv.top
+DOMAIN-SUFFIX,agsvpt.cn
+DOMAIN-SUFFIX,agsvpt.com
+DOMAIN-SUFFIX,agsvpt.work
 
-# PT站点-老师
-DOMAIN-SUFFIX,nicept.net
+# PT站点：老师
 DOMAIN-SUFFIX,nextpt.net
+DOMAIN-SUFFIX,nicept.net
 
-# PT站点-大青虫
+# PT站点：大青虫
 DOMAIN-SUFFIX,cyanbug.net
 
-# PT站点-爱萝莉
-DOMAIN-SUFFIX,ilolicon.cc
-DOMAIN-SUFFIX,ilolicon.com
-DOMAIN-SUFFIX,loli.net
-DOMAIN-SUFFIX,nekofish.cc
+# PT站点：爱萝莉
 DOMAIN-SUFFIX,xloli.cc
-DOMAIN-SUFFIX,bgm.tv
+DOMAIN-SUFFIX,ilolicon.cc
+DOMAIN-SUFFIX,nekofish.cc
+DOMAIN-SUFFIX,ilolicon.com
 
-# PT站点-CDFile
+# PT站点：CDFile
 DOMAIN-SUFFIX,cdfile.org
 
-# PT站点-AFun
+# PT站点：AFun
 DOMAIN-SUFFIX,ptlover.cc
 
-# PT站点-学校
-DOMAIN-SUFFIX,btschool.club
+# PT站点：学校
 DOMAIN-SUFFIX,btschool.net
+DOMAIN-SUFFIX,btschool.club
 
-# PT站点-聆音
+# PT站点：聆音
 DOMAIN-SUFFIX,soulvoice.club
 
-# PT站点-烧包
+# PT站点：烧包
 DOMAIN-SUFFIX,ptsbao.club
 
+# ==================== 域名 / 罕见 / 待核验 ====================
 
+# PT辅助：图床与Tracker
+DOMAIN-SUFFIX,bgm.tv
+DOMAIN-SUFFIX,loli.net
+DOMAIN-SUFFIX,ptpimg.me
+DOMAIN-SUFFIX,trackers.work
+DOMAIN-SUFFIX,filegear-sg.me
+DOMAIN-SUFFIX,trackerfile.com
 
-
-
-
-
-
-
+# PT站点：待确认
+DOMAIN-SUFFIX,carpt.net
+DOMAIN-SUFFIX,13city.org
+DOMAIN-SUFFIX,crabpt.vip
+DOMAIN-SUFFIX,dubhe.site
+DOMAIN-SUFFIX,novahd.top
+DOMAIN-SUFFIX,ptzone.xyz
+DOMAIN-SUFFIX,t-baozi.cc
+DOMAIN-SUFFIX,tangpt.top
+DOMAIN-SUFFIX,discfan.net
+DOMAIN-SUFFIX,ptcafe.club
+DOMAIN-SUFFIX,raingfh.top
+DOMAIN-SUFFIX,xingyungept.org

@@ -1,7 +1,18 @@
-# claude-code
+# Claude.list
+# 格式：Mihomo classical / text
+# 排序：域名 / IPv4 → 常用 / 一般 / 罕见 → 用途分类；类内按规则值长度、同长度按 a-z。
+# 常用程度为分类参考。
+
+# ==================== 域名 / 常用 ====================
+
+# Claude / Anthropic入口与服务
+DOMAIN-SUFFIX,clau.de
 DOMAIN-SUFFIX,claude.ai
 DOMAIN-SUFFIX,claude.com
 DOMAIN-SUFFIX,anthropic.com
-DOMAIN-SUFFIX,clau.de
-DOMAIN-SUFFIX,claudeusercontent.com
+
+# ==================== 域名 / 一般 ====================
+
+# Claude内容与客户端辅助域名（原清单）
 DOMAIN-SUFFIX,claudemcpclient.com
+DOMAIN-SUFFIX,claudeusercontent.com
