@@ -11,7 +11,7 @@
         "tag": "google",
         "type": "https",
         "server": "8.8.8.8",
-        "detour": "📥 下载出口"
+        "detour": "🚀 自动优选"
       },
       {
         "tag": "fakeip",
@@ -70,20 +70,12 @@
   },
   "outbounds": [
     {
-      "tag": "📥 下载出口",
-      "type": "selector",
-      "outbounds": [
-        "🚀 自动优选"
-      ],
-      "default": "🚀 自动优选"
-    },
-    {
       "tag": "🚀 自动优选",
       "type": "urltest",
       "outbounds": [],
       "url": "https://clients1.google.com/generate_204",
-      "interval": "10m",
-      "tolerance": 200,
+      "interval": "300s",
+      "tolerance": 100,
       "interrupt_exist_connections": false
     },
     {
@@ -211,7 +203,7 @@
       },
       {
         "clash_mode": "Global",
-        "outbound": "📥 下载出口"
+        "outbound": "🚀 自动优选"
       },
       {
         "rule_set": [
@@ -221,7 +213,7 @@
           "telegram_ip",
           "twitter_ip"
         ],
-        "outbound": "📥 下载出口"
+        "outbound": "🚀 自动优选"
       },
       {
         "domain_suffix": [
@@ -240,7 +232,7 @@
           "telegram.dog",
           "telegram-cdn.org"
         ],
-        "outbound": "📥 下载出口"
+        "outbound": "🚀 自动优选"
       },
       {
         "rule_set": "cn_domain",
@@ -297,7 +289,7 @@
         "update_interval": "24h"
       }
     ],
-    "final": "📥 下载出口",
+    "final": "🚀 自动优选",
     "default_http_client": "直连下载",
     "auto_detect_interface": true,
     "default_domain_resolver": {

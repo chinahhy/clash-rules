@@ -1,12 +1,11 @@
 // 下载专用 Sub-Store 模板：配合 linux-download.json 使用。
 // 目标：Telegram / YouTube / X (Twitter) 视频下载；不按地区分组。
 // 默认读取“singbox”组合订阅，保持与现有 template.js 相同的订阅入口。
-// 通过 Sub-Store 生成 sing-box 节点后，注入一个自动测速组和一个手动选择组。
-// 延迟不等于吞吐量：自动优选只按连接延迟挑选；需要时可手动选择实测最快节点。
+// 通过 Sub-Store 生成 sing-box 节点后，只注入一个自动测速组。
+// 延迟不等于吞吐量：自动优选只按连接延迟挑选，不执行带宽测速。
 // 重要：没有可用节点时报错，不静默切换为直连。
 
 const DOWNLOAD_AUTO = '🚀 自动优选'
-const DOWNLOAD_SELECT = '📥 下载出口'
 const {
   type: inputType = '组合订阅',
   name = 'singbox',
@@ -27,8 +26,7 @@ if (!Array.isArray(config.outbounds)) {
   throw new Error('下载版缺少 outbounds 数组')
 }
 const auto = config.outbounds.find(o => o.tag === DOWNLOAD_AUTO && o.type === 'urltest')
-const selector = config.outbounds.find(o => o.tag === DOWNLOAD_SELECT && o.type === 'selector')
-if (!auto || !selector) {
+if (!auto) {
   throw new Error('请搭配 linux-download.json 使用 template-download.js')
 }
 
@@ -62,11 +60,9 @@ for (const node of nodes) {
 
 const nodeTags = nodes.map(node => node.tag)
 auto.outbounds = nodeTags
-selector.outbounds = [DOWNLOAD_AUTO, ...nodeTags]
-selector.default = DOWNLOAD_AUTO
 config.outbounds.push(...outbounds)
 if (!Array.isArray(config.endpoints)) config.endpoints = []
 config.endpoints.push(...endpoints)
 
-console.log('[📥 下载专用] 注入 ' + outbounds.length + ' 个代理节点、' + endpoints.length + ' 个端点；不建立地区组')
+console.log('[📥 下载专用] 注入 ' + outbounds.length + ' 个代理节点、' + endpoints.length + ' 个端点；仅保留自动优选')
 $content = JSON.stringify(config, null, 2)
