@@ -21,10 +21,6 @@
     ],
     "rules": [
       {
-        "rule_set": "reject_domain",
-        "action": "reject"
-      },
-      {
         "query_type": [
           "HTTPS",
           "SVCB"
@@ -92,13 +88,6 @@
   ],
   "route": {
     "rules": [
-      {
-        "rule_set": [
-          "reject_domain",
-          "reject_ip"
-        ],
-        "action": "reject"
-      },
       {
         "type": "logical",
         "mode": "and",
@@ -260,16 +249,6 @@
         "format": "source",
         "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/rules/{tag}.json",
         "update_interval": "24h"
-      },
-      {
-        "tag": [
-          "reject_domain",
-          "reject_ip"
-        ],
-        "type": "remote",
-        "format": "binary",
-        "url": "https://gh-proxy.com/https://raw.githubusercontent.com/chinahhy/clash-rules/main/sing-box/rules/{tag}.srs",
-        "update_interval": "1h"
       },
       {
         "tag": [
