@@ -38,6 +38,20 @@ try {
   log(`${e.message ?? e}`)
   throw new Error(`配置文件不是合法的 ${ProxyUtils.JSON5 ? 'JSON5' : 'JSON'} 格式`)
 }
+// 为 PT 保留 HTTPS/SVCB 查询，让客户端能够获取 ECH 和服务协议信息。
+// 仅在现有 PT/ali 规则被 HTTPS/SVCB 拒绝规则挡住时插入，重复生成不会叠加。
+const dnsRules = config.dns?.rules
+if (Array.isArray(dnsRules)) {
+  const httpsRejectIndex = dnsRules.findIndex(rule =>
+    rule.action === 'reject' && ['HTTPS', 'SVCB'].some(type => [].concat(rule.query_type ?? []).includes(type)))
+  const ptDnsIndex = dnsRules.findIndex(rule =>
+    rule.rule_set === 'pt_domain' && rule.server === 'ali' &&
+    (!rule.query_type || ['HTTPS', 'SVCB'].every(type => [].concat(rule.query_type).includes(type))))
+  if (httpsRejectIndex >= 0 && ptDnsIndex > httpsRejectIndex) {
+    dnsRules.splice(httpsRejectIndex, 0, { rule_set: 'pt_domain', query_type: ['HTTPS', 'SVCB'], server: 'ali' })
+  }
+}
+
 log(`② 获取订阅`)
 
 let proxies = []
