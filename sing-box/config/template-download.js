@@ -1,6 +1,6 @@
 // 下载专用 Sub-Store 模板：配合 linux-download.json 使用。
 // 目标：Telegram / YouTube / X (Twitter) 视频下载；不按地区分组。
-// 默认读取“singbox”组合订阅，保持与现有 template.js 相同的订阅入口。
+// 默认读取“singbox2”组合订阅；下载配置与常用配置的组合订阅彼此独立。
 // 通过 Sub-Store 生成 sing-box 节点后，只注入一个自动测速组。
 // 延迟不等于吞吐量：自动优选只按连接延迟挑选，不执行带宽测速。
 // 重要：没有可用节点时报错，不静默切换为直连。
@@ -8,7 +8,7 @@
 const DOWNLOAD_AUTO = '🚀 自动优选'
 const {
   type: inputType = '组合订阅',
-  name = 'singbox',
+  name = 'singbox2',
   includeUnsupportedProxy,
   url,
 } = $arguments ?? {}
@@ -45,7 +45,7 @@ if (!Array.isArray(outbounds) || !Array.isArray(endpoints)) {
 
 const nodes = [...outbounds, ...endpoints]
 if (!nodes.length) {
-  throw new Error('下载版订阅没有节点：请检查 singbox 组合订阅和 Sub-Store 过滤条件')
+  throw new Error('下载版订阅没有节点：请检查 singbox2 组合订阅和 Sub-Store 过滤条件')
 }
 const tags = new Set(config.outbounds.map(o => o.tag))
 for (const node of nodes) {
