@@ -13,7 +13,7 @@
   {"rule_set": "reject_domain", "action": "reject"},
   {"query_type": ["HTTPS", "SVCB"], "action": "reject"},
   {
-    "domain": "hhan.club",
+    "domain": "hhanclub.net",
     "query_type": "A",
     "action": "predefined",
     "answer": [
