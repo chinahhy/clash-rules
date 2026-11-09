@@ -17,7 +17,7 @@ let {
     "🕳^🇹🇼\\ 台湾节点$🏷ℹ️(台湾|台北|台中|高雄|台|taiwan|taipei|taichung|kaohsiung|tw|🇹🇼)",
     "🕳^🇭🇰\\ 香港节点$🏷ℹ️(香港|港|hk|hongkong|hong kong|🇭🇰)",
     "🕳^🇸🇬\\ 狮城节点$🏷ℹ️(新加坡|狮城|坡|sg|singapore|🇸🇬)",
-    "🕳^🇺🇲\\ 美国节点$🏷ℹ️(美国|美|us|usa|unitedstates|united states|🇺🇸|🇺🇲)",
+    "🕳^🇺🇲\\ 美国节点$🏷ℹ️^\\[(SCHOT|SCWL)\\].*(美国|美|(?:^|[^a-z])(us|usa)([^a-z]|$)|unitedstates|united states|🇺🇸|🇺🇲)",
     "🕳^🇬🇧\\ 英国节点$🏷ℹ️(英国|英|uk|gb|unitedkingdom|greatbritain|great britain|united kingdom|🇬🇧)",
     "🕳^🌐\\ 全部节点$🏷.*"
   ].join('\n'),
