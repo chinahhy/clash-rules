@@ -185,3 +185,6 @@ IP-CIDR,8.8.8.8/32,no-resolve
 IP-CIDR,208.67.220.220/32,no-resolve
 IP-CIDR,208.67.222.222/32,no-resolve
 IP-CIDR,185.222.222.222/32,no-resolve
+
+# Meta/Facebook 服务器目标IPv4
+IP-CIDR,157.240.1.9/32,no-resolve
