@@ -188,3 +188,6 @@ IP-CIDR,185.222.222.222/32,no-resolve
 
 # Meta/Facebook 服务器目标IPv4
 IP-CIDR,157.240.1.9/32,no-resolve
+
+# Dropbox 云存储目标IPv4
+IP-CIDR,108.160.161.20/32,no-resolve
