@@ -12,6 +12,7 @@ let {
   name = 'singbox_download',
   outbound = [
     "🕳^♻️\\ 自动选择$🏷.*",
+    "🕳^🚀\\ 自动优选$🏷.*",
     "🕳^🇯🇵\\ 日本节点$🏷ℹ️(日本|日|japan|jp|🇯🇵)",
     "🕳^🇹🇼\\ 台湾节点$🏷ℹ️(台湾|台北|台中|高雄|台|taiwan|taipei|taichung|kaohsiung|tw|🇹🇼)",
     "🕳^🇭🇰\\ 香港节点$🏷ℹ️(香港|港|hk|hongkong|hong kong|🇭🇰)",
@@ -137,6 +138,12 @@ config.outbounds.map(outbound => {
     }
   })
 })
+
+
+const downloadAuto = config.outbounds.find(outbound => outbound.tag === '🚀 自动优选')
+if (downloadAuto && (!Array.isArray(downloadAuto.outbounds) || downloadAuto.outbounds.length === 0)) {
+  throw new Error('下载代理组没有可用节点，已停止生成配置；请检查组合订阅和节点兼容性')
+}
 
 const compatible_outbound = {
   tag: 'COMPATIBLE',
